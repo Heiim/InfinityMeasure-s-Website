@@ -1,5 +1,59 @@
-
-  * {
+* {
     font-family: 'Source Sans Pro', serif;
     font-weight: 100;
-   }
+}
+
+header {
+    border: 2px;
+    border-bottom: solid lightgray;
+    padding: 10px;
+    margin: 5px;
+    height: 120px;
+}
+
+div.logo {
+    width: 120px;
+    height: 120px;
+    border: 5px;
+    float: left;
+}
+
+div.connection {
+    width: 240px;
+    height: 120px;
+    border: 5px;
+    float: right;
+}
+
+div.language {
+    width: 240px;
+    height: 120px;
+    border: 5px;
+    text-align: center;
+    float: right;
+}
+
+.clearing {
+    clear: both;
+}
+
+.button {
+    border: 1px solid lightgray;
+    padding: 6px;
+    margin: 6px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.flagbutton {
+    margin-top: 47px;
+    margin-left: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: yellowgreen;
+    cursor: pointer;
+}
