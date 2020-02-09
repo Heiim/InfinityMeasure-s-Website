@@ -1,1 +1,1 @@
-"# AppInfo1" 
+# quirky()
