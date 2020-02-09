@@ -11,6 +11,13 @@ header {
     height: 120px;
 }
 
+footer {
+    bottom: 0;
+	left: 25%;
+	width: 50%;
+	position: fixed;
+}
+
 div.logo {
     width: 120px;
     height: 120px;
@@ -22,6 +29,9 @@ div.connection {
     width: 240px;
     height: 120px;
     border: 5px;
+    top: 4%;
+	left: 80%;
+	position: fixed;
     float: right;
 }
 
@@ -31,6 +41,9 @@ div.language {
     height: 120px;
     border: 5px;
     text-align: center;
+    top: 4%;
+	left: 60%;
+	position: fixed;
     float: right;
 }
 
@@ -57,4 +70,8 @@ div.language {
 .button:hover {
     background-color: yellowgreen;
     cursor: pointer;
+}
+a {
+	text-decoration: none;
+	color: white;
 }
