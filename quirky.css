@@ -26,6 +26,7 @@ div.connection {
 }
 
 div.language {
+    /* float property and vertical align are not compatible */
     width: 240px;
     height: 120px;
     border: 5px;
