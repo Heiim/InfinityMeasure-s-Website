@@ -58,11 +58,19 @@ div.aboutus {
     border-bottom: solid lightgray;
     padding: 10px;
     margin: 5px;
-    height: 200px;
+    height: 270px;
+    text-align: justify;
 }
 
 .clearing {
     clear: both;
+}
+
+.timesquare {
+    float: right;
+    padding: 5px;
+    padding-left: 25px;
+    height: 250px;
 }
 
 .button {
