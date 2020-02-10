@@ -1,5 +1,5 @@
 * {
-    font-family: 'Source Sans Pro', 'o' serif;
+    font-family: 'Source Sans Pro', serif;
     font-weight: 100;
     background-color: white;
 }
@@ -14,9 +14,10 @@ header {
 
 footer {
     bottom: 0;
-    left: 25%;
-    width: 50%;
+    text-align: center;
     position: fixed;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 div.logo {
@@ -30,10 +31,6 @@ div.connection {
     width: 240px;
     height: 120px;
     border: 5px;
-    top: 4%;
-
-    left: 80%;
-    position: fixed;
     float: right;
 }
 
@@ -43,10 +40,6 @@ div.language {
     height: 120px;
     border: 5px;
     text-align: center;
-    top: 4%;
-    left: 60%;
-    position: fixed;
-
     float: right;
 }
 
@@ -76,6 +69,7 @@ div.language {
 }
 
 a {
-	text-decoration: none;
-	color: gray;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
 }
