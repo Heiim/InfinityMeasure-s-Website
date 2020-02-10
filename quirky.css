@@ -31,6 +31,7 @@ div.connection {
     height: 120px;
     border: 5px;
     top: 4%;
+
     left: 80%;
     position: fixed;
     float: right;
@@ -45,6 +46,7 @@ div.language {
     top: 4%;
     left: 60%;
     position: fixed;
+
     float: right;
 }
 
@@ -74,6 +76,6 @@ div.language {
 }
 
 a {
-    text-decoration: none;
-    color: gray;
+	text-decoration: none;
+	color: gray;
 }
