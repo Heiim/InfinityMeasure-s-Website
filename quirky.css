@@ -126,6 +126,63 @@ a {
     color: black;
 }
 
+
+/* login page */
+
+.loginformcontainer {
+    font-size: x-large;
+    height: 700px;
+    padding-top: 11%;
+    text-align: center;
+}
+
+.loginform {
+    display: inline-block;
+    text-align: right;
+    width: 360px;
+    padding: 10px;
+}
+
+input[type=email] {
+    width: 200px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+}
+
+input[type=password] {
+    width: 200px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background-color: yellowgreen;
+    color: white;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 90px;
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(138, 185, 45);
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1050px) {
     /* For mobile phones: */
     * {
