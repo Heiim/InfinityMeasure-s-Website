@@ -133,6 +133,10 @@ a {
     padding: 10px;
 }
 
+.center {
+    text-align: center;
+}
+
 
 /* login page */
 
@@ -212,7 +216,7 @@ input[type=submit]:hover {
 
 .messagecontainer {
     font-size: x-large;
-    height: 800px;
+    height: 65px;
     padding-top: 10%;
     text-align: center;
 }
