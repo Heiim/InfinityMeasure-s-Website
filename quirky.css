@@ -132,14 +132,14 @@ a {
 .loginformcontainer {
     font-size: x-large;
     height: 700px;
-    padding-top: 11%;
+    padding-top: 7%;
     text-align: center;
 }
 
 .loginform {
     display: inline-block;
     text-align: right;
-    width: 360px;
+    width: 400px;
     padding: 10px;
 }
 
@@ -154,6 +154,26 @@ input[type=email] {
 }
 
 input[type=password] {
+    width: 200px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+}
+
+input[type=text] {
+    width: 200px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+}
+
+input[type=date] {
     width: 200px;
     height: 25px;
     margin: 4px;

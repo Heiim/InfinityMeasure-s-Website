@@ -11,11 +11,11 @@ if (mysqli_connect_errno()) {
 
 
 // On vérifie que tout est bien récupéré par le serveur
-if (!isset($_POST['password'], $_POST['email'])) {
+if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'])) {
 	die ('Veuillez remplir tous les champs.');
 }
 // On vérifie que tout est rempli
-if (empty($_POST['password']) || empty($_POST['email'])) {
+if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday'])) {
 	die ('Veuillez remplir tous les champs.');
 }
 
@@ -25,6 +25,14 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
 if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
 	die ('Le mot de passe doit fair entre 8 et 20 caractères.');
+}
+
+if (strlen($_POST['lastn']) > 20 || strlen($_POST['lastn']) < 1) {
+	die ('Le nom doit fair entre 1 et 20 caractères.');
+}
+
+if (strlen($_POST['firstn']) > 20 || strlen($_POST['firstn']) < 1) {
+	die ('Le prénom doit fair entre 1 et 20 caractères.');
 }
 
 // On vérifie si le compte existe pas déjà
@@ -38,11 +46,11 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) 
 		echo 'Un compte avec ce mail existe déjà, veuillez en saisir une autre';
 	} else {
         // Le compte n'exite pas déjà, on le créé
-        if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code) VALUES (?, ?, ?)')) {
+        if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday) VALUES (?, ?, ?, ?, ?, ?)')) {
             // On hash et verifiy le mot de passe pour pas le stocket en clair dans la DB
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $uniqid = uniqid();
-            $stmt->bind_param('sss', $password, $_POST['email'], $uniqid);
+            $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday']);
             $stmt->execute();
             
             $from    = 'quiaquelrolecettesemaine@gmail.com';
