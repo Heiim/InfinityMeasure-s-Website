@@ -25,12 +25,24 @@
         <div class="loginform">
             <form action="register.php" method="post" autocomplete="off">
                 <div>
+                    <label for="lastn">Nom</label>
+                    <input type="text" name="lastn" id="lastn" required>
+                </div>
+                <div>
+                    <label for="firstn">Prénom </label>
+                    <input type="text" name="firstn" id="firstn" required>
+                </div>
+                <div>
+                    <label for="birthday">Date de naissance </label>
+                    <input type="date" name="birthday" id="birthday" required>
+                </div>
+                <div>
                     <label for="email">Adresse email </label>
-                    <input type="email" name="email" placeholder="Email" id="email" required>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div>
                     <label for="password">Mot de passe </label>
-                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <input type="password" name="password" id="password" required>
                 </div>
                 <div>
                     <input type="submit" value="S'inscrire">

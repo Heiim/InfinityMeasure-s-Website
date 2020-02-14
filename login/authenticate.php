@@ -32,7 +32,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) 
             // Tout est okay on créé la sessions
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
-            $_SESSION['name'] = $_POST['email'];
+            $_SESSION['name'] = $_POST["email"];;
             $_SESSION['id'] = $id;
             echo 'Welcome ' . $_SESSION['name'] . '!';
         } else {
