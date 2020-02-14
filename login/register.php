@@ -53,7 +53,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) 
             $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday']);
             $stmt->execute();
             
-            $from    = 'quiaquelrolecettesemaine@gmail.com';
+            $from    = 'quirkylimited@gmail.com';
             $subject = 'Activation du compte';
             $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
             $activate_link = 'http://localhost/login/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
