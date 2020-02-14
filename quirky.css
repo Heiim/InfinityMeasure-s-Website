@@ -126,6 +126,13 @@ a {
     color: black;
 }
 
+.checkmail {
+    width: 1080px;
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+}
+
 
 /* login page */
 
@@ -201,6 +208,20 @@ input[type=reset] {
 input[type=submit]:hover {
     background-color: rgb(138, 185, 45);
     cursor: pointer;
+}
+
+.messagecontainer {
+    font-size: x-large;
+    height: 800px;
+    padding-top: 10%;
+    text-align: center;
+}
+
+.message {
+    display: inline-block;
+    text-align: center;
+    width: 750px;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 1050px) {

@@ -34,7 +34,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) 
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST["email"];;
             $_SESSION['id'] = $id;
-            echo 'Welcome ' . $_SESSION['name'] . '!';
+            echo 'Bienvenue ' . $_SESSION['name'] . '!';
         } else {
             echo 'Mot de passe incorrect';
         }

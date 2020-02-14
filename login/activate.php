@@ -27,11 +27,44 @@ if (isset($_GET['email'], $_GET['code'])) {
 				$newcode = 'activated';
 				$stmt->bind_param('sss', $newcode, $_GET['email'], $_GET['code']);
 				$stmt->execute();
-				echo 'Votre compte est activé, vous pouvez maintenant vous connecter<br><a href="index.html">Login</a>';
+				$message = 'Votre compte est activé, vous pouvez maintenant vous connecter<br><a href="index.html">Login</a>';
 			}
 		} else {
-			echo 'Le compte est déjà activé ou il n\'existe pas!';
+			$message = 'Le compte est déjà activé ou il n\'existe pas!';
 		}
 	}
 }
 ?>
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="../quirky.css">
+</head>
+
+<header>
+    <div>
+        <div class="logo">
+            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%>
+        </div>
+        <p class="name">quirky()</p>
+    </div>
+</header>
+
+<body>
+    <div class="clearing messagecontainer">
+        <p class="message"><?php echo $message ?></p>
+    </div>
+</body>
+
+<footer>
+    <ul>
+        <li class="button"><a href="cgu.html">CGU</a></li>
+        <li class="button"><a href="contact.html">Nous contacter</a></li>
+        <li class="button"><a href="faq.html">FAQ</a></li>
+        <li class="button"><a href="forum.html">Forum</a></li>
+    </ul>
+</footer>
+
+</html>

@@ -43,7 +43,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) 
 	// On enregistre le résultat pour vérifier si le compte existe pas déjà dans la DB
 	if ($stmt->num_rows > 0) {
 		// Un compte avec ce mail existe déjà
-		echo 'Un compte avec ce mail existe déjà, veuillez en saisir une autre';
+		$messagedisp = 'Un compte avec ce mail existe déjà, veuillez en saisir une autre.';
 	} else {
         // Le compte n'exite pas déjà, on le créé
         if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday) VALUES (?, ?, ?, ?, ?, ?)')) {
@@ -53,23 +53,56 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) 
             $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday']);
             $stmt->execute();
             
-            $from    = 'quiaquelrolecettesemaine@gmail.com';
+            $from    = 'quirkylimited@gmail.com';
             $subject = 'Activation du compte';
             $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
             $activate_link = 'http://localhost/login/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
             $message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
             mail($_POST['email'], $subject, $message, $headers);
-            echo 'Consultez votre boite mail pour activer votre compte.';
+            $messagedisp = 'Consultez votre boite mail pour activer votre compte.';
 
         } else {
             // Problème avec le SQl, il faut verifier si la table existe
-            echo 'Erreur';
+            $messagedisp = 'Erreur';
         }
 	}
 	$stmt->close();
 } else {
 	// Problème avec le SQl, il faut verifier si la table existe
-	echo 'Erreur';
+	$messagedisp = 'Erreur';
 }
 $con->close();
 ?>
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="../quirky.css">
+</head>
+
+<header>
+    <div>
+        <div class="logo">
+            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%>
+        </div>
+        <p class="name">quirky()</p>
+    </div>
+</header>
+
+<body>
+    <div class="clearing messagecontainer">
+        <p class="message"><?php echo $messagedisp ?></p>
+    </div>
+</body>
+
+<footer>
+    <ul>
+        <li class="button"><a href="cgu.html">CGU</a></li>
+        <li class="button"><a href="contact.html">Nous contacter</a></li>
+        <li class="button"><a href="faq.html">FAQ</a></li>
+        <li class="button"><a href="forum.html">Forum</a></li>
+    </ul>
+</footer>
+
+</html>
