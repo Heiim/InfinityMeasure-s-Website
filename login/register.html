@@ -23,6 +23,7 @@
 <body>
     <div class="clearing loginformcontainer">
         <div class="loginform">
+            <script src="formscript.js"></script>
             <form action="register.php" method="post" autocomplete="off">
                 <div>
                     <label for="lastn">Nom</label>
@@ -42,17 +43,18 @@
                 </div>
                 <div>
                     <label for="password">Mot de passe </label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password" onkeyup='checkpassword();' required>
                 </div>
                 <div>
                     <label for="confirmpassword">Confirmation</label>
-                    <input type="password" name="confirmpassword" id="confirmpassword" required>
+                    <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required>
                 </div>
                 <div>
                     <input type="submit" value="S'inscrire">
                 </div>
             </form>
         </div>
+        <span class="passworderror" id='passworderror'></span>
     </div>
 </body>
 
