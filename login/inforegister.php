@@ -7,9 +7,10 @@
 <header>
     <div>
         <div class="logo">
-            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%></a>
+            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%>
         </div>
         <p class="name">quirky()</p>
+        </a>
     </div>
 </header>
 
