@@ -94,6 +94,8 @@ div.aboutus {
 .whitelink {
     color: white;
     font-weight: 300;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .button {
@@ -226,6 +228,13 @@ input[type=submit]:hover {
     text-align: center;
     width: 750px;
     padding: 10px;
+}
+
+.passworderror {
+    padding-top: 194px;
+    font-size: 16px;
+    position: fixed;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 1050px) {
