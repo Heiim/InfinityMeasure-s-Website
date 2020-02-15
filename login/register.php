@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 
 
 // On vérifie que tout est bien récupéré par le serveur
-if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'])) {
+if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'])) {
 	die ('Veuillez remplir tous les champs.');
 }
 // On vérifie que tout est rempli
@@ -22,6 +22,10 @@ if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn'
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 	die ('Email invalide.');
 }
+
+if ($_POST['password'] !== $_POST['confirmpassword']) {
+    die ('Les mots de passes ne correspondent pas');
+ }
 
 if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
 	die ('Le mot de passe doit fair entre 8 et 20 caractères.');
@@ -84,7 +88,7 @@ $con->close();
 <header>
     <div>
         <div class="logo">
-            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%>
+            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%></a>
         </div>
         <p class="name">quirky()</p>
     </div>
