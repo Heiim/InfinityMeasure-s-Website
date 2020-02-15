@@ -231,7 +231,7 @@ input[type=submit]:hover {
 }
 
 .passworderror {
-    padding-top: 194px;
+    padding-top: 200px;
     font-size: 16px;
     position: fixed;
     font-weight: 700;
