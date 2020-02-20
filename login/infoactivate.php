@@ -1,5 +1,5 @@
 <html>
-
+<!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../quirky.css">
 </head>
