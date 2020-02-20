@@ -18,23 +18,25 @@ if ( !isset($_POST['email'], $_POST['password']) ) {
 }
 
 // on prépare le SQL pour éviter les injections SQL
-if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) {
+if ($stmt = $con->prepare('SELECT id,firstn,lastn, password FROM accounts WHERE email = ?')) {
 	$stmt->bind_param('s', $_POST['email']);
 	$stmt->execute();
 	// On vérifie si le compte est dans la DB
 	$stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $password);
+        $stmt->bind_result($id,$firstn,$lastn, $password);
         $stmt->fetch();
         // Le compte existe on vérifie le mot de passe
         if (password_verify($_POST['password'], $password)) {
             // Tout est okay on créé la sessions
             session_regenerate_id();
+
             $_SESSION['loggedin'] = TRUE;
-            $_SESSION['name'] = $_POST["email"];;
+            $_SESSION['name'] = $firstn . " " . $lastn;
             $_SESSION['id'] = $id;
-            echo 'Bienvenue ' . $_SESSION['name'] . '!';
+            header('Location: profile.php');
+            exit();
         } else {
             echo 'Mot de passe incorrect';
         }
