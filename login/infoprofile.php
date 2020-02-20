@@ -20,27 +20,27 @@
 </header>
 
 	<body>
-        <div class="clearing">
-            <div>
+        <div class="clearing profilecontainer">
+            <div class="profileinfo">
                 <table>
 					<tr>
-						<td>Nom</td>
+						<td class="champsinfo">Nom:</td>
 						<td><?=$lastn?></td>
 					</tr>
 					<tr>
-						<td>Prénom</td>
+						<td class="champsinfo">Prénom:</td>
 						<td><?=$firstn?></td>
 					</tr>
 					<tr>
-						<td>Email:</td>
+						<td class="champsinfo">Email:</td>
 						<td><?=$email?></td>
                     </tr>
                     <tr>
-						<td>Mot de passe</td>
+						<td class="champsinfo">Mot de passe:</td>
 						<td>•••••••••••••</td>
                     </tr>
                     <tr>
-						<td>Date de naissance</td>
+						<td class="champsinfo">Date de naissance:</td>
 						<td><?=$birthday?></td>
 					</tr>
 				</table>

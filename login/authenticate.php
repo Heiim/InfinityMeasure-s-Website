@@ -38,10 +38,10 @@ if ($stmt = $con->prepare('SELECT id,firstn,lastn, password FROM accounts WHERE 
             header('Location: profile.php');
             exit();
         } else {
-            echo 'Mot de passe incorrect';
+            header('Location: index.html?error=password');
         }
     } else {
-        echo 'Ce compte n\'existe pas';
+        header('Location: index.html?error=account');
     }
 
 	$stmt->close();
