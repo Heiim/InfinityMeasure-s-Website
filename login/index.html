@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../quirky.css">
+    <script src="urlparameterscript.js"></script>
 </head>
 
 <header>
@@ -37,6 +38,8 @@
                 </div>
             </form>
         </div>
+        <div class="passworderrorlogin" id='errortext'>
+        </div>
     </div>
 </body>
 
@@ -48,5 +51,9 @@
         <li class="button"><a href="forum.html">Forum</a></li>
     </ul>
 </footer>
+
+<script>
+    getError();
+</script>
 
 </html>

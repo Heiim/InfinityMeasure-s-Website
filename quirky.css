@@ -144,7 +144,7 @@ a {
 
 .loginformcontainer {
     font-size: x-large;
-    height: 700px;
+    height: 400px;
     padding-top: 7%;
     text-align: center;
 }
@@ -232,9 +232,34 @@ input[type=submit]:hover {
 
 .passworderror {
     padding-top: 200px;
-    font-size: 16px;
+    font-size: 12px;
     position: fixed;
     font-weight: 700;
+}
+
+.passworderrorlogin {
+    color: red;
+}
+
+
+/* profile page */
+
+.profilecontainer {
+    font-size: x-large;
+    height: 400px;
+    padding-top: 7%;
+    text-align: center;
+}
+
+.profileinfo {
+    display: inline-block;
+    text-align: left;
+    width: 400px;
+    padding: 10px;
+}
+
+.champsinfo {
+    padding-right: 10px;
 }
 
 @media only screen and (max-width: 1050px) {
