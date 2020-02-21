@@ -11,6 +11,8 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'quirky';
 
+$uploadError='';
+
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
@@ -24,32 +26,32 @@ $target_name = $imageid . '.' . pathinfo($_FILES['fileToUpload']['name'],PATHINF
 $target_file = $target_dir . $target_name;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($_FILES['fileToUpload']['name'],PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
+// On vérifie que c'est bien une image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+        echo "Le fichier est une image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        $uploadError = "?error=Le%20fichier%20n'est%20pas%20une%20image";
         $uploadOk = 0;
     }
 }
 
-// Check file size
+// On vérifie la taille de l'image
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
+    $uploadError = "?error=Fichier%20trop%20volumineux";
     $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadError = "?error=Seules%20les%20JPG,%20JPEG,%20PNG%20et%20GIF%20sont%20authorisés";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    //echo "Le fichier n'a pas été importé";
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -64,9 +66,12 @@ if ($uploadOk == 0) {
 
         // execute the query
         $stmt->execute();
-        header('Location: profile.php');
+
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        $uploadError = "?error=Une%20erreur%20est%20survenue.";
     }
 }
+$url = 'Location: profile.php'.$uploadError;
+
+header($url);
 ?>

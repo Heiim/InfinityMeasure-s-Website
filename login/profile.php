@@ -2,7 +2,7 @@
 
 
 session_start();
-// If the user is not logged in redirect to the login page...
+// Si l'utilisateur est pas loggué on le redirige vers la page de login
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: index.html');
 	exit();
@@ -15,9 +15,9 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
-// We don't have the password or email info stored in sessions so instead we can get the results from the database.
+// Les infos sont pas stokées dans la session, on les récupère ici
 $stmt = $con->prepare('SELECT password, email, firstn, lastn, birthday, picture FROM accounts WHERE id = ?');
-// In this case we can use the account ID to get the account info.
+// On utilise l'id pour récuperer les infos
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($password, $email, $firstn, $lastn, $birthday, $picture);
