@@ -246,15 +246,28 @@ input[type=submit]:hover {
 
 .profilecontainer {
     font-size: x-large;
-    height: 400px;
+    height: 700px;
     padding-top: 7%;
-    text-align: center;
+    padding-left: 25%;
+    margin: auto;
 }
 
 .profileinfo {
-    display: inline-block;
+    float: left;
     text-align: left;
     width: 400px;
+    padding: 10px;
+}
+
+.profileimage {
+    padding-bottom: 8px;
+}
+
+.imagecontainer {
+    font-size: 15px;
+    float: left;
+    text-align: center;
+    width: 300px;
     padding: 10px;
 }
 
