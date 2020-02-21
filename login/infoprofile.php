@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <link rel="stylesheet" href="../quirky.css">
@@ -44,6 +45,14 @@
 						<td><?=$birthday?></td>
 					</tr>
 				</table>
+            </div>
+            <div class="imagecontainer">
+                <img class="profileimage" src=<?=$picture?> height=200px>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    Changer la photo
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submit">
+                </form>
             </div>
         </div>
     </body>

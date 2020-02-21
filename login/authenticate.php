@@ -25,7 +25,7 @@ if ($stmt = $con->prepare('SELECT id,firstn,lastn, password FROM accounts WHERE 
 	$stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id,$firstn,$lastn, $password);
+        $stmt->bind_result($id,$firstn,$lastn,$password);
         $stmt->fetch();
         // Le compte existe on vérifie le mot de passe
         if (password_verify($_POST['password'], $password)) {
