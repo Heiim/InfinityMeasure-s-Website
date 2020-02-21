@@ -53,6 +53,7 @@
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="submit" value="Upload Image" name="submit">
                 </form>
+                <span><?php if(isset($_GET['error'])) echo 'Erreur: '.$_GET['error']; ?></span>
             </div>
         </div>
     </body>
