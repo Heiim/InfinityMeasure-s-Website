@@ -27,16 +27,16 @@ if ($_POST['password'] !== $_POST['confirmpassword']) {
     die ('Les mots de passes ne correspondent pas');
  }
 
-if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 8) {
-	die ('Le mot de passe doit fair entre 8 et 20 caractères.');
+if (strlen($_POST['password']) > 30 || strlen($_POST['password']) < 8) {
+	die ('Le mot de passe doit fair entre 8 et 30 caractères.');
 }
 
-if (strlen($_POST['lastn']) > 20 || strlen($_POST['lastn']) < 1) {
-	die ('Le nom doit fair entre 1 et 20 caractères.');
+if (strlen($_POST['lastn']) > 30 || strlen($_POST['lastn']) < 1) {
+	die ('Le nom doit fair entre 1 et 30 caractères.');
 }
 
-if (strlen($_POST['firstn']) > 20 || strlen($_POST['firstn']) < 1) {
-	die ('Le prénom doit fair entre 1 et 20 caractères.');
+if (strlen($_POST['firstn']) > 30 || strlen($_POST['firstn']) < 1) {
+	die ('Le prénom doit fair entre 1 et 30 caractères.');
 }
 
 // On vérifie si le compte existe pas déjà
