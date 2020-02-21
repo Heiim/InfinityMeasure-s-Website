@@ -14,7 +14,7 @@
     </div>
     <div class="connection">
         <ul>
-            <li class="connectbutton"><a class="whitelink" href="prpfile.php">Mon compte</a></li>
+            <li class="connectbutton"><a class="whitelink" href="profile.php">Mon compte</a></li>
             <li class="connectbutton"><a class="whitelink" href="logout.php">Déconnexion</a></li>
         </ul>
     </div>
@@ -53,7 +53,7 @@
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="submit" value="Upload Image" name="submit">
                 </form>
-                <span><?php if(isset($_GET['error'])) echo 'Erreur: '.$_GET['error']; ?></span>
+                <span class="passworderrorlogin"><?php if(isset($_GET['error'])) echo 'Erreur: '.$_GET['error']; ?></span>
             </div>
         </div>
     </body>
