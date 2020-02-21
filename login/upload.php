@@ -33,20 +33,20 @@ if(isset($_POST["submit"])) {
         echo "Le fichier est une image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        $uploadError = "?error=Le%20fichier%20n'est%20pas%20une%20image";
+        $uploadError = "?error=Le%20fichier%20n'est%20pas%20une%20image.";
         $uploadOk = 0;
     }
 }
 
 // On vérifie la taille de l'image
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-    $uploadError = "?error=Fichier%20trop%20volumineux";
+    $uploadError = "?error=Fichier%20trop%20volumineux.";
     $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-    $uploadError = "?error=Seules%20les%20JPG,%20JPEG,%20PNG%20et%20GIF%20sont%20authorisés";
+    $uploadError = "?error=Seules%20les%20JPG,%20JPEG,%20PNG%20et%20GIF%20sont%20authorisées.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error

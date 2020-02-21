@@ -1,9 +1,19 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
     <link rel="stylesheet" href="../quirky.css">
-    <script src="../scripts/urlparameterscript.js"></script>
+    <div hidden>
+    <?=
+    session_start();
+    // Si l'utilisateur est pas loggué on le redirige vers la page de login
+    if (isset($_SESSION['loggedin'])) {
+            header('Location: profile.php');
+            exit();
+    }
+    ?>
+</div>
 </head>
 
 <header>
@@ -15,7 +25,7 @@
     </div>
     <div class="connection">
         <ul>
-            <li class="connectbutton"><a class="whitelink" href="index.html">Connexion</a></li>
+            <li class="connectbutton"><a class="whitelink" href="index.php">Connexion</a></li>
             <li class="connectbutton"><a class="whitelink" href="register.html">Créer un compte</a></li>
         </ul>
     </div>
@@ -38,7 +48,8 @@
                 </div>
             </form>
         </div>
-        <div class="passworderrorlogin" id='errortext'>
+        <div class="passworderrorlogin">
+        <?php if(isset($_GET['error'])) echo 'Erreur: '.$_GET['error']; ?>
         </div>
     </div>
 </body>
@@ -51,9 +62,5 @@
         <li class="button"><a href="forum.html">Forum</a></li>
     </ul>
 </footer>
-
-<script>
-    getError();
-</script>
 
 </html>

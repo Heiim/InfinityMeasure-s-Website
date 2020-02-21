@@ -18,7 +18,7 @@
     <div class="clearing messagecontainer">
 		<p class="message"><?php echo $message ?></p>
 	</div>
-	<div class="connectbutton"><a class="whitelink" href="index.html">Connexion</a></div>
+	<div class="connectbutton"><a class="whitelink" href="index.php">Connexion</a></div>
 </body>
 
 <footer>
