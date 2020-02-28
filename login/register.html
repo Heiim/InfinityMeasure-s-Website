@@ -49,15 +49,13 @@
                 </div>
                 <div>
                     <label for="confirmpassword">Confirmation</label>
-                    <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required>
+                    <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required><span class="passworderror" id='passworderror'></span><span class="passworderror" id='passwordlength'></span>
                 </div>
                 <div>
                     <input type="submit" value="S'inscrire">
                 </div>
             </form>
         </div>
-        <span class="passworderror" id='passworderror'></span>
-        <span class="passworderror" id='passwordlength'></span>
     </div>
 </body>
 
