@@ -75,7 +75,7 @@ div.aboutus {
 }
 
 .connectbutton {
-    background-color: yellowgreen;
+    background-color: #50b3f8;
     padding: 10px;
     padding-right: 20px;
     padding-left: 20px;
@@ -87,7 +87,7 @@ div.aboutus {
 }
 
 .connectbutton:hover {
-    background-color: rgb(138, 185, 45);
+    background-color: #39a5f1;
     cursor: pointer;
 }
 
@@ -111,7 +111,7 @@ div.aboutus {
 }
 
 .button:hover {
-    background-color: yellowgreen;
+    background-color: #39a5f1;
     cursor: pointer;
 }
 
