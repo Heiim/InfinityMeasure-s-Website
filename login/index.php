@@ -7,7 +7,7 @@
     <div hidden>
     <?=
     session_start();
-    // Si l'utilisateur est pas loggué on le redirige vers la page de login
+    // Si l'utilisateur est loggué on le redirige vers son compte
     if (isset($_SESSION['loggedin'])) {
             header('Location: profile.php');
             exit();
@@ -45,6 +45,9 @@
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div>
+                    <ul>
+                        <li class="button resetpasswordbutton"><a class="whitelink" href="resetpassword/resetpasswordrequestform.php">Réinitialiser mon mot de passe</a></li>
+                    </ul>
                     <input type="submit" value="Connexion">
                 </div>
             </form>

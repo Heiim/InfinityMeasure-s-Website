@@ -61,11 +61,12 @@ if ($validation){
             $messagedisp = 'Un compte avec ce mail existe déjà, veuillez en saisir une autre.';
         } else {
             // Le compte n'exite pas déjà, on le créé
-            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday) VALUES (?, ?, ?, ?, ?, ?)')) {
+            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday,token) VALUES (?, ?, ?, ?, ?, ?, ?)')) {
                 // On hash et verifiy le mot de passe pour pas le stocket en clair dans la DB
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $uniqid = uniqid();
-                $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday']);
+                $token = uniqid();
+                $stmt->bind_param('sssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday'], $token);
                 $stmt->execute();
                 
                 $from    = 'quirkylimited@gmail.com';

@@ -129,7 +129,7 @@ a {
 
 .loginformcontainer {
     font-size: x-large;
-    height: 400px;
+    height: 500px;
     padding-top: 7%;
     text-align: center;
 }
@@ -137,7 +137,7 @@ a {
 .loginform {
     display: inline-block;
     text-align: right;
-    width: 400px;
+    width: 500px;
     padding: 10px;
 }
 
@@ -225,6 +225,12 @@ input[type=submit]:hover {
 
 .passworderrorlogin {
     color: red;
+}
+
+.resetpasswordbutton {
+    margin-left: 70px;
+    font-size: 14px;
+    float: left;
 }
 
 
