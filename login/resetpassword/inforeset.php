@@ -1,13 +1,13 @@
 <html>
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../quirky.css">
+    <link rel="stylesheet" href="../../quirky.css">
 </head>
 
 <header>
     <div>
         <div class="logo">
-            <a href="../home.html"><img src="../images/infinitelogo.png" width=100%x height=100%>
+            <a href="../../home.html"><img src="../../images/infinitelogo.png" width=100%x height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
