@@ -74,7 +74,16 @@ div.aboutus {
     height: 250px;
 }
 
-.connectbutton {
+.button {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+}
+
+.whitelink {
+    color: white;
+    font-weight: 300;
     background-color: #50b3f8;
     padding: 10px;
     padding-right: 20px;
@@ -86,31 +95,7 @@ div.aboutus {
     border-radius: 90px;
 }
 
-.connectbutton:hover {
-    background-color: #39a5f1;
-    cursor: pointer;
-}
-
-.whitelink {
-    color: white;
-    font-weight: 300;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.button {
-    border: 1px solid lightgray;
-    padding: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin: 10px;
-    margin-top: 20px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 90px;
-}
-
-.button:hover {
+.whitelink:hover {
     background-color: #39a5f1;
     cursor: pointer;
 }
@@ -199,7 +184,7 @@ input[type=date] {
 input[type=button],
 input[type=submit],
 input[type=reset] {
-    background-color: yellowgreen;
+    background-color: #50b3f8;
     color: white;
     padding: 10px;
     padding-right: 20px;
@@ -212,7 +197,7 @@ input[type=reset] {
 }
 
 input[type=submit]:hover {
-    background-color: rgb(138, 185, 45);
+    background-color: #39a5f1;
     cursor: pointer;
 }
 
@@ -233,8 +218,8 @@ input[type=submit]:hover {
 .passworderror {
     padding-top: 200px;
     font-size: 12px;
-    position: fixed;
     font-weight: 700;
+    position: fixed;
 }
 
 .passworderrorlogin {
@@ -307,7 +292,7 @@ input[type=submit]:hover {
         height: 60px;
         border: 5px;
     }
-    .connectbutton {
+    .button {
         padding: 8px;
         padding-right: 16px;
         padding-left: 16px;
@@ -344,17 +329,6 @@ input[type=submit]:hover {
         padding-top: 22px;
         padding-left: 20px;
         height: 125px;
-    }
-    .button {
-        border: 1px solid lightgray;
-        padding: 8px;
-        padding-right: 16px;
-        padding-left: 16px;
-        margin: 4px;
-        margin-top: 2px;
-        text-align: center;
-        display: inline-block;
-        border-radius: 90px;
     }
     footer {
         bottom: 0;

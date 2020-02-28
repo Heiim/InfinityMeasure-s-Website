@@ -19,14 +19,15 @@
 <header>
     <div>
         <div class="logo">
-            <a href="../home.html"><img src="../images/LogoNoName.png" width=100%x height=100%>
+            <a href="../home.html"><img src="../images/infinitelogo.png" width=100%x height=100%>
         </div>
-        <p class="name">quirky()</p>
+        <p class="name">Infinite Measures</p>
+        </a>
     </div>
     <div class="connection">
         <ul>
-            <li class="connectbutton"><a class="whitelink" href="index.php">Connexion</a></li>
-            <li class="connectbutton"><a class="whitelink" href="register.html">Créer un compte</a></li>
+            <li class="button"><a class="whitelink" href="index.php">Connexion</a></li>
+            <li class="button"><a class="whitelink" href="register.html">Créer un compte</a></li>
         </ul>
     </div>
 </header>
@@ -56,10 +57,10 @@
 
 <footer>
     <ul>
-        <li class="button"><a href="cgu.html">CGU</a></li>
-        <li class="button"><a href="contact.html">Nous contacter</a></li>
-        <li class="button"><a href="faq.html">FAQ</a></li>
-        <li class="button"><a href="forum.html">Forum</a></li>
+        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
+        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
+        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
+        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
     </ul>
 </footer>
 
