@@ -79,6 +79,7 @@ div.aboutus {
     margin: 0px;
     text-align: center;
     display: inline-block;
+
 }
 
 .whitelink {
@@ -94,6 +95,7 @@ div.aboutus {
     display: inline-block;
     border-radius: 90px;
 }
+
 
 .whitelink:hover {
     background-color: #39a5f1;
