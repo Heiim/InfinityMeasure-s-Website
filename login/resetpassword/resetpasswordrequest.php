@@ -23,7 +23,7 @@ if ($stmt = $con->prepare('SELECT token FROM accounts WHERE email = ?')) {
     $message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $reset_link . '">' . $reset_link . '</a></p>';
     mail($_POST['email'], $subject, $message, $headers);
     
-    $messagedisp = 'Consultez votre boite mail pour réinitialiser votre mot de passe';
+    $messagedisp = 'Consultez votre boite mail pour réinitialiser votre mot de passe.';
 } else {
     $messagedisp = 'Erreur';
 }
