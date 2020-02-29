@@ -36,7 +36,7 @@ if ($stmt = $con->prepare('SELECT id,firstn,lastn, password FROM accounts WHERE 
             $_SESSION['name'] = $firstn . " " . $lastn;
             $_SESSION['id'] = $id;
             header('Location: profile.php');
-            exit();
+            exit;
         } else {
             header('Location: index.php?error=Mot%20de%20passe%20incorrect.');
         }

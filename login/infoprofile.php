@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../quirky.css">
+        <link rel="icon" type="image/png" href="../images/infinitelogo.png" />
     </head>
 
     <header>

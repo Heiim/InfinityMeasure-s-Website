@@ -24,6 +24,6 @@ $stmt->bind_result($password, $email, $firstn, $lastn, $birthday, $picture);
 $stmt->fetch();
 $stmt->close();
 
-require('infoprofile.php');
+include 'infoprofile.php';
 
 ?>

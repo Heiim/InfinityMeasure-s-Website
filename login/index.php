@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="../quirky.css">
+    <link rel="icon" type="image/png" href="../images/infinitelogo.png" />
     <div hidden>
     <?=
     session_start();
@@ -46,7 +47,7 @@
                 </div>
                 <div>
                     <ul>
-                        <li class="button resetpasswordbutton"><a class="whitelink" href="resetpassword/resetpasswordrequestform.php">Réinitialiser mon mot de passe</a></li>
+                        <li class="button resetpasswordbutton"><a class="whitelink" href="resetpassword/resetpasswordrequestform.php">Mot de passe oublié</a></li>
                     </ul>
                     <input type="submit" value="Connexion">
                 </div>
