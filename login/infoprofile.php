@@ -46,7 +46,10 @@
 						<td class="champsinfo">Date de naissance:</td>
 						<td><?=$birthday?></td>
 					</tr>
-				</table>
+                </table>
+                    <ul>
+                        <li class="button resetpasswordbutton"><a class="whitelink" href="edit/editprofile.php">Editer mon profile</a></li>
+                    </ul>
             </div>
             <div class="imagecontainer">
                 <img class="profileimage" src=<?=$picture?> height=200px>
