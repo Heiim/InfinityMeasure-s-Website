@@ -57,8 +57,10 @@ if ($validation){
             $stmt = $con->prepare($sql);
             $stmt->bind_param('ssssi', $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['id']);
             $stmt->execute();
-            header('../profile.php');
+            header('Location:../profile.php');
+            exit;
         } else {
+            //TODO: check if email is change we must check if an athoer account in the DB has it and if not update it with email confirmation
             echo $email." alo ".$_POST['email'];
         }
     }
