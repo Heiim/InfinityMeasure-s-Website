@@ -17,8 +17,8 @@ header {
 
 footer {
     bottom: 0;
-    position: absolute;
     text-align: center;
+    position: relative;
     width: 98.8%;
     border: 2px;
     border-top: solid lightgray;
