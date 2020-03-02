@@ -61,8 +61,39 @@ if ($validation){
             exit;
         } else {
             //TODO: check if email is change we must check if an athoer account in the DB has it and if not update it with email confirmation
-            echo $email." alo ".$_POST['email'];
+            $stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?');
+            $stmt->bind_param('s', $_POST['email']);
+            $stmt->execute();
+            $stmt->store_result();
+            // On enregistre le résultat pour vérifier si le compte existe pas déjà dans la DB
+            if ($stmt->num_rows > 0) {
+                // Un compte avec ce mail existe déjà
+                $messagedisp = 'Un compte avec ce mail existe déjà, veuillez en saisir une autre.';
+                $emailchanged=false;
+            }else {
+                $sql = "UPDATE accounts SET email=?, activation_code=?, firstn=?, lastn=?, birthday=? WHERE id=?";
+
+                // Prepare statement
+                $stmt = $con->prepare($sql);
+                $uniqid = uniqid();
+                $stmt->bind_param('sssssi', $_POST['email'], $uniqid, $_POST['firstn'], $_POST['lastn'], $_POST['birthday'], $_POST['id']);
+                $stmt->execute();
+
+                $emailchanged=true;
+
+                $from    = 'quirkylimited@gmail.com';
+                $subject = 'Changement d\'addresse mail';
+                $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
+                $activate_link = 'http://localhost/login/activate.php?email=' . $_POST['email'] . '&code=' . $uniqid;
+                $message = '<p>Veuillez cliquer sur ce lien pour confirmer le changement d\'email: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
+                mail($_POST['email'], $subject, $message, $headers);
+                $messagedisp = 'Consultez votre boite mail pour confirmer le changement d\'email.';
+
+            }
         }
     }
 }
+
+include 'infoedit.php';
+exit;
 ?>
