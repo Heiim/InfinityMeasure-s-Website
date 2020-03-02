@@ -15,10 +15,20 @@ header {
     height: 120px;
 }
 
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -100x;
+}
+
+.footer,
+.push {
+    height: 100px;
+}
+
 footer {
     bottom: 0;
     text-align: center;
-    position: relative;
+    position: fixed;
     width: 98.8%;
     border: 2px;
     border-top: solid lightgray;
