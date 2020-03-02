@@ -7,6 +7,7 @@
 }
 
 header {
+    top: 0;
     border: 2px;
     border-bottom: solid lightgray;
     padding: 10px;
@@ -125,11 +126,11 @@ a {
 }
 
 
-/* login page */
+/* login & register pages */
 
 .loginformcontainer {
     font-size: x-large;
-    height: 500px;
+    height: 350px;
     padding-top: 7%;
     text-align: center;
 }
@@ -137,7 +138,21 @@ a {
 .loginform {
     display: inline-block;
     text-align: right;
-    width: 500px;
+    width: 350px;
+    padding: 10px;
+}
+
+.registerformcontainer {
+    font-size: x-large;
+    height: 350px;
+    padding-top: 7%;
+    text-align: center;
+}
+
+.registerform {
+    display: inline-block;
+    text-align: right;
+    width: 430px;
     padding: 10px;
 }
 
@@ -228,7 +243,6 @@ input[type=submit]:hover {
 }
 
 .resetpasswordbutton {
-    margin-left: 120px;
     font-size: 14px;
     float: left;
 }
