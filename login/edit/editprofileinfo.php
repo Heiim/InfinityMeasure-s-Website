@@ -25,6 +25,7 @@
 	<body>
         <div class="clearing registerformcontainer">
             <div class="registerform">
+            <h1 class="pageinfoh1">Edition du profil</h1>
                 <form action="editsubmit.php" method="post" autocomplete="off">
                     <div>
                         <label for="lastn">Nom</label>

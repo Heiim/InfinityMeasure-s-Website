@@ -24,6 +24,7 @@
 
 	<body>
         <div class="clearing profilecontainer">
+        <h1>Mon profil</h1>
             <div class="profileinfo">
                 <table>
 					<tr>
