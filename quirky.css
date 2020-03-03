@@ -141,7 +141,7 @@ a {
 .loginformcontainer {
     font-size: x-large;
     height: 350px;
-    padding-top: 7%;
+    padding-top: 3%;
     text-align: center;
 }
 
@@ -155,7 +155,7 @@ a {
 .registerformcontainer {
     font-size: x-large;
     height: 350px;
-    padding-top: 7%;
+    padding-top: 0%;
     text-align: center;
 }
 
@@ -263,7 +263,6 @@ input[type=submit]:hover {
 .profilecontainer {
     font-size: x-large;
     height: 410px;
-    padding-top: 5%;
     padding-left: 25%;
     margin: auto;
 }
@@ -272,7 +271,7 @@ input[type=submit]:hover {
     float: left;
     text-align: left;
     width: 500px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .profileimage {
@@ -284,11 +283,14 @@ input[type=submit]:hover {
     float: left;
     text-align: center;
     width: 300px;
-    padding: 10px;
 }
 
 .champsinfo {
     padding-right: 10px;
+}
+
+.pageinfoh1 {
+    text-align: left;
 }
 
 @media only screen and (max-width: 1050px) {
