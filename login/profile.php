@@ -16,11 +16,11 @@ if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 // Les infos sont pas stokées dans la session, on les récupère ici
-$stmt = $con->prepare('SELECT password, email, firstn, lastn, birthday, picture FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT password, email, firstn, lastn, birthday,status, picture FROM accounts WHERE id = ?');
 // On utilise l'id pour récuperer les infos
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($password, $email, $firstn, $lastn, $birthday, $picture);
+$stmt->bind_result($password, $email, $firstn, $lastn, $birthday,$status, $picture);
 $stmt->fetch();
 $stmt->close();
 

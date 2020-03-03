@@ -24,6 +24,7 @@
 
 	<body>
         <div class="clearing profilecontainer">
+        <h1>Mon profil</h1>
             <div class="profileinfo">
                 <table>
 					<tr>
@@ -44,9 +45,16 @@
                     </tr>
                     <tr>
 						<td class="champsinfo">Date de naissance:</td>
-						<td><?=$birthday?></td>
+                        <td><?=$birthday?></td>
+                    </tr>
+                    <tr>
+						<td class="champsinfo">Statut:</td>
+						<td><?=$status?></td>
 					</tr>
-				</table>
+                </table>
+                    <ul>
+                        <li class="button resetpasswordbutton"><a class="whitelink" href="edit/editprofile.php">Editer mon profile</a></li>
+                    </ul>
             </div>
             <div class="imagecontainer">
                 <img class="profileimage" src=<?=$picture?> height=200px>
