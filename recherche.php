@@ -43,7 +43,6 @@ if($user->rowCount() != 0) {
 	$user->bind_param('sss', $nom_user, $prenom_user, $status_user)
 	$user->execute();
 }
-
 ?>
 
 <form method="GET">
