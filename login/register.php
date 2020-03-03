@@ -48,6 +48,8 @@ if (strlen($_POST['firstn']) > 30 || strlen($_POST['firstn']) < 1) {
     $validation=false;
 }
 
+
+
 //si pas d'erreur
 if ($validation){
     // On vérifie si le compte existe pas déjà
@@ -68,6 +70,18 @@ if ($validation){
                 $token = uniqid();
                 $stmt->bind_param('sssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday'], $token);
                 $stmt->execute();
+                if(isset($_POST['status']) && $_POST['status']=='gestionnaire'){
+                    $from    = 'quirkylimited@gmail.com';
+                    $subject = 'Statut gestionnaire du site Infinte Measures ';
+                    $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
+                    $message = '<p>Bonjour, <br/>
+                    Vous êtes un professionel de la santé et vous avez demandez à être gestionnaire de notre site ? 
+                    Si cela est le cas, votre compte gestionnaire, sera activé sous les 24h. <br />
+                    Cordialement, l"Equipe Infinite Measures <br/>
+                    Mail envoyé automatiquement, ne pas répondre, merci<p>';
+                    mail($_POST['email'], $subject, $message, $headers);
+                }
+                
                 
                 $from    = 'quirkylimited@gmail.com';
                 $subject = 'Activation du compte';
@@ -76,6 +90,8 @@ if ($validation){
                 $message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
                 mail($_POST['email'], $subject, $message, $headers);
                 $messagedisp = 'Consultez votre boite mail pour activer votre compte.';
+
+           
 
             } else {
                 // Problème avec le SQl, il faut verifier si la table existe

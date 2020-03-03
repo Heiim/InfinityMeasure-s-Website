@@ -44,7 +44,11 @@
                     </tr>
                     <tr>
 						<td class="champsinfo">Date de naissance:</td>
-						<td><?=$birthday?></td>
+                        <td><?=$birthday?></td>
+                    </tr>
+                    <tr>
+						<td class="champsinfo">Statut:</td>
+						<td><?=$status?></td>
 					</tr>
 				</table>
             </div>
