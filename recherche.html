@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="quirky.css">
+    <link rel="icon" type="image/png" href="images/infinitelogo.png" />
+</head>
+
+<header>
+    <div>
+        <div class="logo">
+            <a href="home.html"><img src="images/infinitelogo.png" width=100%x height=100%>
+        </div>
+        <p class="name">Infinite Measures</p>
+        </a>
+    </div>
+    <div class="connection">
+        <ul>
+            <li class="button"><a class="whitelink" href="index.php">Connexion</a></li>
+            <li class="button"><a class="whitelink" href="register.html">Créer un compte</a></li>
+        </ul>
+    </div>
+</header>
+
+<body>
+    <h1 class="titletext">Recherche Multicritère</h1>
+    <!--<form action="recherche.php" method="POST">--->
+        <div>
+            <form method="GET">
+                <input type="text" name="nom" placeholder="Nom" />
+                <input type="text" name="prenom" placeholder="Prénom" />
+                <select name="status" placeholder="Status">
+                    <option value="0"></option>
+                    <option value="User">Utilisateur</option>
+                    <option value="Gestionnaire">Gestionnaire</option>
+                    <option value="Admin">Administrateur</option>
+                </select>
+                <input type="submit" value="Chercher" />
+                <input type="reset" value="Réinitilaiser" />
+
+        </div>
+        
+
+    <!--</form>-->
+</body>
