@@ -24,8 +24,20 @@
 
 	<body>
         <div class="clearing profilecontainer">
-        <h1>Mon profil</h1>
-            <div class="profileinfo">
+        <div style="margin: auto;">
+            <h1 style="float: left;">Mon profil</h1>
+            <div class="dropdown">
+                <button class="dropbtn">Résultats</button>
+                <div class="dropdown-content">
+                    <?php 
+                    for ($i = 0; $i < count($idstest); $i++) {
+                        echo '<a href="results/getresults.php?idtest='.$idstest[$i].'">'.$descriptions[$i].'</a>';
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+            <div class="clearing profileinfo">
                 <table>
 					<tr>
 						<td class="champsinfo">Nom:</td>
