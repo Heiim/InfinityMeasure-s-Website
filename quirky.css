@@ -337,12 +337,20 @@ input[type=submit]:hover {
 
 /* Dropdown menu */
 
+.textfloatleft {
+    float: left;
+}
+
+.dropcontainer {
+    float: left;
+    margin-left: 630px;
+    margin-top: 41px;
+}
+
 
 /* Style The Dropdown Button */
 
 .dropbtn {
-    margin-top: 41px;
-    margin-left: 650px;
     background-color: #50b3f8;
     color: white;
     padding: 12px;
@@ -364,7 +372,6 @@ input[type=submit]:hover {
 /* Dropdown Content (Hidden by Default) */
 
 .dropdown-content {
-    margin-left: 650px;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
