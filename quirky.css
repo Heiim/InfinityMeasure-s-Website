@@ -17,18 +17,18 @@ header {
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -100x;
+    margin-bottom: -30x;
 }
 
 .footer,
 .push {
     
     height: 100px;
-}
+
 
 
 footer {
-    bottom: 0;
+    bottom: 0px;
     text-align: center;
     position: fixed;
     width: 98.8%;
