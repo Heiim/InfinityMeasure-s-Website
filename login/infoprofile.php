@@ -47,10 +47,6 @@
 						<td class="champsinfo">Date de naissance:</td>
                         <td><?=$birthday?></td>
                     </tr>
-                    <tr>
-						<td class="champsinfo">Statut:</td>
-						<td><?=$status?></td>
-					</tr>
                 </table>
                     <ul>
                         <li class="button resetpasswordbutton"><a class="whitelink" href="edit/editprofile.php">Editer mon profile</a></li>
