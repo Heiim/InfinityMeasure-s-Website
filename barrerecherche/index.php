@@ -24,7 +24,7 @@ if(isset($_GET['status']) AND !empty($_GET['status'])) {
     $status = htmlspecialchars($_GET['status']);
     $status_user = "status = "."'$status'";
 }else{
-    $status = "status "."IS NOT NULL";
+    $status_user = "status "."IS NOT NULL";
 }
 
 
