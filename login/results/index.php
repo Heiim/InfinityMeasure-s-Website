@@ -5,32 +5,35 @@
         <link rel="stylesheet" href="../../quirky.css">
         <link rel="icon" type="image/png" href="../../images/infinitelogo.png" />
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Date',  'Score'],
+            <?php 
+                for ($i = 0; $i < count($results); $i++) {
+                    echo "['".$dates[$i]."',".$results[$i]."],";
+                }
+                ?> 
+            ]);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Date',  'Score'],
-          <?php 
-			for ($i = 0; $i < count($results); $i++) {
-                echo "['".$dates[$i]."',".$results[$i]."],";
-            }
-			 ?> 
-        ]);
+            var options = {
+            title: '<?php echo $description ?>' ,
+            vAxis: {title: '<?php echo "Score " . $unit ?>'},
+            min: <?php echo $min?> ,
+            max: <?php echo $max?> ,
+            legend: {position: 'none'} ,
+            title: {position: 'none'} ,
+            'chartArea': {'width': '80%', 'height': '90%'}
+            };
 
-        var options = {
-          title: 'Score reconnaissance de tonalité',
-          vAxis: {title: 'Score'},
-          min: 0,
-          max: 10,
-        };
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
 
-        var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-      }
-    </script>
+            chart.draw(data, options);
+        }
+        </script>
     </head>
 
     <header>
@@ -50,7 +53,8 @@
 </header>
 
 	<body>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div class="chartitle"><h2><?php echo $description ?></h2></div>
+    <div id="chart_div" class="chart"></div>
     </body>
     
 <footer>
