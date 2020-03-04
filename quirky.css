@@ -22,10 +22,8 @@ header {
 
 .footer,
 .push {
-    
     height: 100px;
-
-
+}
 
 footer {
     bottom: 0px;
@@ -36,7 +34,9 @@ footer {
     border-top: solid lightgrey;
 }
 
+
 /*footer pour les grandes pages*/
+
 .gooter {
     text-align: center;
     position: absolute;
@@ -306,9 +306,10 @@ input[type=submit]:hover {
     text-align: left;
 }
 
+
 /*search page*/
 
-.custom-select{
+.custom-select {
     position: relative;
     width: 200px;
     height: 25px;
@@ -317,8 +318,8 @@ input[type=submit]:hover {
     border-radius: 7px;
     font-size: large;
     outline: none;
-
 }
+
 
 /*.custom-select select {
     display: none;
@@ -406,19 +407,15 @@ input[type=submit]:hover {
         border: 2px;
         border-top: solid lightgray;
     }
-
     .wrapper {
         min-height: 100%;
         margin-bottom: -30x;
     }
-    
     .footer,
     .push {
-        
         height: 30px;
     }
-
-    .gooter{
+    .gooter {
         text-align: center;
         position: absolute;
         width: 98.8%;
