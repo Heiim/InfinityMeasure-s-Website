@@ -24,6 +24,22 @@ $stmt->bind_result($password, $email, $firstn, $lastn, $birthday,$status, $pictu
 $stmt->fetch();
 $stmt->close();
 
+// On récupère les ID et noms de tous les tests pour le menu déroulant
+
+$stmt = $con->prepare('SELECT idtest, description FROM tests WHERE idtest IS NOT NULL');
+
+$stmt->execute();
+$stmt->bind_result($idtest, $description);
+
+$idstest=array();
+$descriptions=array();
+while ($stmt->fetch()) {
+	array_push($idstest,$idtest);
+	array_push($descriptions,$description);
+}
+
+$stmt->close();
+
 include 'infoprofile.php';
 
 ?>
