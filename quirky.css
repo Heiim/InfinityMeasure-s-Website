@@ -17,18 +17,18 @@ header {
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -30x;
+    margin-bottom: -100x;
 }
 
 .footer,
 .push {
     
-    height: 50px;
+    height: 100px;
 }
 
 
 footer {
-    bottom: 0px;
+    bottom: 0;
     text-align: center;
     position: fixed;
     width: 98.8%;
@@ -43,8 +43,8 @@ footer {
     width: 98.8%;
     border: 2px;
     border-top: solid lightgrey;
-    height: 50px;
-    max-height: 50px;
+    height: 100px;
+    max-height: 100px;
 }
 
 div.logo {
