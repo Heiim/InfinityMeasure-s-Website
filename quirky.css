@@ -321,6 +321,20 @@ input[type=submit]:hover {
 }
 
 
+/* charts */
+
+.chart {
+    margin: 0 auto;
+    width: 850px;
+    height: 380px;
+}
+
+.chartitle {
+    margin: 0 auto;
+    width: 850px;
+}
+
+
 /*.custom-select select {
     display: none;
 }
