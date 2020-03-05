@@ -1,4 +1,6 @@
 <?php
+
+
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -10,7 +12,6 @@ if(isset($_GET['prenom']) AND !empty($_GET['prenom'])) {
     $prenom_user = "firstn = "."'$prenom'";
 }else{
     $prenom_user = "firstn "."IS NOT NULL";
-
 }
 
 if(isset($_GET['nom']) AND !empty($_GET['nom'])) {
@@ -29,30 +30,24 @@ if(isset($_GET['status']) AND !empty($_GET['status'])) {
 
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-$user = $con->prepare("SELECT * FROM accounts WHERE $prenom_user AND $nom_user AND $status_user");
-$user->bind_param('sss', $prenom_user, $nom_user, $status_user);
-$user->execute();
-$user->store_result();
+$user = $con->query("SELECT id, firstn, lastn, email, status FROM accounts WHERE $prenom_user  AND $nom_user AND $status_user");
+$con->close();
 ?>
-<form method="GET">
-    <input type="search" name="prenom" placeholder="Prénom" />
-    <input type="search" name="nom" placeholder="Nom" />
-    <select name="status" placeholder="Status">
-		<option value="0"></option>
-		<option value="User">Utilisateur</option>
-		<option value="Gestionnaire">Gestionnaire</option>
-		<option value="Admin">Administrateur</option>
-    </select>
-    <input type="submit" value="Chercher" />
-</form>
 <?php if($user->num_rows > 0) { ?>
-    <?php while($a = $user->fetch_assoc()) { ?>
-        <ul>
-            <li><?php print_r($a)?></li>
-        </ul>
+    <?php while($a = $user->fetch_assoc()) {?>
+
+        <div class="barre"><a href="">
+            <ul class="usercard">
+                <li class="usercard_title"><?=$a['firstn']?> <?=$a['lastn']?></li>
+                <li class="usercard_data">Email : <?=$a['email']?></li> 
+                <li class="usercard_data">Status : <?=$a['status']?></li>
+                    
+            </ul>
+        </a></div>
     <?php } ?>
-<?php } else { ?>
+<?php } else { ?>  
     Aucun résultat ...
+    
 <?php } ?>
-<?php $con->close();
-?>
+
+
