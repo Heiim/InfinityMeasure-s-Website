@@ -75,8 +75,7 @@ if ($validation){
                 }
                 $stmt->bind_param('ssssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday'], $token, $status);
                 $stmt->execute();
-                
-                
+
                 $from    = 'quirkylimited@gmail.com';
                 $subject = 'Activation du compte';
                 $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";

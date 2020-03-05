@@ -24,8 +24,20 @@
 
 	<body>
         <div class="clearing profilecontainer">
-        <h1>Mon profil</h1>
-            <div class="profileinfo">
+            <h1 class="textfloatleft">Mon profil</h1>
+                <div class="dropcontainer">
+                    <div class="dropdown">
+                        <button class="dropbtn">Résultats</button>
+                            <div class="dropdown-content">
+                                <?php 
+                                for ($i = 0; $i < count($idstest); $i++) {
+                                    echo '<a href="results/getresults.php?idtest='.$idstest[$i].'">'.$descriptions[$i].'</a>';
+                                }
+                                ?>
+                        </div>
+                    </div>
+                </div>
+            <div class="clearing profileinfo">
                 <table>
 					<tr>
 						<td class="champsinfo">Nom:</td>
@@ -47,10 +59,6 @@
 						<td class="champsinfo">Date de naissance:</td>
                         <td><?=$birthday?></td>
                     </tr>
-                    <tr>
-						<td class="champsinfo">Statut:</td>
-						<td><?=$status?></td>
-					</tr>
                 </table>
                     <ul>
                         <li class="button resetpasswordbutton"><a class="whitelink" href="edit/editprofile.php">Editer mon profile</a></li>
