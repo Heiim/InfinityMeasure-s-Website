@@ -35,7 +35,7 @@
             <form method="GET">
                 <input type="search" name="prenom" placeholder="Prénom" />
                 <input type="search" name="nom" placeholder="Nom" />
-                <select name="status" placeholder="Status">
+                <select class="selectbarre" name="status" placeholder="Status">
                     <option value="0"></option>
                     <option value="User">Utilisateur</option>
                     <option value="Gestionnaire">Gestionnaire</option>
@@ -46,7 +46,7 @@
             </form>
 
             <div>
-                
+
                 <?php include 'index.php';?>
             </div>
             <div class="push"></div>
