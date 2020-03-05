@@ -29,8 +29,10 @@ if(isset($_GET['status']) AND !empty($_GET['status'])) {
 
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-$user = $con->query("SELECT * FROM accounts WHERE $prenom_user AND $nom_user AND $status_user");
-
+$user = $con->prepare("SELECT * FROM accounts WHERE $prenom_user AND $nom_user AND $status_user");
+$user->bind_param('sss', $prenom_user, $nom_user, $status_user);
+$user->execute();
+$user->store_result();
 ?>
 <form method="GET">
     <input type="search" name="prenom" placeholder="Prénom" />
