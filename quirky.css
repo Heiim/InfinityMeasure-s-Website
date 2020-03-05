@@ -306,6 +306,97 @@ input[type=submit]:hover {
     text-align: left;
 }
 
+/* charts */
+
+.chart {
+    margin: 0 auto;
+    width: 850px;
+    height: 380px;
+}
+
+.chartitle {
+    margin: 0 auto;
+    width: 850px;
+}
+
+
+/* Dropdown menu */
+
+.textfloatleft {
+    float: left;
+}
+
+.dropcontainer {
+    float: left;
+    margin-left: 630px;
+    margin-top: 41px;
+}
+
+
+/* Style The Dropdown Button */
+
+.dropbtn {
+    background-color: #50b3f8;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    font-size: 14px;
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #39a5f1;
+}
+
 /*search page*/
 
 .barre {
