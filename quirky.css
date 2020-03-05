@@ -307,20 +307,6 @@ input[type=submit]:hover {
 }
 
 
-/*search page*/
-
-.custom-select {
-    position: relative;
-    width: 200px;
-    height: 25px;
-    margin: 4px;
-    border: 1px solid grey;
-    border-radius: 7px;
-    font-size: large;
-    outline: none;
-}
-
-
 /* charts */
 
 .chart {
@@ -412,14 +398,91 @@ input[type=submit]:hover {
     background-color: #39a5f1;
 }
 
+/*search page*/
 
-/*.custom-select select {
-    display: none;
+.barre {
+    width: 100%;
+    text-align: center;
 }
 
-.select-selected {
-    background-color: DodgerBlue;
-}*/
+
+input[type=search]{
+    width: 200px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+    
+}
+
+input[type=search]:focus, input[type=search]:hover{
+    border-bottom-width: 6px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-color: #50b3f8;
+    outline: none;
+    
+}
+
+
+
+
+/*search page*/
+
+.selectbarre {
+    position: relative;
+    width: 200px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+}
+
+
+.selectbarre:focus, .selectbarre:hover {
+    border-bottom-width: 6px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-color: #50b3f8;
+}
+
+.usercard {
+    font-weight: 300;
+    background-color: #50b3f8;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    border-radius: 50px;
+    height: 100px;
+    float: left;
+    text-transform: capitalize;
+    min-width: 250px;
+    max-width: 350px;
+    
+    
+    
+}
+.usercard_title {
+    list-style-type: none;
+    font-size: 20px;
+    background-color: #50b3f8;
+    margin-top: 8px;
+  
+}
+.usercard_data {
+    list-style-type: none;
+    background-color: #50b3f8;
+    margin-top: 8px;
+    font-size: 15px;
+
 
 @media only screen and (max-width: 1050px) {
     /* For mobile phones: */
