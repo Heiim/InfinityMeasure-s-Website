@@ -13,12 +13,12 @@ if (mysqli_connect_errno()) {
 
 
 // On vérifie que tout est bien récupéré par le serveur
-if (!isset($_POST['id'],$_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'])) {
+if (!isset($_POST['id'],$_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['size'],$_POST['weight'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
 // On vérifie que tout est rempli
-if ( empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday'])) {
+if ( empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday']) || empty($_POST['size']) || empty($_POST['weight'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
@@ -51,11 +51,11 @@ if ($validation){
         $stmt->close();
 
         if($email==$_POST['email']) {
-            $sql = "UPDATE accounts SET email=?, firstn=?, lastn=?, birthday=? WHERE id=?";
+            $sql = "UPDATE accounts SET email=?, firstn=?, lastn=?, birthday=?, size=?, weight=? WHERE id=?";
 
             // Prepare statement
             $stmt = $con->prepare($sql);
-            $stmt->bind_param('ssssi', $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['id']);
+            $stmt->bind_param('ssssssi', $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['size'],$_POST['weight'],$_POST['id']);
             $stmt->execute();
             header('Location:../profile.php');
             exit;
@@ -71,12 +71,12 @@ if ($validation){
                 $messagedisp = 'Un compte avec ce mail existe déjà, veuillez en saisir une autre.';
                 $emailchanged=false;
             }else {
-                $sql = "UPDATE accounts SET email=?, activation_code=?, firstn=?, lastn=?, birthday=? WHERE id=?";
+                $sql = "UPDATE accounts SET email=?, activation_code=?, firstn=?, lastn=?, birthday=?, size=?, weight=? WHERE id=?";
 
                 // Prepare statement
                 $stmt = $con->prepare($sql);
                 $uniqid = uniqid();
-                $stmt->bind_param('sssssi', $_POST['email'], $uniqid, $_POST['firstn'], $_POST['lastn'], $_POST['birthday'], $_POST['id']);
+                $stmt->bind_param('sssssssi', $_POST['email'], $uniqid, $_POST['firstn'], $_POST['lastn'], $_POST['birthday'],$_POST['size'],$_POST['weight'], $_POST['id']);
                 $stmt->execute();
 
                 $emailchanged=true;

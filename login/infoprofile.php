@@ -52,12 +52,20 @@
 						<td><?=$email?></td>
                     </tr>
                     <tr>
-						<td class="champsinfo">Mot de passe:</td>
-						<td>•••••••••••••</td>
-                    </tr>
-                    <tr>
 						<td class="champsinfo">Date de naissance:</td>
                         <td><?=$birthday?></td>
+                    </tr>
+                    <tr>
+						<td class="champsinfo">Genre:</td>
+                        <td><?=$gender?></td>
+                    </tr>
+                    <tr>
+						<td class="champsinfo">Taille:</td>
+                        <td><?=$size?><label> cm</label></td>
+                    </tr>
+                    <tr>
+						<td class="champsinfo">Poids:</td>
+                        <td><?=$weight?><label> kg</label></td>
                     </tr>
                 </table>
                     <ul>

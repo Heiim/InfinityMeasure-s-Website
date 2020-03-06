@@ -45,7 +45,6 @@
                     <label for="email">Adresse email </label>
                     <input type="email" name="email" id="email" required>
                 </div>
-                
                 <div>
                     <label for="password">Mot de passe </label>
                     <input type="password" name="password" id="password" onkeyup='checkpassword(); checklength()' required>
@@ -53,6 +52,21 @@
                 <div>
                     <label for="confirmpassword">Confirmation</label>
                     <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required><span class="passworderror" id='passworderror'></span><span class="passworderror" id='passwordlength'></span>
+                </div>
+                <div>
+                    <label for="size">Taille </label>
+                    <input type="number" name="size" id="size" placeholder="cm" required>
+                    <label for="size">Poids </label>
+                    <input type="number" name="weight" id="weight" placeholder="kg" required>
+                </div>
+                <div>
+                    <label>Genre</label>
+                    <input type="radio" name="gender" value="Homme" required />
+                    <label for="homme">Homme</label>
+                    <input type="radio" name="gender" value="Femme" />
+                    <label for="femme">Femme</label>
+                    <input type="radio" name="gender" value="Autre" />
+                    <label for="autre">Autre</label>
                 </div>
                 <div>
                     <label for="status">Statut professionel médical </label>
