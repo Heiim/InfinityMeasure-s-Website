@@ -43,6 +43,12 @@
                         <label for="email">Adresse email </label>
                         <input type="email" name="email" id="email" placeholder=<?=$email?> value=<?=$email?> required>
                     </div>
+                    <div>
+                        <label for="size">Taille </label>
+                        <input type="number" name="size" id="size" placeholder="cm" value=<?=$size?> required>
+                        <label for="size">Poids </label>
+                        <input type="number" name="weight" id="weight" placeholder="kg" value=<?=$weight?> required>
+                    </div>
                     <input type="hidden" name="id" id="id" value=<?=$_SESSION['id']?>>
                     <div>
                         <input type="submit" value="Confirmer">
