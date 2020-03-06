@@ -13,12 +13,12 @@ if (mysqli_connect_errno()) {
 
 
 // On vérifie que tout est bien récupéré par le serveur
-if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'])) {
+if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'],$_POST['gender'],$_POST['size'],$_POST['weight'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
 // On vérifie que tout est rempli
-if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday'])) {
+if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday']) || empty($_POST['gender']) || empty($_POST['size']) || empty($_POST['weight'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
@@ -63,7 +63,7 @@ if ($validation){
             $messagedisp = 'Un compte avec ce mail existe déjà, veuillez en saisir une autre.';
         } else {
             // Le compte n'exite pas déjà, on le créé
-            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday, token, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')) {
+            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday, gender, size, weight, token, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')) {
                 // On hash et verifiy le mot de passe pour pas le stocket en clair dans la DB
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $uniqid = uniqid();
@@ -73,7 +73,7 @@ if ($validation){
                 }else {
                     $status = 'user';
                 }
-                $stmt->bind_param('ssssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday'], $token, $status);
+                $stmt->bind_param('sssssssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['gender'],$_POST['size'],$_POST['weight'], $token, $status);
                 $stmt->execute();
 
                 $from    = 'quirkylimited@gmail.com';
