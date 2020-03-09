@@ -47,7 +47,11 @@
                         </div>
                         <div>
                             <label for="size">Taille </label>
+<<<<<<< HEAD
                             <input type="number" name="height" id="height" placeholder="cm" value=<?=$height?> required>
+=======
+                            <input type="number" name="size" id="size" placeholder="cm" value=<?=$size?> required>
+>>>>>>> ajustement footer
                             <label for="size">Poids </label>
                             <input type="number" name="weight" id="weight" placeholder="kg" value=<?=$weight?> required>
                         </div>

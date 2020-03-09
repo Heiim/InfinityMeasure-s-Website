@@ -63,7 +63,11 @@
                             </tr>
                             <tr>
                                 <td class="champsinfo">Taille:</td>
+<<<<<<< HEAD
                                 <td><?=$height?><label> cm</label></td>
+=======
+                                <td><?=$size?><label> cm</label></td>
+>>>>>>> ajustement footer
                             </tr>
                             <tr>
                                 <td class="champsinfo">Poids:</td>

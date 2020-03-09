@@ -16,27 +16,22 @@ if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$idtest = intval($_GET['idtest']);
-$stmt = $con->prepare('SELECT result,date FROM results WHERE iduser = ? AND idtest = ?');
+$stmt = $con->prepare('SELECT content, date, time FROM messages WHERE idsender = ? OR idreceiver = ?');
 // On utilise l'id pour récuperer les infos
-$stmt->bind_param('ii', $_SESSION['id'], $idtest);
+$stmt->bind_param('ii', $_SESSION['id'], $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($result,$date);
+$stmt->bind_result($content,$result,$date);
 
 $results=array();
 $dates=array();
+$contents=array();
+
 while ($stmt->fetch()) {
 	array_push($results,$result);
-	array_push($dates,$date);
+    array_push($dates,$date);
+    array_push($contents,$content);
 }
 
 $stmt->close();
 
-$stmt = $con->prepare('SELECT min, max, description, unit FROM tests WHERE idtest = ?');
-// On utilise l'id pour récuperer les infos
-$stmt->bind_param('i', $idtest);
-$stmt->execute();
-$stmt->bind_result($min,$max,$description,$unit);
-$stmt->fetch();
-
-require 'index.php';
+print_r($contents);
