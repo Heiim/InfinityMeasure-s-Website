@@ -18,7 +18,7 @@ if ( !isset($_POST['email'], $_POST['password']) ) {
 }
 
 // on prépare le SQL pour éviter les injections SQL
-if ($stmt = $con->prepare('SELECT id,firstn,lastn, password FROM accounts WHERE email = ?')) {
+if ($stmt = $con->prepare('SELECT idaccount,firstn,lastn, password FROM accounts WHERE email = ?')) {
 	$stmt->bind_param('s', $_POST['email']);
 	$stmt->execute();
 	// On vérifie si le compte est dans la DB

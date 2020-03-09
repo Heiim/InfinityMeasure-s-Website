@@ -63,7 +63,7 @@
                             </tr>
                             <tr>
                                 <td class="champsinfo">Taille:</td>
-                                <td><?=$size?><label> cm</label></td>
+                                <td><?=$height?><label> cm</label></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Poids:</td>

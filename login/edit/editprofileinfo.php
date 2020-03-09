@@ -47,7 +47,7 @@
                         </div>
                         <div>
                             <label for="size">Taille </label>
-                            <input type="number" name="size" id="size" placeholder="cm" value=<?=$size?> required>
+                            <input type="number" name="height" id="height" placeholder="cm" value=<?=$height?> required>
                             <label for="size">Poids </label>
                             <input type="number" name="weight" id="weight" placeholder="kg" value=<?=$weight?> required>
                         </div>

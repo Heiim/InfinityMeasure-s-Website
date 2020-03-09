@@ -16,13 +16,21 @@ if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 // Les infos sont pas stokées dans la session, on les récupère ici
-$stmt = $con->prepare('SELECT password, email, firstn, lastn, birthday, size, weight, picture FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT password, email, firstn, lastn, picture FROM accounts WHERE idaccount = ?');
 // On utilise l'id pour récuperer les infos
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($password, $email, $firstn, $lastn, $birthday, $size, $weight, $picture);
+$stmt->bind_result($password, $email, $firstn, $lastn, $picture);
 $stmt->fetch();
 $stmt->close();
+
+$stmt2 = $con->prepare('SELECT birthday, height, weight FROM users WHERE iduser = ?');
+// On utilise l'id pour récuperer les infos
+$stmt2->bind_param('i', $_SESSION['id']);
+$stmt2->execute();
+$stmt2->bind_result($birthday, $height, $weight);
+$stmt2->fetch();
+$stmt2->close();
 
 include 'editprofileinfo.php';
 
