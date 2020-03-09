@@ -23,29 +23,35 @@
 </header>
 
 <body>
-    <div class="clearing loginformcontainer">
-        <div class="loginform">
-            <script src="../../scripts/formscript.js"></script>
-            <script src="../../scripts/passlength.js"></script>
-            <form action="resetpasswordrequest.php" method="post">
-                <div>
-                    <label for="email">Adresse email </label>
-                    <input type="email" name="email" id="email" required>
+    <div class="wrapper">
+        <div>
+            <div class="clearing loginformcontainer">
+                <div class="loginform">
+                    <script src="../../scripts/formscript.js"></script>
+                    <script src="../../scripts/passlength.js"></script>
+                    <form action="resetpasswordrequest.php" method="post">
+                        <div>
+                            <label for="email">Adresse email </label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                            <input type="submit" value="Confirmer">
+                        </div>
+                    </form>
                 </div>
-                    <input type="submit" value="Confirmer">
-                </div>
-            </form>
+            </div>
+            <div class="gooter"></div>
+            <div class="gooter">
+                <ul>
+                    <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
+                    <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
+                    <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
+                    <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
 
-<footer>
-    <ul>
-        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
-        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-    </ul>
-</footer>
+
 
 </html>
