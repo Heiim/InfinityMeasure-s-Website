@@ -31,34 +31,36 @@
 
 <body>
     <div class="wrapper">
-        <div class="barre">
-            <form method="GET">
-                <input type="search" name="prenom" placeholder="Prénom" />
-                <input type="search" name="nom" placeholder="Nom" />
-                <select class="selectbarre" name="status" placeholder="Status">
-                    <option value="0"></option>
-                    <option value="User">Utilisateur</option>
-                    <option value="Gestionnaire">Gestionnaire</option>
-                    <option value="Admin">Administrateur</option>
-                </select>
-                <input type="submit" value="Chercher" />
-                <input type="reset" value="Supprimer" />
-            </form>
+        <div>
+            <div class="barre">
+                <form method="GET">
+                    <input type="search" name="prenom" placeholder="Prénom" />
+                    <input type="search" name="nom" placeholder="Nom" />
+                    <select class="selectbarre" name="status" placeholder="Status">
+                        <option value="0"></option>
+                        <option value="User">Utilisateur</option>
+                        <option value="Gestionnaire">Gestionnaire</option>
+                        <option value="Admin">Administrateur</option>
+                    </select>
+                    <input type="submit" value="Chercher" />
+                    <input type="reset" value="Supprimer" />
+                </form>
 
-            <div>
+                <div>
 
-                <?php include 'index.php';?>
+                    <?php include 'index.php';?>
+                </div>
+                <div class="push"></div>
+
+                <div class="gooter">
+                    <ul>
+                        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
+                        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
+                        <li class="button"><a class="whitelink" href="FAQ/faq.html">FAQ</a></li>
+                        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="push"></div>
-
-            <footer class="gooter"><ul>
-                <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-                <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-                <li class="button"><a class="whitelink" href="FAQ/faq.html">FAQ</a></li>
-                <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-            </ul></footer>
         </div>
-
-
-
+    </div>
 </body>
