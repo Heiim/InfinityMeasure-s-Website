@@ -34,39 +34,46 @@
 </header>
 
 <body>
-    <div class="clearing loginformcontainer">
-        <div class="loginform">
-        <h1 class="pageinfoh1">Edition du profil</h1>
-            <form action="authenticate.php" method="post">
-                <div>
-                    <label for="email">Adresse email </label>
-                    <input type="email" name="email" id="email" required>
+    <div class="wrapper">
+        <div>
+            <div class="clearing loginformcontainer">
+                <div class="loginform">
+                <h1 class="pageinfoh1">Edition du profil</h1>
+                    <form action="authenticate.php" method="post">
+                        <div>
+                            <label for="email">Adresse email </label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div>
+                            <label for="password">Mot de passe </label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="button resetpasswordbutton"><a class="whitelink" href="resetpassword/resetpasswordrequestform.php">Mot de passe oublié</a></li>
+                            </ul>
+                            <input type="submit" value="Connexion">
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label for="password">Mot de passe </label>
-                    <input type="password" name="password" id="password" required>
+                <div class="passworderrorlogin">
+                <?php if(isset($_GET['error'])) echo 'Erreur: '.$_GET['error']; ?>
                 </div>
-                <div>
+
+                <div class="push"></div>
+
+                <div class="gooter">
                     <ul>
-                        <li class="button resetpasswordbutton"><a class="whitelink" href="resetpassword/resetpasswordrequestform.php">Mot de passe oublié</a></li>
+                        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
+                        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
+                        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
+                        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
                     </ul>
-                    <input type="submit" value="Connexion">
                 </div>
-            </form>
-        </div>
-        <div class="passworderrorlogin">
-        <?php if(isset($_GET['error'])) echo 'Erreur: '.$_GET['error']; ?>
-        </div>
+            </div>
+        </div> 
     </div>
 </body>
 
-<footer>
-    <ul>
-        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
-        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-    </ul>
-</footer>
 
 </html>

@@ -36,7 +36,7 @@ $con->close();
 <?php if($user->num_rows > 0) { ?>
     <?php while($a = $user->fetch_assoc()) {?>
 
-        <div class="barre"><a href="">
+        <div class="barre"><a href="getprofilS.php?id=<?=$a['id']?>">
             <ul class="usercard">
                 <li class="usercard_title"><?=$a['firstn']?> <?=$a['lastn']?></li>
                 <li class="usercard_data">Email : <?=$a['email']?></li> 
