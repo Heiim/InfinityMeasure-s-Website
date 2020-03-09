@@ -38,7 +38,7 @@
         <div>
             <div class="clearing loginformcontainer">
                 <div class="loginform">
-                <h1 class="pageinfoh1">Edition du profil</h1>
+                <h1 class="pageinfoh1">Connexion</h1>
                     <form action="authenticate.php" method="post">
                         <div>
                             <label for="email">Adresse email </label>
