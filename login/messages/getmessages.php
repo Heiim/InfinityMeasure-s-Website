@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: ../../index.html');
+	header('Location: ../../index.php');
 	exit();
 }
 
@@ -16,22 +16,39 @@ if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$stmt = $con->prepare('SELECT content, date, time FROM messages WHERE idsender = ? OR idreceiver = ?');
+$stmt = $con->prepare('SELECT idsender, idreceiver, content, date, time FROM messages WHERE idsender = ? OR idreceiver = ?');
 // On utilise l'id pour récuperer les infos
 $stmt->bind_param('ii', $_SESSION['id'], $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($content,$result,$date);
+$stmt->bind_result($idsender,$idreceiver,$content,$date,$time);
 
-$results=array();
+$idreceivers=array();
+$idsenders=array();
 $dates=array();
+$times=array();
 $contents=array();
 
 while ($stmt->fetch()) {
-	array_push($results,$result);
     array_push($dates,$date);
-    array_push($contents,$content);
+	array_push($contents,$content);
+	array_push($idsenders,$idsender);
+	array_push($idreceivers,$idreceiver);
+	array_push($times,$time);
 }
 
 $stmt->close();
 
-print_r($contents);
+$idsolver=array();
+
+$stmt2 = $con->prepare('SELECT idaccount,firstn, lastn FROM accounts');
+
+$stmt2->execute();
+$stmt2->bind_result($idaccount,$firstn,$lastn);
+while ($stmt2->fetch()) {
+	$name = $firstn .' '. $lastn;
+	$idsolver[$idaccount]=$name;
+}
+$stmt2->close();
+
+require 'index.php';
+?>
