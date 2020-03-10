@@ -22,7 +22,15 @@
 </header>
 
 <body>
-
+    <?php 
+    for ($i = 0; $i < count($dates); $i++) {
+        echo nl2br('De : ' . $idsolver[$idsenders[$i]] ."\n");
+        echo nl2br('Pour : ' . $idsolver[$idreceivers[$i]]."\n");
+        echo nl2br('A : ' . $times[$i]."\n");
+        echo nl2br($contents[$i]."\n");
+        echo nl2br("\n");
+    }
+    ?>
 </body>
 
 <footer>
