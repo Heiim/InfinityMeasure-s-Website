@@ -16,20 +16,18 @@ if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-$stmt = $con->prepare('SELECT idsender, idreceiver, content, date, time FROM messages WHERE (idsender = ? AND idreceiver = ?) OR (idsender = ? AND idreceiver = ?)');
+$stmt = $con->prepare('SELECT idsender, idreceiver, content, time FROM messages WHERE (idsender = ? AND idreceiver = ?) OR (idsender = ? AND idreceiver = ?)');
 // On utilise l'id pour récuperer les infos
 $stmt->bind_param('iiii', $_GET['id'], $_SESSION['id'],$_SESSION['id'],$_GET['id']);
 $stmt->execute();
-$stmt->bind_result($idsender,$idreceiver,$content,$date,$time);
+$stmt->bind_result($idsender,$idreceiver,$content,$time);
 
 $idreceivers=array();
 $idsenders=array();
-$dates=array();
 $times=array();
 $contents=array();
 
 while ($stmt->fetch()) {
-    array_push($dates,$date);
 	array_push($contents,$content);
 	array_push($idsenders,$idsender);
 	array_push($idreceivers,$idreceiver);
@@ -49,6 +47,8 @@ while ($stmt2->fetch()) {
 	$idsolver[$idaccount]=$name;
 }
 $stmt2->close();
+
+$sendto=$_GET['id'];
 
 require 'index.php';
 ?>

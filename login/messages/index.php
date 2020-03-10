@@ -23,7 +23,7 @@
 
 <body>
     <?php 
-    for ($i = 0; $i < count($dates); $i++) {
+    for ($i = 0; $i < count($times); $i++) {
         echo nl2br('De : ' . $idsolver[$idsenders[$i]] ."\n");
         echo nl2br('Pour : ' . $idsolver[$idreceivers[$i]]."\n");
         echo nl2br('A : ' . $times[$i]."\n");
@@ -31,6 +31,16 @@
         echo nl2br("\n");
     }
     ?>
+
+<form action="<?php echo 'sendmessage.php?id=' . $sendto?>" method="post" autocomplete="off">
+    <div>
+        <label for="content">Message </label>
+        <input type="text" name="content" id="content" required>
+    </div>
+    <div>
+        <input type="submit" value="Envoyer">
+    </div>
+</form>
 </body>
 
 <footer>
