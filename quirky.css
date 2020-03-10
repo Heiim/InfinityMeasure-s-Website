@@ -1,5 +1,5 @@
 * {
-    font-family: 'Source Sans Pro', 'Verdana', serif;
+    font-family: 'Source Sans Pro', 'Verdana Pro Light', serif;
     font-weight: 100;
     background-color: white;
 }
@@ -15,7 +15,7 @@ header {
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -30x;
+    margin-bottom: -30px;
 }
 
 .footer,
@@ -120,6 +120,7 @@ div.aboutus {
 .whitelink:hover {
     background-color: #39a5f1;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 .flagbutton {
@@ -245,6 +246,7 @@ input[type=reset] {
 input[type=submit]:hover {
     background-color: #39a5f1;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 .messagecontainer {
@@ -352,6 +354,7 @@ input[type=submit]:hover {
     width: 200px;
     border: none;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 
@@ -389,7 +392,8 @@ input[type=submit]:hover {
 /* Change color of dropdown links on hover */
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #f1f1f1;
+    transition-duration: 0.4s;
 }
 
 
