@@ -1,0 +1,55 @@
+.discussionlink {
+    width: 600px;
+    padding: 50px;
+}
+
+.discussion {
+    width: 600px;
+    border: 2px solid grey;
+    margin: 20px;
+    padding: 50px;
+}
+
+input[type=textarea] {
+    width: 100%;
+    padding: 0 0 125px 0;
+    border: 1px solid grey;
+    border-radius: 7px;
+}
+
+.chat {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.textmessageright {
+    border-radius: 8px;
+    color: white;
+    font-weight: 300;
+    background-color: #50b3f8;
+    padding: 5px;
+    margin-left: 70%;
+}
+
+.textmessageleft {
+    border-radius: 8px;
+    color: white;
+    font-weight: 300;
+    background-color: grey;
+    padding: 5px;
+    margin-right: 70%;
+}
+
+.timeright {
+    color: rgb(109, 107, 107);
+    font-weight: 300;
+    padding: 3px;
+    margin-left: 70%;
+}
+
+.timeleft {
+    color: rgb(109, 107, 107);
+    font-weight: 300;
+    padding: 3px;
+    margin-right: 70%;
+}

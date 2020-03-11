@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../../quirky.css">
+        <link rel="stylesheet" href="messages.css">
         <link rel="icon" type="image/png" href="../../images/infinitelogo.png" />
     </head>
 <header>
@@ -26,7 +27,7 @@
     $ids=array_keys($idsolver);
     for ($i = 0; $i < count($idsolver); $i++) {
         if ($ids[$i] != $_SESSION['id']) {
-            echo nl2br('<a class="whitelink" href="getmessages.php?id='.$ids[$i].'">Discussion avec : ' .$idsolver[$ids[$i]].'</a>'."\n");
+            echo nl2br('<div class="discussion"><a class="discussionlink" href="getmessages.php?id='.$ids[$i].'">Discussion avec ' .$idsolver[$ids[$i]].'</a></div>');
         }
     }
     ?>

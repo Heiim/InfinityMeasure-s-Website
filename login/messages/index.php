@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="../../quirky.css">
+        <link rel="stylesheet" href="messages.css">
         <link rel="icon" type="image/png" href="../../images/infinitelogo.png" />
     </head>
 <header>
@@ -22,25 +23,50 @@
 </header>
 
 <body>
-    <?php 
-    for ($i = 0; $i < count($times); $i++) {
-        echo nl2br('De : ' . $idsolver[$idsenders[$i]] ."\n");
-        echo nl2br('Pour : ' . $idsolver[$idreceivers[$i]]."\n");
-        echo nl2br('A : ' . $times[$i]."\n");
-        echo nl2br($contents[$i]."\n");
-        echo nl2br("\n");
-    }
-    ?>
+    <div class="chat">
+    <h1 class="pageinfoh1">Conversation avec <?php 
+        if ($idsenders[0]==$_SESSION['id']) {
+            echo $idsolver[$idreceivers[0]];
+        } else {
+            echo $idsolver[$idsenders[0]];
+        }
+        
+        ?>
+        </h1>
+        <?php 
+        for ($i = 0; $i < count($times); $i++) {
+            if ($idsenders[$i]==$_SESSION['id']) {
+                echo nl2br('<div class="timeright">');
+            } else {
+                echo nl2br('<div class="timeleft">');
+            }
+            echo nl2br($times[$i]."\n");
+            echo '</div>';
 
-<form action="<?php echo 'sendmessage.php?id=' . $sendto?>" method="post" autocomplete="off">
-    <div>
-        <label for="content">Message </label>
-        <input type="text" name="content" id="content" required>
+
+            if ($idsenders[$i]==$_SESSION['id']) {
+                echo nl2br('<div class="textmessageright">');
+            } else {
+                echo nl2br('<div class="textmessageleft">');
+            }
+
+            echo nl2br($contents[$i]."\n");
+            echo nl2br('</div>'."\n");
+        }
+        ?>
+
+    <form action="<?php echo 'sendmessage.php?id=' . $sendto?>" method="post" autocomplete="off">
+        <div>
+            <label for="content">Message : </label>
+        </div>
+        <div>
+            <input class="messageinput" type="textarea" name="content" id="content" required>
+        </div>
+        <div>
+            <input type="submit" value="Envoyer">
+        </div>
+    </form>
     </div>
-    <div>
-        <input type="submit" value="Envoyer">
-    </div>
-</form>
 </body>
 
 <footer>
