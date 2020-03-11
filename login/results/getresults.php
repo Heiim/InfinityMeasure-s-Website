@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin'])) {
-	header('Location: ../../index.html');
+	header('Location: ../../index.php');
 	exit();
 }
 
@@ -15,8 +15,9 @@ $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_
 if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
+
 $idtest = intval($_GET['idtest']);
-$stmt = $con->prepare('SELECT result,date FROM results WHERE id = ? AND idtest = ?');
+$stmt = $con->prepare('SELECT result,date FROM results WHERE iduser = ? AND idtest = ?');
 // On utilise l'id pour récuperer les infos
 $stmt->bind_param('ii', $_SESSION['id'], $idtest);
 $stmt->execute();

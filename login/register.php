@@ -13,12 +13,12 @@ if (mysqli_connect_errno()) {
 
 
 // On vérifie que tout est bien récupéré par le serveur
-if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'],$_POST['gender'],$_POST['size'],$_POST['weight'])) {
+if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'],$_POST['gender'],$_POST['height'],$_POST['weight'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
 // On vérifie que tout est rempli
-if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday']) || empty($_POST['gender']) || empty($_POST['size']) || empty($_POST['weight'])) {
+if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday']) || empty($_POST['gender']) || empty($_POST['height']) || empty($_POST['weight'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
@@ -53,7 +53,7 @@ if (strlen($_POST['firstn']) > 30 || strlen($_POST['firstn']) < 1) {
 //si pas d'erreur
 if ($validation){
     // On vérifie si le compte existe pas déjà
-    if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE email = ?')) {
+    if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email = ?')) {
         $stmt->bind_param('s', $_POST['email']);
         $stmt->execute();
         $stmt->store_result();
@@ -63,18 +63,27 @@ if ($validation){
             $messagedisp = 'Un compte avec ce mail existe déjà, veuillez en saisir une autre.';
         } else {
             // Le compte n'exite pas déjà, on le créé
-            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, birthday, gender, size, weight, token, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')) {
+            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, token) VALUES (?, ?, ?, ?, ?, ?)')) {
                 // On hash et verifiy le mot de passe pour pas le stocket en clair dans la DB
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $uniqid = uniqid();
                 $token = uniqid();
-                if (isset($_POST['status'])) {
-                    $status = $_POST['status'];
-                }else {
-                    $status = 'user';
-                }
-                $stmt->bind_param('sssssssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['gender'],$_POST['size'],$_POST['weight'], $token, $status);
+                
+                $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'], $token);
                 $stmt->execute();
+
+
+                $stmt2 = $con->prepare('SELECT idaccount FROM accounts WHERE email = ?');
+                $stmt2->bind_param('s', $_POST['email']);
+                $stmt2->execute();
+                $stmt2->bind_result($id);
+                $stmt2->fetch();
+                $stmt2->close();
+
+                $stmt3 = $con->prepare('INSERT INTO users (iduser, birthday, gender, height, weight) VALUES (?, ?, ?, ?, ?)');
+                $stmt3->bind_param('issss', $id, $_POST['birthday'], $_POST['gender'], $_POST['height'], $_POST['weight']);
+                $stmt3->execute();
+                $stmt3->close();
 
                 $from    = 'quirkylimited@gmail.com';
                 $subject = 'Activation du compte';
@@ -83,7 +92,8 @@ if ($validation){
                 $message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
                 mail($_POST['email'], $subject, $message, $headers);
                 $messagedisp = 'Consultez votre boite mail pour activer votre compte.';
-
+                
+                /*
                 if(isset($_POST['status']) && $_POST['status']=='gestionnairepending'){
                     $from    = 'quirkylimited@gmail.com';
                     $subject = 'Statut gestionnaire du site Infinte Measures ';
@@ -95,6 +105,7 @@ if ($validation){
                     Mail envoyé automatiquement, ne pas répondre, merci<p>';
                     mail($_POST['email'], $subject, $message, $headers);
                 }
+                */
 
             } else {
                 // Problème avec le SQl, il faut verifier si la table existe
