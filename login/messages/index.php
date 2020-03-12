@@ -36,6 +36,7 @@
                 }
                 
             ?>
+            <button class="refresh" onClick="window.location.reload();"><img class="refreshimage" src="../../images/refresh.png" width=20px height=20px></button>
         </h1>
         <div class="chat" id="chat">
             <?php 

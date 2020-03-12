@@ -114,3 +114,27 @@ input[type=submit] {
     overflow: auto;
     padding-right: 10px;
 }
+
+.refresh {
+    background-color: #50b3f8;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    margin-left: 100px;
+}
+
+.refreshimage {
+    background-color: transparent;
+    padding-top: 5px;
+    border-radius: 20px;
+}
+
+.refresh:hover {
+    background-color: #39a5f1;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.refresh:focus {
+    outline: 0;
+}
