@@ -10,7 +10,7 @@
 <header>
 <div>
     <div class="logo">
-        <a href="../../home.html"><img src="../../images/infinitelogo.png" width=100%x height=100%>
+        <a href="../../home.html"><img src="../../images/infinitelogo.png" width=100% height=100%>
     </div>
     <p class="name">Infinite Measures</p>
     </a>
@@ -25,7 +25,9 @@
 
 <body onload="scrollDown()">
     <div class="chatcontainer">
-        <h1 class="pageinfoh1">Conversation avec 
+        <h1 class="pageinfoh1"> 
+            <a class="whitelink goodsize" href="getdiscussions.php">Retour</a> 
+            Conversation avec 
             <?php 
                 if ($idsenders[0]==$_SESSION['id']) {
                     echo $idsolver[$idreceivers[0]];
@@ -60,7 +62,7 @@
         </div>
         <form action="<?php echo 'sendmessage.php?id=' . $sendto?>" method="post" autocomplete="off">
             <div>
-                <label id="goodsize" for="content">Message : </label>
+                <label class="goodsize" for="content">Message : </label>
             </div>
             <div>
                 <input class="messageinput" type="textarea" name="content" id="content" required>
