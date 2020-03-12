@@ -55,12 +55,12 @@ h1{
 
 
 .centerbutton1 {
-    padding:0px;
-    margin: 0px;
-    height:160%;
-    width: 35%;
+    padding: 1%;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 400px;
     text-align: center;
-    line-height: 80px;
+    line-height: 100%;
     text-decoration: none;
     top: 600px; 
     left: 30%;
@@ -81,12 +81,12 @@ h1{
     cursor: pointer;
 }
 .centerbutton2 {
-    padding:0px;
-    margin: 0px;
-    height:160%;
-    width: 35%;
+    padding: 1%;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 400px;
     text-align: center;
-    line-height: 80px;
+    line-height: 100%;
     text-decoration: none;
     top: 600px; 
     left: 70%;
@@ -107,10 +107,8 @@ h1{
     cursor: pointer;
 }
 .centerbutton3 {
-    padding: 0px;
-    margin: 0px;
-    height: 80%;
-    width: 10%;
+    padding-right: 20px;
+    padding-left: 20px;
     text-align: center;
     line-height: 40px;
     text-decoration: none;
@@ -138,4 +136,11 @@ h1{
 
 .wrapper{
     margin-top: 1000px;
+}
+
+@media only screen and (max-width: 1162px){
+    .wallpaperbutton{
+        display: none;
+    }
+
 }
