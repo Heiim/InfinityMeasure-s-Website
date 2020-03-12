@@ -58,7 +58,7 @@ if ($uploadOk == 0) {
         
         
         //si l'image est bien uploadé on change la valeur dans la DB
-        $sql = "UPDATE accounts SET picture=? WHERE id=?";
+        $sql = "UPDATE accounts SET picture=? WHERE idaccount=?";
 
         // Prepare statement
         $stmt = $con->prepare($sql);

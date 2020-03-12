@@ -20,12 +20,18 @@ if (mysqli_connect_errno()) {
 	die ('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
+if(isset($_GET['id'])) { 
+	$id=$_GET['id'];
+} else {
+	$id=$_POST['id'];
+}
+
 $stmt = $con->prepare('INSERT INTO messages (idsender,idreceiver,content) VALUES (?, ?, ?)');
-$stmt->bind_param('iis',$_SESSION['id'],$_GET['id'],$_POST['content']);
+$stmt->bind_param('iis',$_SESSION['id'],$id,$_POST['content']);
 $stmt->execute();
 
 
-$url = 'Location: getmessages.php?id='.$_GET['id'];
+$url = 'Location: getmessages.php?id='.$id;
 header($url);
 exit();
 ?>
