@@ -3,30 +3,33 @@
     font-weight: 100;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .banner {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
-.banner video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+.banner section {
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
-.content {
+.topleftbutton {
     position: relative;
+    margin-top: 1px;
+    margin-right: 50px;
     z-index: 1;
 }
 
 .logo {
     height: 100px;
     position: absolute;
-    top: 5px;
+    top: 10px;
     left: 5px;
 }
 
@@ -38,68 +41,28 @@ h1 {
     color: white;
 }
 
-.rightbutton {
-    height: 100%;
+.toprightbutton {
+    position: relative;
+    top: 1px;
+    z-index: 1;
+}
+
+.flaglogoFr {
     position: absolute;
     top: 20px;
-    right: 30px;
-    float: right;
+    right: 460px;
 }
 
-.flaglogo {
-    height: 20px;
-    margin-right: 20px;
-}
-
-.wallpaperbutton {
+.flaglogoGb {
     position: absolute;
-    top: 70vh;
-    left: 25%;
+    top: 20px;
+    right: 400px;
 }
 
-.centerbutton {
-    padding: 1%;
-    padding-right: 20px;
-    padding-left: 20px;
-    width: 400px;
-    text-align: center;
-    line-height: 100%;
-    text-decoration: none;
-    top: 600px;
-    left: 30%;
+.buttonright {
     position: absolute;
-    color: white;
-    font-weight: 300px;
-    background: none;
-    transform: translate(-50%, -50%);
-    border: 3px solid #ffffff;
-    font-size: 25px;
-    border-radius: 50px;
-    transition: .6s;
-    overflow: hidden;
-}
-
-.centerbutton1:hover {
-    background-color: #39a5f1;
-    cursor: pointer;
-}
-
-.centerbutton2 {
-    padding: 1%;
-    padding-right: 20px;
-    padding-left: 20px;
-    width: 400px;
-    text-align: center;
-    line-height: 100%;
-    text-decoration: none;
-    top: 600px;
-    left: 70%;
-    position: absolute;
-    color: white;
-    font-weight: 300px;
-    background: none;
-    transform: translate(-50%, -50%);
-    border: 3px solid #ffffff;
+    top: 30px;
+    right: 1px;
     font-size: 25px;
     border-radius: 50px;
     transition: .6s;
@@ -124,42 +87,89 @@ h1 {
     padding-right: 40px;
     padding-left: 40px;
     transition: .6s;
-    margin-right: 15px;
     overflow: hidden;
 }
 
-.button:hover {
+.buttonright:hover {
     background-color: #39a5f1;
     cursor: pointer;
 }
 
-.second-content {
+.centerbutton {
     position: relative;
+    z-index: 1;
 }
 
-.wrapper {
-    margin-top: 300vw;
+.buttoncenter {
+    font-size: 200%;
+    position: absolute;
+    top: 70vh;
+    right: 25vw;
+    text-align: center;
+    color: white;
+    background: none;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+    transition: .6s;
+    overflow: hidden;
 }
 
-@media only screen and (max-width: 1162px) {
-    .button {
-        display: block;
-        margin-bottom: 30px;
-        margin-top: 30px;
-    }
-    .rightbutton {
-        top: 100px;
-    }
-    .wallpaperbutton {
-        top: 70vh;
-        left: 50vw;
-        right: 0%;
-        margin-left: 0%;
-    }
+.buttoncenter:hover {
+    background-color: #39a5f1;
+    cursor: pointer;
 }
 
-@media only screen and (max-width: 1162px) {
-    .wallpaperbutton {
-        display: none;
-    }
+.buttoncenter1 {
+    font-size: 200%;
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    text-align: center;
+    color: white;
+    background: none;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding-right: 40px;
+    padding-left: 40px;
+    transition: .6s;
+    overflow: hidden;
+}
+
+.buttoncenter1:hover {
+    background-color: #39a5f1;
+    cursor: pointer;
+}
+
+.banner video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.image1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+    top: 0px;
+}
+
+h2 {
+    position: absolute;
+    top: 0px;
+    left: 650px;
+    font-size: 45px;
+    color: white;
 }
