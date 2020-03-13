@@ -39,7 +39,7 @@ if(isset($_POST["submit"])) {
 }
 
 // On vérifie la taille de l'image
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 1000000) {
     $uploadError = "?error=Fichier%20trop%20volumineux.";
     $uploadOk = 0;
 }
