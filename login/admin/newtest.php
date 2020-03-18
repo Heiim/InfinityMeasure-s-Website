@@ -11,20 +11,21 @@ if (!isset($_SESSION['loggedin'])) {
 <html>
     <head>
         <link rel="stylesheet" href="../../quirky.css">
-        <link rel="icon" type="image/png" href="../../images/infinitelogo.png" />
+        <link rel="stylesheet" href="tests.css">
+        <link rel="icon" type="image/png" href="../../../images/infinitelogo.png" />
     </head>
 
     <header>
     <div>
         <div class="logo">
-            <a href="../../home.html"><img src="../../images/infinitelogo.png" width=100%x height=100%>
+            <a href="../../../home.html"><img src="../../../images/infinitelogo.png" width=100%x height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
     </div>
     <div class="connection">
         <ul>
-            <li class="button"><a class="whitelink" href="../messages/getdiscussions.php">Messagerie</a></li>
+            <li class="button"><a class="whitelink" href="profile.php">Mon compte</a></li>
             <li class="button"><a class="whitelink" href="../logout.php">Déconnexion</a></li>
         </ul>
     </div>
@@ -35,57 +36,39 @@ if (!isset($_SESSION['loggedin'])) {
         <div>
             <div class="clearing registerformcontainer">
                 <div class="registerform">
-                    <h1 class="pageinfoh1">Créer un compte</h1>
-                    <script src="../scripts/formscript.js"></script>
-                    <script src="../scripts/passlength.js"></script>
-                    <form action="register.php" method="post" autocomplete="off">
+                <h1 class="pageinfoh1">Nouveau test</h1>
+                    <form action="newtestsubmit.php" method="post" autocomplete="off">
                         <div>
-                            <label for="lastn">Nom</label>
-                            <input type="text" name="lastn" id="lastn" required>
+                            <label for="name">Nom</label>
+                            <input type="text" name="name" id="name" required>
                         </div>
                         <div>
-                            <label for="firstn">Prénom </label>
-                            <input type="text" name="firstn" id="firstn" required>
+                            <label for="min">Minimum </label>
+                            <input type="number" name="min" id="min" required>
                         </div>
                         <div>
-                            <label for="birthday">Date de naissance </label>
-                            <input type="date" name="birthday" id="birthday" required>
+                            <label for="max">Maximum </label>
+                            <input type="number" name="max" id="max" required>
                         </div>
                         <div>
-                            <label for="email">Adresse email </label>
-                            <input type="email" name="email" id="email" required>
+                            <label for="unit">Unité </label>
+                            <input type="text" name="unit" id="unit" required>
                         </div>
                         <div>
-                            <label for="password">Mot de passe </label>
-                            <input type="password" name="password" id="password" onkeyup='checkpassword(); checklength()' required>
+                            <label for="description">Description </label>
+                            <input class="textareadisc" type="textarea" name="description" id="description" required>
                         </div>
                         <div>
-                            <label for="confirmpassword">Confirmation</label>
-                            <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required><span class="passworderror" id='passworderror'></span><span class="passworderror" id='passwordlength'></span>
+                            <label for="idsensor">Capteur: </label>
+                            <select id="idsensor" name="idsensor">
+                                <?php 
+                                    for ($i = 0; $i < count($idsolver); $i++) {
+                                        echo nl2br('<option value="'.$ids[$i].'">'.$idsolver[$ids[$i]].'</option>');
+                                    }
+                                ?>
+                            </select>
                         </div>
-                        <div>
-                            <label for="size">Taille </label>
-                            <input type="number" name="height" id="height" placeholder="cm" required>
-
-                            <label for="size">Poids </label>
-                            <input type="number" name="weight" id="weight" placeholder="kg" required>
-                        </div>
-                        <div>
-                            <label>Genre</label>
-                            <input type="radio" name="gender" value="Homme" required />
-                            <label for="homme">Homme</label>
-                            <input type="radio" name="gender" value="Femme" />
-                            <label for="femme">Femme</label>
-                            <input type="radio" name="gender" value="Autre" />
-                            <label for="autre">Autre</label>
-                        </div>
-                        <div>
-                            <label for="status">Statut professionel médical </label>
-                            <input type="checkbox" name="status" value="gestionnairepending">
-                        </div>
-                        <div>
-                            <input type="submit" value="S'inscrire">
-                        </div>
+                        <input type="submit" value="Confirmer">
                     </form>
                 </div>
 
@@ -102,7 +85,5 @@ if (!isset($_SESSION['loggedin'])) {
             </div>
         </div>
     </div>
-    </div>
 </body>
-    
 </html>

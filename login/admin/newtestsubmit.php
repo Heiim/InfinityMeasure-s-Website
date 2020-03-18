@@ -13,12 +13,12 @@ if (mysqli_connect_errno()) {
 
 
 // On vérifie que tout est bien récupéré par le serveur
-if (!isset($_POST['name'],$_POST['min'],$_POST['max'],$_POST['unit'],$_POST['description'],$_POST['idsensor'],$_POST['idtest'])) {
+if (!isset($_POST['name'],$_POST['min'],$_POST['max'],$_POST['unit'],$_POST['description'],$_POST['idsensor'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
 
-if ( empty($_POST['name']) || empty($_POST['max']) || empty($_POST['unit']) || empty($_POST['description']) || empty($_POST['idsensor']) || empty($_POST['idtest'])) {
+if ( empty($_POST['name']) || empty($_POST['max']) || empty($_POST['unit']) || empty($_POST['description']) || empty($_POST['idsensor'])) {
     $messagedisp ='Erreur: Veuillez remplir tous les champs.';
     $validation=false;
 }
@@ -36,26 +36,25 @@ if (strlen($_POST['description']) > 150 || strlen($_POST['description']) < 1) {
 //si pas d'erreur
 if ($validation){
     // On vérifie si un test avec le même nom existe pas déjà
-    if ($stmt = $con->prepare('SELECT idtest FROM tests WHERE (name = ? or description=?) and idtest != ?')) {
-        $stmt->bind_param('ssi', $_POST['name'], $_POST['description'], $_POST['idtest']);
+    if ($stmt = $con->prepare('SELECT idtest FROM tests WHERE name = ? or description=?')) {
+        $stmt->bind_param('ss', $_POST['name'], $_POST['description']);
         $stmt->execute();
         $stmt->store_result();
         // On enregistre le résultat pour vérifier si le compte existe pas déjà dans la DB
         if ($stmt->num_rows > 0) {
             // Un compte avec ce mail existe déjà
-            $messagedisp = 'Un test avec ce nom ou cette description existe déjà, veuillez en saisir d\'autres.';
+            $messagedisp = 'Un test avec ce nom ou cette descriptions existe déjà, veuillez en saisir d\'autres.';
             $stmt->close();
         } else {
             $stmt->close();
-            $sql = "UPDATE tests SET idsensor=?, name=?, description=?, min=?, max=?, unit=? WHERE idtest=?";
-
+            $sql = "INSERT INTO tests (idsensor, name, description, min, max, unit) VALUES (?, ?, ?, ?, ?, ?)";
             // Prepare statement
             $stmt2 = $con->prepare($sql);
-            $stmt2->bind_param('issiisi',$_POST['idsensor'], $_POST['name'],$_POST['description'],$_POST['min'],$_POST['max'],$_POST['unit'],$_POST['idtest']);
+            $stmt2->bind_param('issiis',$_POST['idsensor'], $_POST['name'],$_POST['description'],$_POST['min'],$_POST['max'],$_POST['unit']);
             $stmt2->execute();
             $stmt2->close();
 
-            $url='Location: gettest.php?idtest='.$_POST['idtest'];
+            $url='Location: profile.php';
             
             header($url);
             exit;

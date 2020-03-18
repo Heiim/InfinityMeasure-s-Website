@@ -10,8 +10,13 @@
     session_start();
     // Si l'utilisateur est loggué on le redirige vers son compte
     if (isset($_SESSION['loggedin'])) {
+        if($_SESSION['status'] == "admin"){
+            header('Location: admin/profile.php');
+            exit();
+    } else if ($_SESSION['status'] == "user") {
             header('Location: profile.php');
             exit();
+        }
     }
     ?>
 </div>
