@@ -36,7 +36,7 @@
                                             echo '<a href="gettest.php?idtest='.$idstest[$i].'">'.$descriptions[$i].'</a>';
                                         }
                                         ?>
-                                        <a href="newtest.php"> Nouveau test </a>
+                                        <a href="newtestprepare.php"> Nouveau test </a>
                                 </div>
                             </div>
                         </div>
