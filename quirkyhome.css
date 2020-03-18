@@ -1,12 +1,12 @@
 * {
     font-family: 'Source Sans Pro', 'Verdana', serif;
     font-weight: 100;
-    
 }
 body{
     margin: 0;
     padding: 0;
 }
+
 
 .banner{
     height: 100vh;
@@ -32,7 +32,8 @@ body{
     top: 10px;
     left :5px;
 }
-h1{ 
+
+h1 {
     position: absolute;
     top: 0px;
     left: 120px;
@@ -57,13 +58,16 @@ h1{
     right: 400px;
 }
 
-
+.flaglogoGb {
+    position: absolute;
+    top: 20px;
+    right: 400px;
+}
 
 .buttonright{
     position: absolute;
     top: 30px;
     right: 1px;
-    font-size: 25px;
     text-align: center;
     color: white;
     background: none;
@@ -77,11 +81,11 @@ h1{
     overflow: hidden;
 }
 
-
 .buttonright:hover {
     background-color: #39a5f1;
     cursor: pointer;
 }
+
 
 .centerbutton{
     position: relative;
@@ -105,10 +109,12 @@ h1{
     transition: .6s;
     overflow: hidden;
 }
+
 .buttoncenter:hover {
     background-color: #39a5f1;
     cursor: pointer;
 }
+
 
 .buttoncenter1{
     font-size: 200%;
@@ -127,6 +133,7 @@ h1{
     transition: .6s;
     overflow: hidden;
 }
+
 .buttoncenter1:hover {
     background-color: #39a5f1;
     cursor: pointer;
@@ -158,5 +165,4 @@ h2{
     left: 650px;
     font-size: 45px;
     color: white;
-
 }
