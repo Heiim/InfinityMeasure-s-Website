@@ -2,13 +2,13 @@
     font-family: 'Source Sans Pro', 'Verdana', serif;
     font-weight: 100;
 }
-
-body {
+body{
     margin: 0;
     padding: 0;
 }
 
-.banner {
+
+.banner{
     height: 100vh;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -19,7 +19,7 @@ body {
     scroll-snap-align: start;
 }
 
-.topleftbutton {
+.topleftbutton{
     position: relative;
     margin-top: 1px;
     margin-right: 50px;
@@ -30,7 +30,7 @@ body {
     height: 100px;
     position: absolute;
     top: 10px;
-    left: 5px;
+    left :5px;
 }
 
 h1 {
@@ -41,16 +41,21 @@ h1 {
     color: white;
 }
 
-.toprightbutton {
+.toprightbutton{
     position: relative;
     top: 1px;
     z-index: 1;
 }
 
-.flaglogoFr {
+.flaglogoFr{
     position: absolute;
     top: 20px;
     right: 460px;
+}
+.flaglogoGb{
+    position: absolute;
+    top: 20px;
+    right: 400px;
 }
 
 .flaglogoGb {
@@ -59,29 +64,15 @@ h1 {
     right: 400px;
 }
 
-.buttonright {
+.buttonright{
     position: absolute;
     top: 30px;
     right: 1px;
-    font-size: 25px;
-    border-radius: 50px;
-    transition: .6s;
-    overflow: hidden;
-}
-
-.centerbutton2:hover {
-    background-color: #39a5f1;
-    cursor: pointer;
-}
-
-.centerbutton3 {
-    padding-right: 20px;
-    padding-left: 20px;
     text-align: center;
     color: white;
     background: none;
     text-decoration: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     border: 2px solid #ffffff;
     border-radius: 50px;
     padding-right: 40px;
@@ -95,12 +86,13 @@ h1 {
     cursor: pointer;
 }
 
-.centerbutton {
+
+.centerbutton{
     position: relative;
     z-index: 1;
 }
 
-.buttoncenter {
+.buttoncenter{
     font-size: 200%;
     position: absolute;
     top: 70vh;
@@ -109,7 +101,7 @@ h1 {
     color: white;
     background: none;
     text-decoration: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     border: 2px solid #ffffff;
     border-radius: 50px;
     padding-right: 40px;
@@ -123,7 +115,8 @@ h1 {
     cursor: pointer;
 }
 
-.buttoncenter1 {
+
+.buttoncenter1{
     font-size: 200%;
     position: absolute;
     top: 80vh;
@@ -132,7 +125,7 @@ h1 {
     color: white;
     background: none;
     text-decoration: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     border: 2px solid #ffffff;
     border-radius: 50px;
     padding-right: 40px;
@@ -146,27 +139,27 @@ h1 {
     cursor: pointer;
 }
 
-.banner video {
+.banner video{
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: 2;
 }
 
-.image1 {
+.image1{
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: 2;
 }
 
-.title {
-    position: relative;
+.title{
+    position : relative;
     z-index: 1;
     top: 0px;
 }
 
-h2 {
+h2{ 
     position: absolute;
     top: 0px;
     left: 650px;
