@@ -33,7 +33,7 @@
                                     <div class="dropdown-content">
                                         <?php 
                                         for ($i = 0; $i < count($idstest); $i++) {
-                                            echo '<a href="results/getresults.php?idtest='.$idstest[$i].'">'.$descriptions[$i].'</a>';
+                                            echo '<a href="gettest.php?idtest='.$idstest[$i].'">'.$descriptions[$i].'</a>';
                                         }
                                         ?>
                                         <a href="newtest.php"> Nouveau test </a>

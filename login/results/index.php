@@ -21,7 +21,7 @@
 
             var options = {
             title: '<?php echo $description ?>' ,
-            vAxis: {title: '<?php echo "Score " . $unit ?>'},
+            vAxis: {title: '<?php echo "Score " .'('. $unit .')' ?>'},
             min: <?php echo $min?> ,
             max: <?php echo $max?> ,
             legend: {position: 'none'} ,
