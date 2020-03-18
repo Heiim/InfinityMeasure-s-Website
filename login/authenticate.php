@@ -35,15 +35,33 @@ if ($stmt = $con->prepare('SELECT idaccount,firstn,lastn, password FROM accounts
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $firstn . " " . $lastn;
             $_SESSION['id'] = $id;
-            header('Location: profile.php');
+            
+            $stmt->close();
+            
+            $stmt2 = $con->prepare('SELECT * FROM admins WHERE idadmin = ?');
+            $stmt2->bind_param('i', $_SESSION['id']);
+            $stmt2->execute();
+            $stmt2->store_result();
+
+            if ($stmt2->num_rows > 0) {
+                //si dans la table admin c'est un admin
+                $_SESSION['status'] = "admin";
+                header('Location: admin/profile.php');
+            } else {
+                //sinon user
+                $_SESSION['status'] = "user";
+                header('Location: profile.php');
+
+            }
+            //TODO gestionnaire aussi
             exit;
         } else {
             header('Location: index.php?error=Mot%20de%20passe%20incorrect.');
+            $stmt->close();
         }
     } else {
         header('Location: index.php?error=Ce%20compte%20n\'existe%20pas.');
+        $stmt->close();
     }
-
-	$stmt->close();
 }
 ?>
