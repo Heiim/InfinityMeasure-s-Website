@@ -65,6 +65,7 @@ h1 {
 }
 
 .buttonright{
+    font-size: 150%;
     position: absolute;
     top: 30px;
     right: 1px;
@@ -147,7 +148,7 @@ h1 {
 }
 
 .image1{
-    height: 100%;
+    height: auto;
     width: 100%;
     object-fit: cover;
     z-index: 2;
@@ -156,13 +157,13 @@ h1 {
 .title{
     position : relative;
     z-index: 1;
-    top: 0px;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 h2{ 
     position: absolute;
-    top: 0px;
-    left: 650px;
+    width: auto;
     font-size: 45px;
     color: white;
 }
