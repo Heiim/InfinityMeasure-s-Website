@@ -157,23 +157,75 @@ h1 {
 .title{
     position : relative;
     z-index: 1;
-    margin-right: 350px;
+    
+}
+
+.titlesmall{
+    position : relative;
+    z-index: 1;
+   
+}
+
+.titlemobile{
+    position : relative;
+    z-index: 1;
+   
 }
 
 h2{ 
     position: absolute;
     width: auto;
-    font-size: 60px;
+    font-size: 80px;
     color: white;
     margin-left: 350px;
 }
 
 .image1{
     position: absolute;
-    margin-top: 250px;
+    margin-top: 350px;
     margin-right: 150px;
-    margin-left: 150px;
+    margin-left: calc(150px-50vw);
+}
+
+.image2{
+    position: absolute;
+    top: 200px;
+    margin-left: 300px;
+}
+
+.image3{
+    position: absolute;
+    top: 300px;
+    margin-left: 300px;
 }
 
 
+@media only screen and (max-width : 1433px){
+    .title{
+        display: none;
+    }
+}
 
+@media only screen and (min-width : 1434px){
+    .titlesmall{
+        display: none;
+    }
+}
+
+@media only screen and (max-width :1160px){
+    h2,.image2,.image3{
+        margin-left: 150px;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .titlemobile{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 780px){
+    .titlesmall{
+        display: none;
+    }
+}
