@@ -147,8 +147,8 @@ h1 {
     z-index: 2;
 }
 
-.image1{
-    height: auto;
+.image{
+    height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: 2;
@@ -157,13 +157,23 @@ h1 {
 .title{
     position : relative;
     z-index: 1;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-right: 350px;
 }
 
 h2{ 
     position: absolute;
     width: auto;
-    font-size: 45px;
+    font-size: 60px;
     color: white;
+    margin-left: 350px;
 }
+
+.image1{
+    position: absolute;
+    margin-top: 250px;
+    margin-right: 150px;
+    margin-left: 150px;
+}
+
+
+
