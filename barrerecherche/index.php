@@ -9,16 +9,16 @@ $DATABASE_NAME = 'quirky';
 
 if(isset($_GET['prenom']) AND !empty($_GET['prenom'])) {
     $prenom = htmlspecialchars($_GET['prenom']);
-    $prenom_user = "firstn = "."'$prenom'";
+    $prenom_user = $prenom;
 }else{
-    $prenom_user = "firstn "."IS NOT NULL";
+    $prenom_user = "%";
 }
 
 if(isset($_GET['nom']) AND !empty($_GET['nom'])) {
     $nom = htmlspecialchars($_GET['nom']);
-    $nom_user = "lastn = "."'$nom'";
+    $nom_user = $nom;
 }else{
-    $nom_user = "lastn "."IS NOT NULL";
+    $nom_user = "%";
 }
 
 if(isset($_GET['status']) AND !empty($_GET['status'])) {
@@ -37,23 +37,20 @@ if(isset($_GET['gender']) AND !empty($_GET['gender'])) {
 
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-$user = $con->query("SELECT idaccount, firstn, lastn, email, idadmin, idmanager, idcompany FROM accounts LEFT JOIN users ON accounts.idaccount = users.iduser LEFT JOIN managers ON accounts.idaccount = managers.idmanager LEFT JOIN admins ON accounts.idaccount = admins.idadmin WHERE $prenom_user AND $nom_user");
+$stmt = $con->prepare("SELECT idaccount, firstn, lastn, email, idadmin, idmanager FROM accounts LEFT JOIN users ON accounts.idaccount = users.iduser LEFT JOIN managers ON accounts.idaccount = managers.idmanager LEFT JOIN admins ON accounts.idaccount = admins.idadmin WHERE firstn LIKE ? AND lastn LIKE ?");
+$stmt->bind_param('ss',$prenom_user, $nom_user);
+$stmt->execute();
+$stmt->bind_result($idaccount, $firstn, $lastn, $email, $idadmin, $idmanager);
 
 ?>
 
-<?php while($a = $user->fetch_assoc()) {?>
+<?php while($stmt->fetch()) {?>
     
-    <?php 
-    $nom_company = $a['idcompany'];
-    $company = $con-query("SELECT company_code FROM companies WHERE idcompany = $nom_company");
-    $company->fetch_assoc();
-    ?>
-    <div class="barre"><a href="getprofilS.php?id=<?=$a['id']?>">
+    
+    <div class="barre"><a href="getprofilS.php?id=<?=$idaccount?>">
         <ul class="usercard">
-            <li class="usercard_title"><?=$a['firstn']?> <?=$a['lastn']?></li>
-            <li class="usercard_data">Email : <?=$a['email']?></li> 
-            <li class="usercard_data">status : <?=$a['idadmin']?></li> 
-            <li class="usercard_data">compagnie : <?=$company?></li>
+            <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
+            <li class="usercard_data">Email : <?=$email?></li> 
         </ul>
     </a></div>
 <?php } ?>
