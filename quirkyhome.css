@@ -7,7 +7,6 @@ body{
     padding: 0;
 }
 
-
 .banner{
     height: 100vh;
     scroll-snap-type: y mandatory;
@@ -42,7 +41,7 @@ h1 {
 }
 
 .toprightbutton{
-    position: relative;
+    position: static;
     top: 1px;
     z-index: 1;
 }
@@ -154,11 +153,12 @@ h1 {
     z-index: 2;
 }
 
-.title{
+.title,.title1{
     position : relative;
     z-index: 1;
     
 }
+
 
 .titlesmall{
     position : relative;
@@ -199,6 +199,75 @@ h2{
     margin-left: 300px;
 }
 
+.footer {
+    position: relative;
+}
+
+.aboutus{
+    top: 830px;
+    position: absolute;
+    margin-left: 550px;
+}
+
+h3{ 
+    position: absolute;
+    width: auto;
+    font-size: 50px;
+    color: white;
+    margin-left: 350px;
+}
+h4{ 
+    position: absolute;
+    font-size: 50px;
+    top:150px;
+    margin-left: 300px;
+}
+
+h5{
+    position: absolute;
+    width: auto;
+    font-size: 50px;
+    color: white;
+    margin-top:530px;
+    margin-left: 430px;
+}
+h6{
+    position: absolute;
+    width: auto;
+    font-size: 50px;
+    color: white;
+    margin-top:330px;
+    margin-left: 730px;
+}
+
+
+.button {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+}
+.whitelink {
+    color: white;
+    font-weight: 300;
+    background-color: #50b3f8;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 90px;
+}
+
+.whitelink:hover {
+    background-color: #39a5f1;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+
 
 @media only screen and (max-width : 1433px){
     .title{
@@ -221,5 +290,20 @@ h2{
 @media only screen and (max-width: 780px){
     .titlesmall{
         display: none;
+    }
+}
+
+@media only screen and (min-width:1195px){
+    h6{
+        display:none
+    }
+    
+}
+@media only screen and (max-width:1195px){
+    h5{
+        display:none
+    }
+    .aboutus{
+        margin-left: 270px;
     }
 }
