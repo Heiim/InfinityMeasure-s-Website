@@ -41,7 +41,7 @@ h1 {
 }
 
 .toprightbutton{
-    position: static;
+    position: sticky;
     top: 1px;
     z-index: 1;
 }
@@ -84,6 +84,7 @@ h1 {
 .buttonright:hover {
     background-color: #39a5f1;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 
@@ -113,6 +114,7 @@ h1 {
 .buttoncenter:hover {
     background-color: #39a5f1;
     cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 
@@ -137,6 +139,28 @@ h1 {
 .buttoncenter1:hover {
     background-color: #39a5f1;
     cursor: pointer;
+    transition-duration: 0.4s;
+}
+.whitelink {
+    color: white;
+    font-weight: 300;
+    background: none;
+    text-decoration: none;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 90px;
+    border: 2px solid #ffffff;
+}
+
+.whitelink:hover {
+    background-color: #39a5f1;
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 .banner video{
@@ -247,25 +271,7 @@ h6{
     text-align: center;
     display: inline-block;
 }
-.whitelink {
-    color: white;
-    font-weight: 300;
-    background-color: #50b3f8;
-    padding: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin: 10px;
-    margin-top: 20px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 90px;
-}
 
-.whitelink:hover {
-    background-color: #39a5f1;
-    cursor: pointer;
-    transition-duration: 0.4s;
-}
 
 
 
