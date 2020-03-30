@@ -36,11 +36,24 @@
                 <form method="GET">
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
+                    <?php
+                        echo '<select class="selectbarre" name="age" placeholder="Age">';
+                        echo '<option value="" disable selected>Age</option>';
+                        for($i=1;$i<=200;$i++){
+                        echo '<option value="'.$i.'">'.$i.'</option>';
+                        }
+                        echo '</select>';
+                    ?>
+                    <select class="selectbarre" name="gender" placeholder="Sexe">
+                        <option value="0" disable selected>Sexe</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Homme">Homme</option>
+                    </select>
                     <select class="selectbarre" name="status" placeholder="Status">
-                        <option value="0"></option>
-                        <option value="User">Utilisateur</option>
-                        <option value="Gestionnaire">Gestionnaire</option>
-                        <option value="Admin">Administrateur</option>
+                        <option value="0" disable selected>Status</option>
+                        <option value="iduser">Utilisateur</option>
+                        <option value="idmanager">Gestionnaire</option>
+                        <option value="idadmin">Administrateur</option>
                     </select>
                     <input type="submit" value="Chercher" />
                     <input type="reset" value="Supprimer" />
@@ -52,14 +65,7 @@
                 </div>
                 <div class="push"></div>
 
-                <div class="gooter">
-                    <ul>
-                        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-                        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-                        <li class="button"><a class="whitelink" href="FAQ/faq.html">FAQ</a></li>
-                        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-                    </ul>
-                </div>
+                
             </div>
         </div>
     </div>
