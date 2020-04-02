@@ -146,7 +146,7 @@ function updateProfilePic()
     $uploadError='';
 
     //pour rendre le nom de l'image pas evident a trouver: pas juste user.jpg ou id.jpg on va hasher le prenom + nom + id de l'utilisateur
-    $imageid = hash('sha256', $_SESSION['name'].$_SESSION['id']);
+    $imageid = hash('sha256', $_SESSION['name'].$_SESSION['id'].time());
 
     $target_dir = "public/images/userspics/";
     $target_name = $imageid . '.' . pathinfo($_FILES['fileToUpload']['name'],PATHINFO_EXTENSION);
@@ -192,6 +192,7 @@ function updateProfilePic()
         header('Location: index.php?action=userprofile'.$uploadError);
         exit();
     }
+    exit();
 }
 
 function getResults() {
