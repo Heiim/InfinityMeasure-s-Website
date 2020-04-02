@@ -36,20 +36,29 @@
                 <form method="GET">
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
+                    <script>
+                    function replaceStatus(){
+                        document.getElementById("status1").value= 0;
+                    }
+                    function replaceGender(){
+                        document.getElementById("gender1").value= 0;
+                        document.getElementById("age1").value= 0;
+                    }
+                    </script>
                     <?php
-                        echo '<select class="selectbarre" name="age" placeholder="Age">';
+                        echo '<select class="selectbarre" id="age1" name="age" placeholder="Age">';
                         echo '<option value="" disable selected>Age</option>';
                         for($i=1;$i<=200;$i++){
                         echo '<option value="'.$i.'">'.$i.'</option>';
                         }
                         echo '</select>';
                     ?>
-                    <select class="selectbarre" name="gender" placeholder="Sexe">
+                    <select class="selectbarre" onclick="replaceStatus()"  id="gender1" name="gender" placeholder="Sexe">
                         <option value="0" disable selected>Sexe</option>
                         <option value="Femme">Femme</option>
                         <option value="Homme">Homme</option>
                     </select>
-                    <select class="selectbarre" name="status" placeholder="Status">
+                    <select class="selectbarre" onclick="replaceGender()" id ="status1" name="status" placeholder="Status">
                         <option value="0" disable selected>Status</option>
                         <option value="iduser">Utilisateur</option>
                         <option value="idmanager">Gestionnaire</option>
