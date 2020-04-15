@@ -33,44 +33,26 @@
     <div class="wrapper">
         <div>
             <div class="barre">
+            <h2>Recherche Utilisateur</h2>
                 <form method="GET">
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
-                    <script>
-                    function replaceStatus(){
-                        document.getElementById("status1").value= 0;
-                    }
-                    function replaceGender(){
-                        document.getElementById("gender1").value= 0;
-                        document.getElementById("age1").value= 0;
-                    }
-                    </script>
-                    <?php
-                        echo '<select class="selectbarre" id="age1" name="age" placeholder="Age">';
-                        echo '<option value="" disable selected>Age</option>';
-                        for($i=1;$i<=200;$i++){
-                        echo '<option value="'.$i.'">'.$i.'</option>';
-                        }
-                        echo '</select>';
-                    ?>
-                    <select class="selectbarre" onclick="replaceStatus()"  id="gender1" name="gender" placeholder="Sexe">
-                        <option value="0" disable selected>Sexe</option>
+                    <input type="search" name="poids" placeholder="Poids" />
+                    <input type="search" name="taille" placeholder="Taille" />
+
+                    <select class="selectbarre" id="gender1" name="gender" placeholder="Sexe">
+                        <option value="%" disable selected>Sexe</option>
                         <option value="Femme">Femme</option>
                         <option value="Homme">Homme</option>
                     </select>
-                    <select class="selectbarre" onclick="replaceGender()" id ="status1" name="status" placeholder="Status">
-                        <option value="0" disable selected>Status</option>
-                        <option value="iduser">Utilisateur</option>
-                        <option value="idmanager">Gestionnaire</option>
-                        <option value="idadmin">Administrateur</option>
-                    </select>
+                    
                     <input type="submit" value="Chercher" />
                     <input type="reset" value="Supprimer" />
                 </form>
 
                 <div>
 
-                    <?php include 'index.php';?>
+                    <?php include 'searchuser.php';?>
                 </div>
                 <div class="push"></div>
 
