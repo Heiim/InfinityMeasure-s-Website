@@ -16,8 +16,8 @@
     </div>
     <div class="connection">
         <ul>
-            <li class="button"><a class="whitelink" href="index.php">Connexion</a></li>
-            <li class="button"><a class="whitelink" href="register.html">Créer un compte</a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=register">Créer un compte</a></li>
         </ul>
     </div>
 </header>
