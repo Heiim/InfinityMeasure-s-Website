@@ -40,6 +40,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="dropcontainer">
+                            <div class="dropdown">
+                                <button class="dropbtn">Rechercher</button>
+                                    <div class="dropdown-content">
+                                        <a href="index.php?action=searchuser"> Recherche Utilisateur </a>
+                                        <a href="index.php?action=searchmanager"> Recherche Gestionnaire </a>
+                                        <a href="index.php?action=searchadmin"> Recherche Administrateur </a>
+                                </div>
+                            </div>
+                        </div>
                     <div class="clearing profileinfo">
                         <table>
                             <tr>
