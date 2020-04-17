@@ -18,26 +18,24 @@ header {
     margin-bottom: -30px;
 }
 
-.footer,
 .push {
     height: 100px;
 }
 
-footer {
-    bottom: 0px;
+/*footer pour les grandes pages*/
+
+.footerLong {
     text-align: center;
-    position: fixed;
     width: 98.8%;
     border: 2px;
     border-top: solid lightgrey;
+    height: 100px;
+    max-height: 100px;
 }
-
-
-/*footer pour les grandes pages*/
-
-.gooter {
-    text-align: center;
-    position: absolute;
+.footerShort{
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
     width: 98.8%;
     border: 2px;
     border-top: solid lightgrey;

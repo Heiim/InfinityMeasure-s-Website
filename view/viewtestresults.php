@@ -53,15 +53,10 @@
 	<body>
     <div class="chartitle"><h2><?php echo $description ?></h2></div>
     <div id="chart_div" class="chart"></div>
+    <div class="push"></div>
+    <?php include("viewfooterShort.php") ?>
     </body>
     
-<footer>
-    <ul>
-        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
-        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-    </ul>
-</footer>
+
 
 </html>

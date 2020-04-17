@@ -32,14 +32,7 @@ if ($emailchanged) {
             </div>
             <div class="button"><a class="whitelink" href="index.php">Retour au profil</a></div>
             <div class="push"></div>
-            <div class="gooter">
-                    <ul>
-                        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-                        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-                        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
-                        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-                    </ul>
-            </div>
+            <?php include("viewfooterShort.php") ?>
         </div>
     </div> 
 </body>
