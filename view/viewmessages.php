@@ -36,9 +36,9 @@
             Conversation avec 
             <?php 
                 if ($idsenders[0]==$_SESSION['id']) {
-                    echo $idsolver[$idreceivers[0]];
+                    echo htmlspecialchars($idsolver[$idreceivers[0]]);
                 } else {
-                    echo $idsolver[$idsenders[0]];
+                    echo htmlspecialchars($idsolver[$idsenders[0]]);
                 }
                 
             ?>
@@ -62,7 +62,7 @@
                     echo nl2br('<div class="textmessageleft">');
                 }
 
-                echo nl2br($contents[$i]."\n");
+                echo nl2br(htmlspecialchars ($contents[$i])."\n");
                 echo nl2br('</div>'."\n");
             }
             ?>

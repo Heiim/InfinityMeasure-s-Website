@@ -31,25 +31,25 @@
                     <form action="index.php?action=doeditprofile" method="post" autocomplete="off">
                         <div>
                             <label for="lastn">Nom</label>
-                            <input type="text" name="lastn" id="lastn" placeholder=<?=$lastn?> value=<?=$lastn?> required>
+                            <input type="text" name="lastn" id="lastn" placeholder=<?=htmlspecialchars($lastn)?> value=<?=htmlspecialchars($lastn)?> required>
                         </div>
                         <div>
                             <label for="firstn">Prénom </label>
-                            <input type="text" name="firstn" id="firstn" placeholder=<?=$firstn?> value=<?=$firstn?> required>
+                            <input type="text" name="firstn" id="firstn" placeholder=<?=htmlspecialchars($firstn)?> value=<?=htmlspecialchars($firstn)?> required>
                         </div>
                         <div>
                             <label for="birthday">Date de naissance </label>
-                            <input type="date" name="birthday" id="birthday" placeholder=<?=$birthday?> value=<?=$birthday?> required>
+                            <input type="date" name="birthday" id="birthday" placeholder=<?=htmlspecialchars($birthday)?> value=<?=htmlspecialchars($birthday)?> required>
                         </div>
                         <div>
                             <label for="email">Adresse email </label>
-                            <input type="email" name="email" id="email" placeholder=<?=$email?> value=<?=$email?> required>
+                            <input type="email" name="email" id="email" placeholder=<?=htmlspecialchars($email)?> value=<?=htmlspecialchars($email)?> required>
                         </div>
                         <div>
                             <label for="size">Taille </label>
-                            <input type="number" name="height" id="height" placeholder="cm" value=<?=$height?> required>
+                            <input type="number" name="height" id="height" placeholder="cm" value=<?=htmlspecialchars($height)?> required>
                             <label for="size">Poids </label>
-                            <input type="number" name="weight" id="weight" placeholder="kg" value=<?=$weight?> required>
+                            <input type="number" name="weight" id="weight" placeholder="kg" value=<?=htmlspecialchars($weight)?> required>
                         </div>
                         <input type="hidden" name="id" id="id" value=<?=$_SESSION['id']?>>
                         <div>
