@@ -40,6 +40,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="dropcontainer">
+                            <div class="dropdown">
+                                <button class="dropbtn">Rechercher</button>
+                                    <div class="dropdown-content">
+                                        <a href="index.php?action=searchuser"> Recherche Utilisateur </a>
+                                        <a href="index.php?action=searchmanager"> Recherche Gestionnaire </a>
+                                        <a href="index.php?action=searchadmin"> Recherche Administrateur </a>
+                                </div>
+                            </div>
+                        </div>
                     <div class="clearing profileinfo">
                         <table>
                             <tr>
@@ -70,14 +80,7 @@
                     </div>
                 </div>
                 <div class="push"></div>
-                <div class="gooter">
-                    <ul>
-                        <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-                        <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-                        <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
-                        <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-                    </ul>
-                 </div>
+                <?php include("viewfooterShort.php") ?>
             </div>
          </div>
     </body>

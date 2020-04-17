@@ -87,7 +87,17 @@ if (isset($_GET['action'])) {
     case "sendmessage":
         sendMessage();
         break;
+    case "searchuser":
+        searchuser();
+        break;
+    case "searchmanager":
+        searchmanager();
+        break;
+    case "searchadmin":
+        searchadmin();
+        break;
     }
+
 }
 else {
     homePage();

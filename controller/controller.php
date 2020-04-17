@@ -456,3 +456,21 @@ function sendMessage()
 
     require('model/sendmessage.php');
 }
+
+function searchuser()
+{
+    require('model/searchuser.php');
+    require('view/viewsearchuser.php');
+}
+
+function searchmanager()
+{
+    require('model/searchmanager.php');
+    require('view/viewsearchmanager.php');
+}
+
+function searchadmin()
+{
+    require('model/searchadmin.php');
+    require('view/viewsearchadmin.php');
+}

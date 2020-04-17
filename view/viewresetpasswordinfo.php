@@ -22,14 +22,8 @@
                 <p class="message"><?php echo $message ?></p>
             </div>
             <div class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></div>
-            <div class="gooter">
-                <ul>
-                    <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
-                    <li class="button"><a class="whitelink" href="contact.html">Nous contacter</a></li>
-                    <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
-                    <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
-                </ul>
-            </div>
+            <div class="push"></div>
+            <?php include("viewfooterShort.php") ?>
         </div>  
     </div>     
 </body>
