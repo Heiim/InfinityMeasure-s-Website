@@ -43,31 +43,31 @@
                         <table>
                             <tr>
                                 <td class="champsinfo">Nom:</td>
-                                <td><?=$lastn?></td>
+                                <td><?=htmlspecialchars($lastn)?></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Prénom:</td>
-                                <td><?=$firstn?></td>
+                                <td><?=htmlspecialchars($firstn)?></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Email:</td>
-                                <td><?=$email?></td>
+                                <td><?=htmlspecialchars($email)?></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Date de naissance:</td>
-                                <td><?=$birthday?></td>
+                                <td><?=htmlspecialchars($birthday)?></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Genre:</td>
-                                <td><?=$gender?></td>
+                                <td><?=htmlspecialchars($gender)?></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Taille:</td>
-                                <td><?=$height?><label> cm</label></td>
+                                <td><?=htmlspecialchars($height)?><label> cm</label></td>
                             </tr>
                             <tr>
                                 <td class="champsinfo">Poids:</td>
-                                <td><?=$weight?><label> kg</label></td>
+                                <td><?=htmlspecialchars($weight)?><label> kg</label></td>
                             </tr>
                         </table>
                             <ul>
@@ -75,7 +75,7 @@
                             </ul>
                     </div>
                     <div class="imagecontainer">
-                        <img class="profileimage" src=<?=$picture?> height=200px>
+                        <img class="profileimage" src=<?=htmlspecialchars($picture)?> height=200px>
                         <form action="index.php?action=updateimage" method="post" enctype="multipart/form-data">
                             Changer la photo
                             <input type="file" name="fileToUpload" id="fileToUpload">
