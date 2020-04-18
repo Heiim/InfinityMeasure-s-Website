@@ -87,6 +87,15 @@ if (isset($_GET['action'])) {
     case "sendmessage":
         sendMessage();
         break;
+    case "showsearchuser":
+        showsearchuser();
+        break;
+    case "showsearchmanager":
+        showsearchmanager();
+        break;
+    case "showsearchadmin":
+        showsearchadmin();
+        break;
     case "searchuser":
         searchuser();
         break;

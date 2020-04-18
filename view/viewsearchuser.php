@@ -20,14 +20,14 @@
             <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
         </ul>
     </div>
-</header>
+</header> 
 
 <body>
     <div class="wrapper">
         <div>
             <div class="barre">
             <h2>Recherche Utilisateur</h2>
-                <form method="GET">
+                <form action="index.php?action=searchuser" method="GET">
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
                     <input type="search" name="poids" placeholder="Poids" />

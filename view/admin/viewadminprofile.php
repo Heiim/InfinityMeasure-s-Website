@@ -44,9 +44,9 @@
                             <div class="dropdown">
                                 <button class="dropbtn">Rechercher</button>
                                     <div class="dropdown-content">
-                                        <a href="index.php?action=searchuser"> Recherche Utilisateur </a>
-                                        <a href="index.php?action=searchmanager"> Recherche Gestionnaire </a>
-                                        <a href="index.php?action=searchadmin"> Recherche Administrateur </a>
+                                        <a href="index.php?action=showsearchuser"> Recherche Utilisateur </a>
+                                        <a href="index.php?action=showsearchmanager"> Recherche Gestionnaire </a>
+                                        <a href="index.php?action=showsearchadmin"> Recherche Administrateur </a>
                                 </div>
                             </div>
                         </div>

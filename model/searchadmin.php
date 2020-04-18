@@ -19,7 +19,7 @@ if(isset($_GET['nom']) AND !empty($_GET['nom'])) {
 }else{
     $nom_user = "%";
 }
-
+ 
 
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
