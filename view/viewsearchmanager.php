@@ -39,7 +39,7 @@
 
                 <div>
 
-                    <?php include 'searchmanager.php';?>
+                    <?php include 'model/searchmanager.php';?>
                 </div>
                 <div class="push"></div>
 

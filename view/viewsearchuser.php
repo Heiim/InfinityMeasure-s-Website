@@ -45,7 +45,7 @@
 
                 <div>
 
-                    <?php include 'searchuser.php';?>
+                    <?php include 'model/searchuser.php';?>
                 </div>
                 <div class="push"></div>
 
