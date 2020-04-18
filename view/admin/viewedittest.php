@@ -76,7 +76,7 @@
 
                 <div class="push"></div>
 
-                <?php include("viewfooterLong.php") ?>
+                <?php include(__DIR__."/../viewfooterShort.php") ?>
             </div>
         </div>
     </div>

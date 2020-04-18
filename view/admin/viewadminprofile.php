@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="push"></div>
-                <?php include("viewfooterShort.php") ?>
+                <?php include(__DIR__."/../viewfooterLong.php") ?>
             </div>
          </div>
     </body>

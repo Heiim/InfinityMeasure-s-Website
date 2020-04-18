@@ -22,6 +22,7 @@ header {
     height: 100px;
 }
 
+
 /*footer pour les grandes pages*/
 
 .footerLong {
@@ -33,10 +34,11 @@ header {
     max-height: 100px;
     font-size: medium;
 }
-.footerShort{
-	text-align: center;
-	position: fixed;
-	bottom: 0px;
+
+.footerShort {
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
     width: 98.8%;
     border: 2px;
     border-top: solid lightgrey;

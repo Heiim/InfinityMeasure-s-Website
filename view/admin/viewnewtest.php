@@ -32,7 +32,6 @@ if (!isset($_SESSION['loggedin'])) {
 </header>
 
 <body>
-    <div class="wrapper">
         <div>
             <div class="clearing registerformcontainer">
                 <div class="registerform">
@@ -72,11 +71,8 @@ if (!isset($_SESSION['loggedin'])) {
                     </form>
                 </div>
 
-                <div class="push"></div>
-
-                <?php include("viewfooterLong.php") ?>
+                <?php include(__DIR__."/../viewfooterShort.php") ?>
             </div>
         </div>
-    </div>
 </body>
 </html>

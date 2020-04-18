@@ -1,5 +1,5 @@
 <?php
-echo"
+echo'
 <div class="footerShort">
     <ul>
         <li class="button"><a class="whitelink" href="cgu.html">CGU</a></li>
@@ -7,6 +7,6 @@ echo"
         <li class="button"><a class="whitelink" href="faq.html">FAQ</a></li>
         <li class="button"><a class="whitelink" href="forum.html">Forum</a></li>
     </ul>
- </div>";
+ </div>';
 
  ?>
