@@ -6,6 +6,10 @@
     <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
 </head>
 
+<?php
+    session_start();
+?>
+
 <header>
     <div>
         <div class="logo">
@@ -16,8 +20,14 @@
     </div>
     <div class="connection">
         <ul>
+            <li class="button"><a class="whitelink" href='<?php
+                if($_SESSION['status']=="user"){
+                    echo 'index.php?action=userprofile';
+                }else if ($_SESSION['status']=="admin"){
+                    echo 'index.php?action=adminprofile';
+                }
+            ?>'>Mon compte</a></li>
             <li class="button"><a class="whitelink" href="index.php?action=chat">Messagerie</a></li>
-            <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
         </ul>
     </div>
 </header>
@@ -36,17 +46,17 @@
                 </form>
 
                 <div>
-                <?php
-                    if(isset($thesearchwasdone)){
-                        while($stmt->fetch()) {
-                            echo nl2br('<div class="barre">');
-                            echo nl2br('<ul class="usercard">');
-                            echo nl2br('<li class="usercard_title">'.$firstn.' '.$lastn.'</li>');
-                            echo nl2br('<li class="usercard_data">Email : '.$email.'</li>');
-                            echo nl2br('</ul>');
-                            echo nl2br('</a></div>');
+                <?php if(isset($thesearchwasdone)){
+                        while($stmt->fetch()) {?>
+                            <div class="barre">
+                                <ul class="usercard">
+                                    <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
+                                    <li class="usercard_data">Email : <?=$email?></li>
+                                </ul>
+                            </a>
+                            </div>
                                 
-                        }
+                        <?php }
                     }
                     ?>
                 </div>
