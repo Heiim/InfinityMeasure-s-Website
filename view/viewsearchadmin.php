@@ -27,7 +27,7 @@
         <div>
             <div class="barre">
             <h2>Recherche Administrateur</h2>
-                <form method="GET">
+                <form action="index.php?action=searchmadmin" method="GET">
                     
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />

@@ -457,6 +457,21 @@ function sendMessage()
     require('model/sendmessage.php');
 }
 
+function showsearchuser()
+{ 
+    require('view/viewsearchuser.php');
+}
+
+function showsearchmanager()
+{ 
+    require('view/viewsearchmanager.php');
+}
+
+function showsearchadmin()
+{
+    require('view/viewsearchadmin.php');
+}
+
 function searchuser()
 {
     require('model/searchuser.php');

@@ -27,7 +27,7 @@
         <div>
             <div class="barre">
             <h2>Recherche Gestionnaire</h2>
-                <form method="GET">
+                <form action="index.php?action=searchmanager" method="GET">
                 
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
