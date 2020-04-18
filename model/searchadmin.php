@@ -6,6 +6,8 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'quirky';
 
+$thesearchwasdone = true;
+
 if(isset($_GET['prenom']) AND !empty($_GET['prenom'])) {
     $prenom = htmlspecialchars($_GET['prenom']);
     $prenom_user = $prenom;
@@ -38,17 +40,6 @@ $stmt->bind_result($idaccount, $firstn, $lastn, $email);
 //$stmt->bind_result($idaccount, $firstn, $lastn, $email, $idadmin, $idmanager);
 
 ?>
-
-<?php while($stmt->fetch()) {?>
-    
-    
-    <div class="barre"><a href="">
-        <ul class="usercard">
-            <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
-            <li class="usercard_data">Email : <?=$email?></li>
-        </ul>
-    </a></div>
-<?php } ?>
 
 
 

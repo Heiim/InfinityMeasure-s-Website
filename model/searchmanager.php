@@ -6,6 +6,8 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'quirky';
 
+$thesearchwasdone = true;
+
 $idadmin1 = 'idadmin';
 $idmanager1 = 'idmanager';
 $iduser1 = 'iduser';
@@ -48,18 +50,6 @@ $stmt->bind_result($idaccount, $firstn, $lastn, $email, $company_code);
 //$stmt->bind_result($idaccount, $firstn, $lastn, $email, $idadmin, $idmanager);
 
 ?>
-
-<?php while($stmt->fetch()) {?>
-    
-    
-    <div class="barre"><a href="">
-        <ul class="usercard">
-            <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
-            <li class="usercard_data">Email : <?=$email?></li>
-            <li class="usercard_data">Compagnie : <?=$company_code?></li>
-        </ul>
-    </a></div>
-<?php } ?>
 
 
 

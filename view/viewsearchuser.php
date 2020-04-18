@@ -27,7 +27,7 @@
         <div>
             <div class="barre">
             <h2>Recherche Utilisateur</h2>
-                <form action="index.php?action=searchuser" method="GET">
+                <form action="index.php?action=searchuser" method="POST">
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
                     <input type="search" name="poids" placeholder="Poids" />
@@ -44,8 +44,20 @@
                 </form>
 
                 <div>
-
-                    <?php include 'model/searchuser.php';?>
+                    <?php
+                    if(isset($thesearchwasdone)){
+                        while($stmt->fetch()) {
+                            echo nl2br('<div class="barre"><a href="getprofilS.php?iduser='.$idaccount.'">');
+                            echo nl2br('<ul class="usercard">');
+                            echo nl2br('<li class="usercard_title">'.$firstn.' '.$lastn.'</li>');
+                            echo nl2br('<li class="usercard_data">Email : '.$email.'</li>');
+                            echo nl2br('<li class="usercard_data">Compagnie : '.$company_code.'</li>');
+                            echo nl2br('</ul>');
+                            echo nl2br('</a></div>');
+                                
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="push"></div>
 
