@@ -20,7 +20,10 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
             $uniqid = uniqid();
             $token = uniqid();
             
-            $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $_POST['firstn'],$_POST['lastn'], $token);
+            $firstn=ucfirst(strtolower($_POST['firstn']));
+            $lastn=ucfirst(strtolower($_POST['lastn']));
+
+            $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $firstn, $lastn, $token);
             $stmt->execute();
 
 

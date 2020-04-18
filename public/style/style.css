@@ -508,7 +508,6 @@ input[type=search]:hover {
     border-radius: 50px;
     height: 100px;
     float: left;
-    text-transform: capitalize;
     min-width: 250px;
     max-width: 350px;
 }
