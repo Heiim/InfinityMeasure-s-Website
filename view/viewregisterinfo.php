@@ -16,16 +16,14 @@
 </header>
 
 <body>
-    <div class="wrapper">
         <div>
             <div class="clearing messagecontainer">
                 <p class="message"><?php echo $messagedisp ?></p>
             </div>
-            <div class="push"></div>
+
             <?php include("viewfooterShort.php") ?>
 
          </div>
-     </div>
 </body>
 
 </html>

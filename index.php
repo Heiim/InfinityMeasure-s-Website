@@ -105,7 +105,11 @@ if (isset($_GET['action'])) {
     case "searchadmin":
         searchadmin();
         break;
+    case "cgu":
+        cgu();
+    break;
     }
+    
 
 }
 else {

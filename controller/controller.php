@@ -489,3 +489,8 @@ function searchadmin()
     require('model/searchadmin.php');
     require('view/viewsearchadmin.php');
 }
+
+function cgu()
+{
+    require('view/viewcgu.php');
+}
