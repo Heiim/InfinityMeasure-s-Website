@@ -21,7 +21,7 @@
             <div class="clearing messagecontainer">
                 <p class="message"><?php echo $message ?></p>
             </div>
-	        <div class="button"><a class="whitelink" href="index.php">Connexion</a></div>
+	        <div class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></div>
             <div class="push"></div>
             <?php include("viewfooterShort.php") ?>
         </div>
