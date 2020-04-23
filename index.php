@@ -108,6 +108,13 @@ if (isset($_GET['action'])) {
     case "cgu":
         cgu();
     break;
+    case "forum":
+        forum();
+    break;
+    case "viewtopic":
+        viewTopic();
+    break;
+
     }
     
 

@@ -1,0 +1,77 @@
+.topicscontainer {
+    margin: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    height: 400px;
+    overflow: auto;
+}
+
+.topic {
+    border: 2px solid lightgrey;
+    padding-left: 30px;
+    padding-top: 25px;
+    height: 60px;
+    width: 95%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.topic .name {
+    font-size: x-large;
+    float: left;
+}
+
+.topic .date {
+    font-size: large;
+    float: right;
+    color: grey;
+    margin-right: 30px;
+    margin-top: 4px;
+}
+
+.postscontainer {
+    margin: 50px;
+    margin-left: 110px;
+    margin-right: 110px;
+}
+
+.postcontainer {
+    width: 98%;
+    height: 160px;
+    margin: auto;
+    border: 2px solid lightgrey;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.userinfo {
+    width: 12%;
+    height: 160px;
+    float: left;
+}
+
+.post {
+    padding-left: 10px;
+    margin-left: 12%;
+    height: 160px;
+    border-left: 2px solid lightgrey;
+}
+
+.username {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-right: 9px;
+}
+
+.content {
+    display: block;
+}
+
+.postdate {
+    font-size: 14px;
+    color: grey;
+    display: block;
+    margin-bottom: 5px;
+}
