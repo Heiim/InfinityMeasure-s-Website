@@ -494,3 +494,15 @@ function cgu()
 {
     require('view/viewcgu.php');
 }
+
+function forum()
+{
+    require('model/gettopics.php');
+    require('view/viewforum.php');
+}
+
+function viewTopic()
+{
+    require('model/gettopic.php');
+    require('view/viewtopic.php');
+}
