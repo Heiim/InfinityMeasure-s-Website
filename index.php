@@ -114,6 +114,10 @@ if (isset($_GET['action'])) {
     case "viewtopic":
         viewTopic();
     break;
+    case "newtopic":
+        newTopic();
+    break;
+
 
     }
     
