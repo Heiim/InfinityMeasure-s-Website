@@ -497,6 +497,13 @@ function cgu()
 
 function forum()
 {
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    }
+
     require('model/gettopics.php');
     require('view/viewforum.php');
 }
@@ -505,4 +512,49 @@ function viewTopic()
 {
     require('model/gettopic.php');
     require('view/viewtopic.php');
+}
+
+function newTopic()
+{
+
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    }
+
+    $validation=true;
+
+    // On vérifie que tout est bien récupéré par le serveur
+    if (!isset($_POST['title'],$_POST['content'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+    // On vérifie que tout est rempli
+    if ( empty($_POST['title']) || empty($_POST['content'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+
+
+    if (strlen($_POST['title']) > 70 || strlen($_POST['title']) < 1) {
+        $messagedisp ='Erreur: Le titre doit faire entre 1 et 70 caractères.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['content']) > 1000 || strlen($_POST['content']) < 1) {
+        $messagedisp ='Erreur: Le post doit faire entre 1 et 1000 caractères.';
+        $validation=false;
+    }
+
+    //si pas d'erreur
+    if ($validation){
+        require('model/newtopic.php');
+        header('Location: index.php?action=viewtopic&id='.$idtopic);
+        exit();
+    } else {
+        header('Location: index.php?action=forum&error='.$messagedisp);
+        exit();
+    }
 }

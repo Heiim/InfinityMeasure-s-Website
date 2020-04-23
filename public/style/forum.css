@@ -3,7 +3,6 @@
     margin-left: 150px;
     margin-right: 150px;
     height: 400px;
-    overflow: auto;
 }
 
 .topic {
@@ -27,6 +26,12 @@
     color: grey;
     margin-right: 30px;
     margin-top: 4px;
+}
+
+.topicwrapper {
+    height: 450px;
+    overflow: auto;
+    padding-right: 10px;
 }
 
 .postscontainer {
@@ -74,4 +79,35 @@
     color: grey;
     display: block;
     margin-bottom: 5px;
+}
+
+.textareatopic {
+    margin-top: 15px;
+    padding: 1px 1px 1px 1px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-size: 17px;
+    padding-left: 3px;
+    resize: none;
+}
+
+input[type=textarea]:focus {
+    outline: 0;
+}
+
+.titleinput {
+    width: 500px;
+    height: 25px;
+    margin: 4px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size: large;
+    outline: none;
+    padding-left: 3px;
+}
+
+.goodsize {
+    font-size: 25px;
 }
