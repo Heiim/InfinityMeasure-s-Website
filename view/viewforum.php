@@ -27,9 +27,9 @@
 	<body>
         <div class="topicscontainer">
             <div class="topicwrapper">
-                <?php for ($i = 0; $i < count($dates); $i++) {?>
+                <?php for ($i = 0; $i < count($dates); $i++) {?> <?php if (($_SESSION['status']=="admin") && ($status[$i]=="open"))  {?> <div style="float: right; padding-top:23px; padding-left:10px;"><a class="closebutton" href="index.php?action=closetopic&id=<?=$idtopics[$i]?>">fermer</a></div><?php } ?>
                     <a href="index.php?action=viewtopic&id=<?= $idtopics[$i] ?>">
-                        <div class="topic">
+                        <div <?php if ($_SESSION['status']=="admin") {?> style= "width: 88%;" <?php } else { ?> style= "width: 95%;" <?php }?> class="topic">
                             <span class="name"><?= $titles[$i]?></span>
                 <span class="date"> <?php if ($status[$i]=="open") {?> <img class="lockimage" src="public/images/open.png" width=25px height=25px><?php } else { ?> <img class="lockimage" src="public/images/close.png" width=25px height=25px><?php }?> <div style="float: right; padding-top: 3px;"> Dernier message : <?= $dates[$i]?> </div></span>
                         </div>
@@ -44,10 +44,10 @@
                     </div>
                     <div style="margin-top: 7px;">
                         <label style="font-size: 18px;" for="title">Titre : </label>
-                        <input class="titleinput" name="title" id="title" required>
+                        <input class="titleinput" name="title" id="title" maxlength="45" required>
                     </div>
                     <div>
-                    <textarea class="textareatopic" rows="6" cols="154" wrap="hard" name="content" id="content" required></textarea> 
+                    <textarea class="textareatopic" rows="6" cols="154" wrap="hard" name="content" id="content" maxlength="900" required></textarea> 
                     </div>
                     <input type="submit" value="Envoyer"> <span class="passworderrorlogin"><?php if(isset($_GET['error'])) echo $_GET['error']; ?></span>
                 </form>
