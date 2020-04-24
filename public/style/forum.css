@@ -25,7 +25,6 @@
     float: right;
     color: grey;
     margin-right: 30px;
-    margin-top: 4px;
 }
 
 .topicwrapper {
@@ -110,4 +109,14 @@
 
 .goodsize {
     font-size: 25px;
+}
+
+.closednotice {
+    padding-top: 25px;
+    padding-left: 425px;
+    color: red;
+}
+
+.lockimage {
+    padding-right: 15px;
 }
