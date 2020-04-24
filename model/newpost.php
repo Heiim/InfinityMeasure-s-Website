@@ -6,8 +6,9 @@ $sql = "INSERT INTO posts (idtopic, idaccount, content) VALUES (?, ?, ?)";
 // Prepare statement
 $stmt = $con->prepare($sql);
 
+$contentToStore = nl2br(htmlentities($_POST['content'], ENT_QUOTES, 'UTF-8'));
 
-$stmt->bind_param('iis',$_POST['idtopic'],$_SESSION['id'],$_POST['content']);
+$stmt->bind_param('iis',$_POST['idtopic'],$_SESSION['id'],$contentToStore);
 
 $stmt->execute();
 $stmt->close();
