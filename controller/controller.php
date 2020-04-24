@@ -621,7 +621,7 @@ function closeTopic()
     }
 }
 
-function deleteTopic()
+function deletePost()
 {
     session_start();
 
@@ -629,8 +629,8 @@ function deleteTopic()
         header('Location: index.php?action=login');
         exit();
     } else if ($_SESSION['status']=="admin") {
-        require('model/deletetopic.php');
-        header('Location: index.php?action=forum');
+        require('model/deletepost.php');
+        header('Location: index.php?action=viewtopic&id='.$_GET['idtopic']);
         exit();
     } else {
         header('Location: index.php');

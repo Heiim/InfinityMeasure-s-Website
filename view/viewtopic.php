@@ -38,7 +38,7 @@
                         <span class="username"><?= $idsolver[$idaccounts[$i]]?></span>
                     </div>
                     <div class="post">
-                        <span class="postdate">Le <?= $thedate[0]?> à <?= $thedate[1]?> :</span>
+                        <span class="postdate">Le <?= $thedate[0]?> à <?= $thedate[1]?> : <?php if ($_SESSION['status']=="admin")  {?><a style="margin-left: 850px; color: red;" href="index.php?action=deletepost&id=<?=$idposts[$i]?>&idtopic=<?=$_GET['id']?>">Supprimer</a> <?php } ?> </span>
                         <span class="content" ><?= $contents[$i]?></span>
                     </div>
                 </div>
