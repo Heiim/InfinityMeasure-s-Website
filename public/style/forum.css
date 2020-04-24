@@ -93,7 +93,7 @@
     resize: none;
 }
 
-input[type=textarea]:focus {
+.textareatopic:focus {
     outline: 0;
 }
 
