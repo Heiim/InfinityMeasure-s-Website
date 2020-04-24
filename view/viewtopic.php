@@ -42,97 +42,101 @@
                     </div>
                 </div>
             <?php } ?>
-            <div>
-                <form style="margin-top:50px; margin-bottom: 30px; margin-left: 70px" action="index.php?action=newpost" method="post" autocomplete="off">
-                    <div>
-                        <label class="goodsize" for="content">Nouveau message : </label>
-                        <input type="text" name="idtopic" id="idtopic" hidden="hidden" value=<?=$_GET['id']?> required>
-                    </div>
-                    <div>
-                    <textarea class="textareatopic" rows="6" cols="154" wrap="hard" name="content" id="content" required></textarea> 
-                    </div>
-                    <input type="submit" value="Envoyer"> <span class="passworderrorlogin"><?php if(isset($_GET['error'])) echo $_GET['error']; ?></span>
-                </form>
-                <script>
-                // code from https://stackoverflow.com/a/557227/12982078
-                
-                    var lines = 1;
+            <?php if ($status == "open" ) { ?>
+                <div>
+                    <form style="margin-top:50px; margin-bottom: 30px; margin-left: 70px" action="index.php?action=newpost" method="post" autocomplete="off">
+                        <div>
+                            <label class="goodsize" for="content">Nouveau message : </label>
+                            <input type="text" name="idtopic" id="idtopic" hidden="hidden" value=<?=$_GET['id']?> required>
+                        </div>
+                        <div>
+                        <textarea class="textareatopic" rows="6" cols="154" wrap="hard" name="content" id="content" required></textarea> 
+                        </div>
+                        <input type="submit" value="Envoyer"> <span class="passworderrorlogin"><?php if(isset($_GET['error'])) echo $_GET['error']; ?></span>
+                    </form>
+                    <script>
+                    // code from https://stackoverflow.com/a/557227/12982078
+                    
+                        var lines = 1;
 
-                    function getKeyNum(e) {
-                        var keynum;
-                        // IE
-                        if (window.event) {
-                            keynum = e.keyCode;
-                            // Netscape/Firefox/Opera
-                        } else if (e.which) {
-                            keynum = e.which;
-                        }
-
-                        return keynum;
-                    }
-
-                    var limitLines = function (e) {
-                        var keynum = getKeyNum(e);
-
-                        if (keynum === 13) {
-                            if (lines >= this.rows) {
-                                e.stopPropagation();
-                                e.preventDefault();
-                            } else {
-                                lines++;
+                        function getKeyNum(e) {
+                            var keynum;
+                            // IE
+                            if (window.event) {
+                                keynum = e.keyCode;
+                                // Netscape/Firefox/Opera
+                            } else if (e.which) {
+                                keynum = e.which;
                             }
-                        }
-                    };
 
-                    var setNumberOfLines = function (e) {
-                        lines = getNumberOfLines(this.value);
-                    };
-
-                    var limitPaste = function (e) {
-                        var clipboardData, pastedData;
-
-                        // Stop data actually being pasted into div
-                        e.stopPropagation();
-                        e.preventDefault();
-
-                        // Get pasted data via clipboard API
-                        clipboardData = e.clipboardData || window.clipboardData;
-                        pastedData = clipboardData.getData('Text');
-
-                        var pastedLines = getNumberOfLines(pastedData);
-
-                        // Do whatever with pasteddata
-                        if (pastedLines <= this.rows) {
-                            lines = pastedLines;
-                            this.value = pastedData;
-                        }
-                        else if (pastedLines > this.rows) {
-                            // alert("Too many lines pasted ");
-                            this.value = pastedData
-                                .split(/\r\n|\r|\n/)
-                                .slice(0, this.rows)
-                                .join("\n ");
-                        }
-                    };
-
-                    function getNumberOfLines(str) {
-                        if (str) {
-                            return str.split(/\r\n|\r|\n/).length;
+                            return keynum;
                         }
 
-                        return 1;
-                    }
+                        var limitLines = function (e) {
+                            var keynum = getKeyNum(e);
 
-                    var limitedElements = document.getElementsByClassName('textareatopic');
+                            if (keynum === 13) {
+                                if (lines >= this.rows) {
+                                    e.stopPropagation();
+                                    e.preventDefault();
+                                } else {
+                                    lines++;
+                                }
+                            }
+                        };
 
-                    Array.from(limitedElements).forEach(function (element) {
-                        element.addEventListener('keydown', limitLines);
-                        element.addEventListener('keyup', setNumberOfLines);
-                        element.addEventListener('cut', setNumberOfLines);
-                        element.addEventListener('paste', limitPaste);
-                    });
-                </script>
-            </div>
+                        var setNumberOfLines = function (e) {
+                            lines = getNumberOfLines(this.value);
+                        };
+
+                        var limitPaste = function (e) {
+                            var clipboardData, pastedData;
+
+                            // Stop data actually being pasted into div
+                            e.stopPropagation();
+                            e.preventDefault();
+
+                            // Get pasted data via clipboard API
+                            clipboardData = e.clipboardData || window.clipboardData;
+                            pastedData = clipboardData.getData('Text');
+
+                            var pastedLines = getNumberOfLines(pastedData);
+
+                            // Do whatever with pasteddata
+                            if (pastedLines <= this.rows) {
+                                lines = pastedLines;
+                                this.value = pastedData;
+                            }
+                            else if (pastedLines > this.rows) {
+                                // alert("Too many lines pasted ");
+                                this.value = pastedData
+                                    .split(/\r\n|\r|\n/)
+                                    .slice(0, this.rows)
+                                    .join("\n ");
+                            }
+                        };
+
+                        function getNumberOfLines(str) {
+                            if (str) {
+                                return str.split(/\r\n|\r|\n/).length;
+                            }
+
+                            return 1;
+                        }
+
+                        var limitedElements = document.getElementsByClassName('textareatopic');
+
+                        Array.from(limitedElements).forEach(function (element) {
+                            element.addEventListener('keydown', limitLines);
+                            element.addEventListener('keyup', setNumberOfLines);
+                            element.addEventListener('cut', setNumberOfLines);
+                            element.addEventListener('paste', limitPaste);
+                        });
+                    </script>
+                </div>
+            <?php } else { ?>
+                <div class="closednotice"><h3> Ce sujet est clos, vous ne pouvez plus y répondre</h3></div>
+            <?php }?>
         </div>
     </body>
     
