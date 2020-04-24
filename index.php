@@ -117,6 +117,9 @@ if (isset($_GET['action'])) {
     case "newtopic":
         newTopic();
     break;
+    case "newpost":
+        newPost();
+    break;
 
 
     }

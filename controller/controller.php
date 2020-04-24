@@ -558,3 +558,41 @@ function newTopic()
         exit();
     }
 }
+
+function newPost()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    }
+
+    $validation=true;
+
+    // On vérifie que tout est bien récupéré par le serveur
+    if (!isset($_POST['content'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+    // On vérifie que tout est rempli
+    if ( empty($_POST['content'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['content']) > 1000 || strlen($_POST['content']) < 1) {
+        $messagedisp ='Erreur: Le post doit faire entre 1 et 1000 caractères.';
+        $validation=false;
+    }
+
+    //si pas d'erreur
+    if ($validation){
+        require('model/newpost.php');
+        header('Location: index.php?action=viewtopic&id='.$_POST['idtopic']);
+        exit();
+    } else {
+        header('Location: index.php?action=viewtopic&id='.$_POST['idtopic'].'&error='.$messagedisp);
+        exit();
+    }
+}

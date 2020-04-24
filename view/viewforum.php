@@ -52,6 +52,8 @@
                     <input type="submit" value="Envoyer"> <span class="passworderrorlogin"><?php if(isset($_GET['error'])) echo $_GET['error']; ?></span>
                 </form>
                 <script>
+                // code from https://stackoverflow.com/a/557227/12982078
+                
                     var lines = 1;
 
                     function getKeyNum(e) {
