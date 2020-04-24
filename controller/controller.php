@@ -621,6 +621,24 @@ function closeTopic()
     }
 }
 
+
+function deleteTopic()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/deletetopic.php');
+        header('Location: index.php?action=forum');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
 function deletePost()
 {
     session_start();
