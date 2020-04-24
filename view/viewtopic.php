@@ -26,8 +26,9 @@
 	<body>
         <ul>
             <li class="button"><a class="whitelink" href="index.php?action=forum">Retour au forum</a></li>
-        </ul>
-        <h1 style="margin-left: 75px;"><?= $title ?></h5>
+            <?php if ($_SESSION['status']=="admin")  {?> <div style=" float: left; padding-top:20px; padding-left:10px; padding-right:20px;"><a class="closebutton" href="index.php?action=deletetopic&id=<?=$_GET['id']?>">Supprimer le sujet</a></div><?php } ?> 
+        </ul> 
+        <h1 style="margin-left: 75px;"><?= $title ?></h5> 
         <div class="postscontainer">
             <?php for ($i = 0; $i < count($idposts); $i++) {
                 $thedate = explode(" ", $dates[$i]);?>

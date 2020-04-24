@@ -123,6 +123,9 @@ if (isset($_GET['action'])) {
     case "closetopic":
         closeTopic();
     break;
+    case "deletetopic":
+        deleteTopic();
+    break;
 
     }
     

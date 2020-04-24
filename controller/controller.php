@@ -510,6 +510,13 @@ function forum()
 
 function viewTopic()
 {
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    }
+
     require('model/gettopic.php');
     require('view/viewtopic.php');
 }
@@ -606,6 +613,23 @@ function closeTopic()
         exit();
     } else if ($_SESSION['status']=="admin") {
         require('model/closetopic.php');
+        header('Location: index.php?action=forum');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function deleteTopic()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/deletetopic.php');
         header('Location: index.php?action=forum');
         exit();
     } else {
