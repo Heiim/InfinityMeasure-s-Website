@@ -538,13 +538,13 @@ function newTopic()
     }
 
 
-    if (strlen($_POST['title']) > 70 || strlen($_POST['title']) < 1) {
-        $messagedisp ='Erreur: Le titre doit faire entre 1 et 70 caractères.';
+    if (strlen($_POST['title']) > 45 || strlen($_POST['title']) < 1) {
+        $messagedisp ='Erreur: Le titre doit faire entre 1 et 45 caractères.';
         $validation=false;
     }
 
-    if (strlen($_POST['content']) > 1000 || strlen($_POST['content']) < 1) {
-        $messagedisp ='Erreur: Le post doit faire entre 1 et 1000 caractères.';
+    if (strlen($_POST['content']) > 900 || strlen($_POST['content']) < 1) {
+        $messagedisp ='Erreur: Le post doit faire entre 1 et 900 caractères.';
         $validation=false;
     }
 
@@ -581,8 +581,8 @@ function newPost()
         $validation=false;
     }
 
-    if (strlen($_POST['content']) > 1000 || strlen($_POST['content']) < 1) {
-        $messagedisp ='Erreur: Le post doit faire entre 1 et 1000 caractères.';
+    if (strlen($_POST['content']) > 900|| strlen($_POST['content']) < 1) {
+        $messagedisp ='Erreur: Le post doit faire entre 1 et 900 caractères.';
         $validation=false;
     }
 
@@ -593,6 +593,23 @@ function newPost()
         exit();
     } else {
         header('Location: index.php?action=viewtopic&id='.$_POST['idtopic'].'&error='.$messagedisp);
+        exit();
+    }
+}
+
+function closeTopic()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/closetopic.php');
+        header('Location: index.php?action=forum');
+        exit();
+    } else {
+        header('Location: index.php');
         exit();
     }
 }

@@ -120,7 +120,9 @@ if (isset($_GET['action'])) {
     case "newpost":
         newPost();
     break;
-
+    case "closetopic":
+        closeTopic();
+    break;
 
     }
     

@@ -10,7 +10,6 @@
     padding-left: 30px;
     padding-top: 25px;
     height: 60px;
-    width: 95%;
     margin-bottom: 20px;
     border-radius: 5px;
 }
@@ -119,4 +118,16 @@
 
 .lockimage {
     padding-right: 15px;
+}
+
+.closebutton {
+    color: white;
+    font-weight: 300;
+    background-color: red;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 90px;
 }
