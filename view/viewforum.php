@@ -11,7 +11,11 @@
     <header>
         <div>
             <div class="logo">
+<<<<<<< HEAD
                 <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+=======
+                <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
+>>>>>>> a2160d9e3c7af5ad492584072c2248d355482748
             </div>
             <p class="name">Infinite Measures</p>
             </a>
@@ -31,7 +35,11 @@
                     <a href="index.php?action=viewtopic&id=<?= $idtopics[$i] ?>">
                         <div class="topic">
                             <span class="name"><?= $titles[$i]?></span>
+<<<<<<< HEAD
                             <span class="date">Dernier message : <?= $dates[$i]?></span>
+=======
+                <span class="date"> <?php if ($status[$i]=="open") {?> <img class="lockimage" src="public/images/open.png" width=25px height=25px><?php } else { ?> <img class="lockimage" src="public/images/close.png" width=25px height=25px><?php }?> <div style="float: right; padding-top: 3px;"> Dernier message : <?= $dates[$i]?> </div></span>
+>>>>>>> a2160d9e3c7af5ad492584072c2248d355482748
                         </div>
                     </a>
                 <?php } ?>
