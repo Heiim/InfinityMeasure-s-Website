@@ -14,23 +14,17 @@
         <p class="name">Infinite Measures</p>
         </a>
     </div>
-    <div class="connection">
-        <ul>
-            <li class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></li>
-            <li class="button"><a class="whitelink" href="index.php?action=register">Créer un compte</a></li>
-        </ul>
-    </div>
 </header>
 
 <body>
     <div class="wrapper">
         <div>
             <div class="clearing registerformcontainer">
+                <h1 style="margin-left:335px;" class="pageinfoh1">Créer un compte administrateur</h1>
                 <div class="registerform">
-                    <h1 class="pageinfoh1">Créer un compte</h1>
                     <script src="public/scripts/formscript.js"></script>
                     <script src="public/scripts/passlength.js"></script>
-                    <form action="index.php?action=doregister" method="post" autocomplete="off">
+                    <form action="index.php?action=doadminregister" method="post" autocomplete="off">
                         <div>
                             <label for="lastn">Nom</label>
                             <input type="text" name="lastn" id="lastn" required>
@@ -40,12 +34,8 @@
                             <input type="text" name="firstn" id="firstn" required>
                         </div>
                         <div>
-                            <label for="birthday">Date de naissance </label>
-                            <input type="date" name="birthday" id="birthday" required>
-                        </div>
-                        <div>
                             <label for="email">Adresse email </label>
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" id="email" value="<?=$_GET['email']?>" required>
                         </div>
                         <div>
                             <label for="password">Mot de passe </label>
@@ -56,24 +46,11 @@
                             <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required><span class="passworderror" id='passworderror'></span><span class="passworderror" id='passwordlength'></span>
                         </div>
                         <div>
-                            <label for="size">Taille </label>
-                            <input type="number" name="height" id="height" placeholder="cm" required>
-
-                            <label for="size">Poids </label>
-                            <input type="number" name="weight" id="weight" placeholder="kg" required>
-                        </div>
-                        <div>
-                            <label>Genre</label>
-                            <input type="radio" name="gender" value="Homme" required />
-                            <label for="homme">Homme</label>
-                            <input type="radio" name="gender" value="Femme" />
-                            <label for="femme">Femme</label>
-                            <input type="radio" name="gender" value="Autre" />
-                            <label for="autre">Autre</label>
-                        </div>
-                        <div>
                             <label for="cgu">J'ai lu et j'accepte les <a style="color: blue;" href="index.php?action=cgu">CGU</a> </label>
                             <input type="checkbox" name="cgu" value="cgu" required>
+                        </div>
+                        <div>
+                            <input type="hidden" name="token" id="token" value="<?=$_GET['token']?>" required>
                         </div>
                         <div>
                             <input type="submit" value="S'inscrire">
@@ -83,7 +60,7 @@
 
                 <div class="push"></div>
 
-                <?php include("viewfooterLong.php") ?>
+                <?php include(__DIR__."/../viewfooterLong.php") ?>
             </div>
         </div>
     </div>

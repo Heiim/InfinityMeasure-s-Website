@@ -21,6 +21,16 @@
                 <p class="message"><?php echo $messagedisp ?></p>
             </div>
 
+            <?php if (isset($profilebutton)) { ?>
+                <div style="margin-left:670px;" class="button"><a class="whitelink" href="index.php?action=login">Retour au profil</a></div>
+            <?php }?>
+
+            <?php include("viewfooterShort.php") ?>
+
+            <?php if (isset($loginbutton)) { ?>
+                <div style="margin-left:685px;" class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></div>
+            <?php }?>
+
             <?php include("viewfooterShort.php") ?>
 
          </div>

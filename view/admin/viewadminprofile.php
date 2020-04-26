@@ -68,6 +68,9 @@
                             <ul>
                                 <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=editadminprofile">Editer mon profile</a></li>
                             </ul>
+                            <ul>
+                                <li style="clear: both;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=admininvite">Créer un nouveau profile administrateur</a></li>
+                            </ul>
                     </div>
                     <div class="imagecontainer">
                         <img class="profileimage" src="../<?=$picture?>" height=200px>
@@ -82,7 +85,7 @@
                 <div class="push"></div>
                 <?php include(__DIR__."/../viewfooterLong.php") ?>
             </div>
-         </div>
+        </div>
     </body>
     
 </html>

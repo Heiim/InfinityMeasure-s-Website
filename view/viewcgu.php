@@ -25,7 +25,7 @@
 <body>
     <div class="wrapper">
         <div>
-            <h1 class="titletext">CGU</h1>
+            <h1 class="titletext">Conditions générales d'utilisation</h1>
             <h2 class="titletext">Article 1 : Objet</h2>
             <p>
                 Les présentes CGUs ou Conditions Générales d’Utilisation encadrent juridiquement l’utilisation des services du site InfiniteMeasures (ci-après dénommé « le site »).

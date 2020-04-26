@@ -129,6 +129,19 @@ if (isset($_GET['action'])) {
     case "deletepost":
         deletePost();
     break;
+    case "admininvite":
+        adminInvite();
+    break;
+    case "sendadmininvite":
+        sendAdminInvite();
+    break;
+    case "adminregister":
+        adminRegister();
+    break;
+    case "doadminregister":
+        doAdminRegister();
+    break;
+    
 
     }
     
