@@ -655,3 +655,86 @@ function deletePost()
         exit();
     }
 }
+
+function adminInvite()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('view/admin/viewinviteadmin.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function sendAdminInvite()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/sendadmininvite.php');
+        require('view/viewregisterinfo.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function adminRegister()
+{
+    require('view/admin/viewadminregister.php');
+}
+
+function doAdminRegister()
+{
+    $validation=true;
+    // On vérifie que tout est bien récupéré par le serveur
+    if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['confirmpassword'],$_POST['token'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+    // On vérifie que tout est rempli
+    if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['token'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $messagedisp ='Erreur: Email invalide.';
+        $validation=false;
+    }
+
+    if ($_POST['password'] !== $_POST['confirmpassword']) {
+        $messagedisp ='Erreur: Les mots de passes ne correspondent pas';
+        $validation=false;
+    }
+
+    if (strlen($_POST['password']) > 30 || strlen($_POST['password']) < 8) {
+        $messagedisp ='Erreur: Le mot de passe doit faire entre 8 et 30 caractères.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['lastn']) > 30 || strlen($_POST['lastn']) < 1) {
+        $messagedisp ='Erreur: Le nom doit faire entre 1 et 30 caractères.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['firstn']) > 30 || strlen($_POST['firstn']) < 1) {
+        $messagedisp ='Erreur: Le prénom doit faire entre 1 et 30 caractères.';
+        $validation=false;
+    }
+
+    if ($validation){
+        require('model/registeradmin.php');
+    }
+    require('view/viewregisterinfo.php');
+}
