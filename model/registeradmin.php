@@ -51,6 +51,11 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
                 $stmt3->execute();
                 $stmt3->close();
 
+                //on delete le jeton
+                $stmtd = $con->prepare('DELETE FROM admintokens WHERE email=?');
+                $stmtd->bind_param('s', $_POST['email']);
+                $stmtd->execute();
+
                 $messagedisp = 'Inscription réussite, vous pouvez vous connecter';
 
             } else {
