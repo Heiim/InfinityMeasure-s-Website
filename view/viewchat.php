@@ -16,13 +16,7 @@
 </div>
 <div class="connection">
     <ul>
-        <li class="button"><a class="whitelink" href='<?php
-            if($_SESSION['status']=="user"){
-                echo 'index.php?action=userprofile';
-            }else if ($_SESSION['status']=="admin"){
-                echo 'index.php?action=adminprofile';
-            }
-        ?>'>Mon compte</a></li>
+        <li class="button"><a class="whitelink" href='index.php?action=login'>Mon compte</a></li>
         <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
     </ul>
 </div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="public/style/style.css">
+        <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
+    </head>
+
+    <header>
+    <div>
+        <div class="logo">
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+        </div>
+        <p class="name">Infinite Measures</p>
+        </a>
+    </div>
+    <div class="connection">
+        <ul>
+            <li class="button"><a class="whitelink" href="index.php?action=adminprofile">Retour au profil</a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
+        </ul>
+    </div>
+</header>
+
+<body>
+    <div class="wrapper">
+        <div>
+            <div class="clearing registerformcontainer">
+            <h1 style="margin-left: 200px; margin-top: 50px; margin-bottom: 60px;" class="pageinfoh1">Nouveau profil administrateur</h1>
+                <div class="registerform">
+                    <form action="index.php?action=sendmanagerinvite" method="post" autocomplete="off">
+                        <div>
+                            <label for="email">Adresse email </label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <label for="company_code">Entreprise </label>
+                        <select id="company_code" name="company_code">
+                        <?php 
+                            for ($i = 0; $i < count($idscompany); $i++) {
+                                if ($ids[$i] != $_SESSION['id']) {
+                                    echo nl2br('<option value="'.$company_codes[$i].'">'.htmlspecialchars($names[$i]).'</option>');
+                                }
+                            }
+                        ?>
+                    </select>
+                        <div>
+                            <input type="submit" value="Envoyer l'invitation">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="push"></div>
+
+                <?php include(__DIR__."/../viewfooterShort.php") ?>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

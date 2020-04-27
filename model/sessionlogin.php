@@ -33,10 +33,22 @@ if ($stmt = $con->prepare('SELECT idaccount,firstn,lastn, password FROM accounts
                 //si dans la table admin c'est un admin
                 $_SESSION['status'] = "admin";
             } else {
+                $stmt2->close();
+
+                $stmt3 = $con->prepare('SELECT * FROM managers WHERE idmanager = ?');
+                $stmt3->bind_param('i', $_SESSION['id']);
+                $stmt3->execute();
+                $stmt3->store_result();
+
+                if ($stmt3->num_rows > 0) {
+                    //si dans la table manager c'est un manager
+                    $_SESSION['status'] = "manager";
+                } else {
                 //sinon user
                 $_SESSION['status'] = "user";
+                }
             }
-            //TODO gestionnaire aussi
+
             return;
         } else {
             $error='Mot%20de%20passe%20incorrect.';

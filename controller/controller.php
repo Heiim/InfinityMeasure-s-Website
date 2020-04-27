@@ -9,6 +9,9 @@ function logincheck()
         } else if ($_SESSION['status'] == "user") {
             header('Location: index.php?action=userprofile');
             exit();
+        } else if ($_SESSION['status'] == "manager") {
+            header('Location: index.php?action=managerprofile');
+            exit();
         }
     }
 }
@@ -45,6 +48,10 @@ function authenticate()
             session_destroy();
             userProfile();
         }
+        else if ($_SESSION['status']=='manager'){
+            session_destroy();
+            managerProfile();
+        }
     }
 
 }
@@ -72,6 +79,15 @@ function userProfile()
     require('model/getusersession.php');
     require('model/gettests.php');
     require('view/viewuserprofile.php');
+    exit;
+}
+
+function managerProfile()
+{
+    require('model/sessionlogin.php');
+    require('model/getaccountinfo.php');
+    require('model/getmanagersession.php');
+    require('view/manager/viewmanagerprofile.php');
     exit;
 }
 
@@ -191,6 +207,9 @@ function updateProfilePic()
     } else if ($_SESSION['status'] == "user") {
         header('Location: index.php?action=userprofile'.$uploadError);
         exit();
+    } else if ($_SESSION['status'] == "manager") {
+        header('Location: index.php?action=managerprofile'.$uploadError);
+        exit();
     }
     exit();
 }
@@ -289,6 +308,51 @@ function doEditAdminProfile()
 
     if ($validation){
         require('model/editadminprofile.php');
+    } else {
+        require('view/viewinfoedit.php');
+    }
+}
+
+function editManagerProfile()
+{
+    session_start();
+    require('model/getaccountinfo.php');
+    require('view/manager/viewprofileedit.php');
+}
+
+function doEditManagerProfile()
+{
+    $validation=true;
+
+    // On vérifie que tout est bien récupéré par le serveur
+    if (!isset($_POST['id'],$_POST['email'],$_POST['firstn'],$_POST['lastn'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+    // On vérifie que tout est rempli
+    if ( empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $messagedisp ='Erreur: Email invalide.';
+        $validation=false;
+    }
+
+
+    if (strlen($_POST['lastn']) > 30 || strlen($_POST['lastn']) < 1) {
+        $messagedisp ='Erreur: Le nom doit faire entre 1 et 30 caractères.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['firstn']) > 30 || strlen($_POST['firstn']) < 1) {
+        $messagedisp ='Erreur: Le prénom doit faire entre 1 et 30 caractères.';
+        $validation=false;
+    }
+
+    if ($validation){
+        require('model/editmanagerprofile.php');
     } else {
         require('view/viewinfoedit.php');
     }
@@ -792,4 +856,88 @@ function newCompanyCode()
         header('Location: index.php');
         exit();
     }
+}
+
+function managerInvite()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/getcompanycodes.php');
+        require('view/admin/viewinvitemanager.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function sendManagerInvite()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/sendmanagerinvite.php');
+        require('view/viewregisterinfo.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function managerRegister()
+{
+    require('view/manager/viewmanagerregister.php');
+}
+
+function doManagerRegister()
+{
+    $validation=true;
+    // On vérifie que tout est bien récupéré par le serveur
+    if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['confirmpassword'],$_POST['token'], $_POST['company_code'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+    // On vérifie que tout est rempli
+    if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['token']) || empty($_POST['company_code'])) {
+        $messagedisp ='Erreur: Veuillez remplir tous les champs.';
+        $validation=false;
+    }
+
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $messagedisp ='Erreur: Email invalide.';
+        $validation=false;
+    }
+
+    if ($_POST['password'] !== $_POST['confirmpassword']) {
+        $messagedisp ='Erreur: Les mots de passes ne correspondent pas';
+        $validation=false;
+    }
+
+    if (strlen($_POST['password']) > 30 || strlen($_POST['password']) < 8) {
+        $messagedisp ='Erreur: Le mot de passe doit faire entre 8 et 30 caractères.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['lastn']) > 30 || strlen($_POST['lastn']) < 1) {
+        $messagedisp ='Erreur: Le nom doit faire entre 1 et 30 caractères.';
+        $validation=false;
+    }
+
+    if (strlen($_POST['firstn']) > 30 || strlen($_POST['firstn']) < 1) {
+        $messagedisp ='Erreur: Le prénom doit faire entre 1 et 30 caractères.';
+        $validation=false;
+    }
+
+    if ($validation){
+        require('model/registermanager.php');
+    }
+    require('view/viewregisterinfo.php');
 }
