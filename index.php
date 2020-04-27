@@ -141,6 +141,12 @@ if (isset($_GET['action'])) {
     case "doadminregister":
         doAdminRegister();
     break;
+    case "managecompanycodes":
+        manageCompanyCodes();
+    break;
+    case "newcompanycode":
+        newCompanyCode();
+    break;
     
 
     }

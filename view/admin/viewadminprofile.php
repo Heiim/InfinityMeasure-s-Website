@@ -9,7 +9,7 @@
 <header>
     <div>
         <div class="logo">
-            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
@@ -25,7 +25,7 @@
 	<body>
         <div class="wrapper">
             <div>
-                <div class="clearing profilecontainer">
+                <div class="clearing adminprofilecontainer">
                     <h1 class="textfloatleft">Administrateur</h1>
                         <div class="dropcontainer">
                             <div class="dropdown">
@@ -66,14 +66,18 @@
                             </tr>
                         </table>
                             <ul>
-                                <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=editadminprofile">Editer mon profile</a></li>
-                            </ul>
-                            <ul>
-                                <li style="clear: both;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=admininvite">Créer un nouveau profile administrateur</a></li>
+                                <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=editadminprofile">Editer mon profil</a></li>
                             </ul>
                     </div>
+                    <div style="float: right;">
+                        <ul>
+                            <li style="clear: both; margin-right: 130px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=admininvite">Créer un nouveau profil administrateur</a></li>
+                            <li style="clear: both; margin-left: 6px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=admininvite">Créer un nouveau profil Gestionnaire</a></li>
+                            <li style="clear: both; margin-left: 35px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=managecompanycodes">Gérer les codes entreprises</a></li>
+                        </ul>
+                    </div>
                     <div class="imagecontainer">
-                        <img class="profileimage" src="../<?=$picture?>" height=200px>
+                        <img class="profileimage" src="../<?=$picture?>" height=200px width=200px>
                         <form action="index.php?action=updateimage" method="post" enctype="multipart/form-data">
                             Changer la photo
                             <input type="file" name="fileToUpload" id="fileToUpload">
