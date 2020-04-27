@@ -738,3 +738,58 @@ function doAdminRegister()
     }
     require('view/viewregisterinfo.php');
 }
+
+function manageCompanyCodes()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/getcompanycodes.php');
+        require('view/admin/viewcompanycodes.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function newCompanyCode()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        $validation=true;
+        // On vérifie que tout est bien récupéré par le serveur
+        if (!isset($_POST['name'])) {
+            $messagewrong ='Erreur: Veuillez remplir tous les champs.';
+            $validation=false;
+        }
+        // On vérifie que tout est rempli
+        if (empty($_POST['name'])) {
+            $messagewrong ='Erreur: Veuillez remplir tous les champs.';
+            $validation=false;
+        }
+
+        if (strlen($_POST['name']) > 35 || strlen($_POST['name']) < 1) {
+            $messagewrong ='Erreur: Le nom doit faire entre 1 et 35 caractères.';
+            $validation=false;
+        }
+
+        if ($validation) {
+            require('model/newcompanycode.php');
+        }
+        
+        require('model/getcompanycodes.php');
+        require('view/admin/viewcompanycodes.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}

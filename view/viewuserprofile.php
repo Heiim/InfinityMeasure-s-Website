@@ -75,7 +75,7 @@
                             </ul>
                     </div>
                     <div class="imagecontainer">
-                        <img class="profileimage" src=<?=htmlspecialchars($picture)?> height=200px>
+                        <img class="profileimage" src=<?=htmlspecialchars($picture)?> height=200px width=200px>
                         <form action="index.php?action=updateimage" method="post" enctype="multipart/form-data">
                             Changer la photo
                             <input type="file" name="fileToUpload" id="fileToUpload">
