@@ -26,27 +26,13 @@
         <div class="wrapper">
             <div>
                 <div class="clearing adminprofilecontainer">
-                    <h1 class="textfloatleft">Administrateur</h1>
-                        <div class="dropcontainer">
-                            <div class="dropdown">
-                                <button class="dropbtn">Modifier un test</button>
-                                    <div class="dropdown-content">
-                                        <?php 
-                                        for ($i = 0; $i < count($idstest); $i++) {
-                                            echo '<a href="index.php?action=edittest&idtest='.$idstest[$i].'">'.$descriptions[$i].'</a>';
-                                        }
-                                        ?>
-                                        <a href="index.php?action=newtest"> Nouveau test </a>
-                                </div>
-                            </div>
-                        </div>
+                    <h1 class="textfloatleft">Gestionnaire</h1>
                         <div class="dropcontainer">
                             <div class="dropdown">
                                 <button class="dropbtn">Rechercher</button>
                                     <div class="dropdown-content">
                                         <a href="index.php?action=showsearchuser"> Recherche Utilisateur </a>
                                         <a href="index.php?action=showsearchmanager"> Recherche Gestionnaire </a>
-                                        <a href="index.php?action=showsearchadmin"> Recherche Administrateur </a>
                                 </div>
                             </div>
                         </div>
@@ -64,16 +50,22 @@
                                 <td class="champsinfo">Email:</td>
                                 <td><?=$email?></td>
                             </tr>
+                            <tr>
+                                <td class="champsinfo">Entreprise:</td>
+                                <td><?=$company_name?></td>
+                            </tr>
+                            <tr>
+                                <td class="champsinfo">Code entreprise:</td>
+                                <td><?=$company_code?></td>
+                            </tr>
                         </table>
                             <ul>
-                                <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=editadminprofile">Editer mon profil</a></li>
+                                <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=editmanagerprofile">Editer mon profil</a></li>
                             </ul>
                     </div>
                     <div style="float: right;">
                         <ul>
-                            <li style="clear: both; margin-right: 130px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=admininvite">Créer un nouveau profil administrateur</a></li>
-                            <li style="clear: both; margin-left: 6px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=managerinvite">Créer un nouveau profil gestionnaire</a></li>
-                            <li style="clear: both; margin-left: 35px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=managecompanycodes">Gérer les codes entreprises</a></li>
+                            <li style="clear: both; margin-right: 215px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=userinvite">Créer un profil utilisateur</a></li>
                         </ul>
                     </div>
                     <div class="imagecontainer">

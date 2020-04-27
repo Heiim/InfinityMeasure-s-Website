@@ -18,6 +18,9 @@ if (isset($_GET['action'])) {
     case "adminprofile":
         adminProfile();
         break;
+    case "managerprofile":
+        managerProfile();
+        break;
     case "editadminprofile":
         editAdminProfile();
         break;
@@ -147,7 +150,24 @@ if (isset($_GET['action'])) {
     case "newcompanycode":
         newCompanyCode();
     break;
-    
+    case "managerinvite":
+        managerInvite();
+    break;
+    case "sendmanagerinvite":
+        sendManagerInvite();
+    break;
+    case "managerregister":
+        managerRegister();
+    break;
+    case "domanagerregister":
+        doManagerRegister();
+    break;
+    case "editmanagerprofile":
+        editManagerProfile();
+    break;
+    case "doeditmanagerprofile":
+        doEditManagerProfile();
+    break;
 
     }
     
