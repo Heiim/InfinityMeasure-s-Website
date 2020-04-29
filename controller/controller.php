@@ -559,6 +559,11 @@ function cgu()
     require('view/viewcgu.php');
 }
 
+function contactus()
+{
+    require('view/viewcontactus.php');
+}
+
 function forum()
 {
     session_start();
