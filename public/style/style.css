@@ -179,6 +179,17 @@ a {
     width: 430px;
     padding: 10px;
 }
+.contactform1{
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    margin-left: 5%;
+    padding:10px;
+}
+textarea
+{
+   font-size: 20px;
+}
 
 input[type=email] {
     width: 200px;

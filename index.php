@@ -110,7 +110,10 @@ if (isset($_GET['action'])) {
         break;
     case "cgu":
         cgu();
-    break;
+        break;
+    case"contactus";
+        contactus();
+        break;
     case "forum":
         forum();
     break;
