@@ -45,7 +45,7 @@
                         </div>
                         <div>
                             <label for="email">Adresse email </label>
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" id="email" <?php if (isset($_GET['email'])) { ?> value="<?=$_GET['email']?>" <?php } ?> required>
                         </div>
                         <div>
                             <label for="password">Mot de passe </label>
@@ -54,6 +54,10 @@
                         <div>
                             <label for="confirmpassword">Confirmation</label>
                             <input type="password" name="confirmpassword" id="confirmpassword" onkeyup='checkpassword();' required><span class="passworderror" id='passworderror'></span><span class="passworderror" id='passwordlength'></span>
+                        </div>
+                        <div>
+                            <label for="company_code">Code entreprise</label>
+                            <input type="text" name="company_code" id="company_code" <?php if (isset($_GET['company_code'])) { ?> value="<?=$_GET['company_code']?>" <?php } ?> required>
                         </div>
                         <div>
                             <label for="size">Taille </label>

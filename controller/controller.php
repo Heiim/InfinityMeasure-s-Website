@@ -109,12 +109,12 @@ function register()
 
     $validation=true;
     // On vérifie que tout est bien récupéré par le serveur
-    if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'],$_POST['gender'],$_POST['height'],$_POST['weight'])) {
+    if (!isset($_POST['password'], $_POST['email'],$_POST['firstn'],$_POST['lastn'],$_POST['birthday'],$_POST['confirmpassword'],$_POST['gender'],$_POST['height'],$_POST['weight'],$_POST['company_code'])) {
         $messagedisp ='Erreur: Veuillez remplir tous les champs.';
         $validation=false;
     }
     // On vérifie que tout est rempli
-    if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday']) || empty($_POST['gender']) || empty($_POST['height']) || empty($_POST['weight'])) {
+    if (empty($_POST['password']) || empty($_POST['email']) || empty($_POST['firstn']) || empty($_POST['lastn']) || empty($_POST['birthday']) || empty($_POST['gender']) || empty($_POST['height']) || empty($_POST['weight']) || empty($_POST['company_code'])) {
         $messagedisp ='Erreur: Veuillez remplir tous les champs.';
         $validation=false;
     }
@@ -869,6 +869,10 @@ function managerInvite()
         require('model/getcompanycodes.php');
         require('view/admin/viewinvitemanager.php');
         exit();
+    } else if ($_SESSION['status']=="manager") {
+        require('model/getmanagersession.php');
+        require('view/manager/viewinvitemanager.php');
+        exit();    
     } else {
         header('Location: index.php');
         exit();
@@ -882,7 +886,7 @@ function sendManagerInvite()
     if (!isset($_SESSION['loggedin'])) {
         header('Location: index.php?action=login');
         exit();
-    } else if ($_SESSION['status']=="admin") {
+    } else if ($_SESSION['status']=="admin" or $_SESSION['status']=="manager") {
         require('model/sendmanagerinvite.php');
         require('view/viewregisterinfo.php');
         exit();
@@ -940,4 +944,38 @@ function doManagerRegister()
         require('model/registermanager.php');
     }
     require('view/viewregisterinfo.php');
+}
+
+function userInvite()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="manager") {
+        require('model/getmanagersession.php');
+        require('view/manager/viewinviteuser.php');
+        exit();    
+    } else {
+        header('Location: index.php');
+        exit();
+    }   
+}
+
+function sendUserInvite()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="manager") {
+        require('model/senduserinvite.php');
+        require('view/viewregisterinfo.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
 }

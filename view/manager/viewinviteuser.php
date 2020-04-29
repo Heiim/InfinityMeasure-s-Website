@@ -26,23 +26,14 @@
     <div class="wrapper">
         <div>
             <div class="clearing registerformcontainer">
-            <h1 style="margin-left: 200px; margin-top: 50px; margin-bottom: 60px;" class="pageinfoh1">Nouveau profil gestionnaire</h1>
+            <h1 style="margin-left: 200px; margin-top: 50px; margin-bottom: 60px;" class="pageinfoh1">Nouveau profil utilisateur</h1>
                 <div class="registerform">
-                    <form action="index.php?action=sendmanagerinvite" method="post" autocomplete="off">
+                    <form action="index.php?action=senduserinvite" method="post" autocomplete="off">
                         <div>
                             <label for="email">Adresse email </label>
                             <input type="email" name="email" id="email" required>
                         </div>
-                        <label for="company_code">Entreprise </label>
-                        <select id="company_code" name="company_code">
-                        <?php 
-                            for ($i = 0; $i < count($idscompany); $i++) {
-                                if ($ids[$i] != $_SESSION['id']) {
-                                    echo nl2br('<option value="'.$company_codes[$i].'">'.htmlspecialchars($names[$i]).'</option>');
-                                }
-                            }
-                        ?>
-                    </select>
+                        <input type="hidden" name="company_code" id="company_code" value=<?=$company_code?> required>
                         <div>
                             <input type="submit" value="Envoyer l'invitation">
                         </div>
