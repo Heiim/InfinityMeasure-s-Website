@@ -35,7 +35,7 @@
                         </div>
                         <div>
                             <label for="email">Adresse email </label>
-                            <input type="email" name="email" id="email" value="<?=$_GET['email']?>" required>
+                            <input type="email" name="email" id="email" <?php if (isset($_GET['email'])) { ?> value="<?=$_GET['email']?>" <?php } ?> required>
                         </div>
                         <div>
                             <label for="password">Mot de passe </label>

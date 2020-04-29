@@ -35,7 +35,7 @@
                         </div>
                         <div>
                             <label for="email">Adresse email </label>
-                            <input type="email" name="email" id="email" value="<?=$_GET['email']?>" required>
+                            <input type="email" name="email" id="email" <?php if (isset($_GET['email'])) { ?> value="<?=$_GET['email']?>" <?php } ?> required>
                         </div>
                         <div>
                             <label for="password">Mot de passe </label>
@@ -47,7 +47,7 @@
                         </div>
                         <div>
                             <label for="company_code">Code entreprise</label>
-                            <input type="text" name="company_code" id="company_code" value="<?=$_GET['company_code']?>" required>
+                            <input type="text" name="company_code" id="company_code" <?php if (isset($_GET['company_code'])) { ?> value="<?=$_GET['company_code']?>" <?php } ?> required>
                         </div>
                         <div>
                             <label for="cgu">J'ai lu et j'accepte les <a style="color: blue;" href="index.php?action=cgu">CGU</a> </label>

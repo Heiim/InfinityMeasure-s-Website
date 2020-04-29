@@ -168,6 +168,12 @@ if (isset($_GET['action'])) {
     case "doeditmanagerprofile":
         doEditManagerProfile();
     break;
+    case "userinvite":
+        userInvite();
+    break;
+    case "senduserinvite":
+        sendUserInvite();
+    break;
 
     }
     

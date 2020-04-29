@@ -67,6 +67,9 @@
                         <ul>
                             <li style="clear: both; margin-right: 215px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=userinvite">Créer un profil utilisateur</a></li>
                         </ul>
+                        <ul>
+                            <li style="clear: both; margin-right: 215px;" class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=managerinvite">Créer un profil gestionnaire</a></li>
+                        </ul>
                     </div>
                     <div class="imagecontainer">
                         <img class="profileimage" src="../<?=$picture?>" height=200px width=200px>

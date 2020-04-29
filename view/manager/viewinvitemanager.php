@@ -33,16 +33,7 @@
                             <label for="email">Adresse email </label>
                             <input type="email" name="email" id="email" required>
                         </div>
-                        <label for="company_code">Entreprise </label>
-                        <select id="company_code" name="company_code">
-                        <?php 
-                            for ($i = 0; $i < count($idscompany); $i++) {
-                                if ($ids[$i] != $_SESSION['id']) {
-                                    echo nl2br('<option value="'.$company_codes[$i].'">'.htmlspecialchars($names[$i]).'</option>');
-                                }
-                            }
-                        ?>
-                    </select>
+                        <input type="hidden" name="company_code" id="company_code" value=<?=$company_code?> required>
                         <div>
                             <input type="submit" value="Envoyer l'invitation">
                         </div>
