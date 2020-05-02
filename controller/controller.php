@@ -561,7 +561,16 @@ function cgu()
 
 function contactus()
 {
-    require('view/viewcontactus.php');
+require('view/viewcontactus.php');
+}
+function postcontact()
+{
+    require('model/postcontact.php');
+}
+
+function contactussend()
+{
+    require('view/viewcontactussend.php');
 }
 
 function forum()

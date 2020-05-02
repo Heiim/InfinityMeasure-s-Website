@@ -191,6 +191,11 @@ textarea
    font-size: 20px;
 }
 
+.confirm{
+    text-align: center;
+    color: #50b3f8;
+}
+
 input[type=email] {
     width: 200px;
     height: 25px;

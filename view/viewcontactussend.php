@@ -39,6 +39,7 @@
         
         <div>
             <h1 class="titletext">Poser un question ou envoyer un commentaire</h1>
+            <h1 class="confirm">Votre message a été envoyé !</h1>
         </div>
     <div class="wrapper">
         <form action="index.php?action=postcontact" method="POST">
