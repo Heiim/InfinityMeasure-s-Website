@@ -60,19 +60,7 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
                 mail($_POST['email'], $subject, $message, $headers);
                 $messagedisp = 'Consultez votre boite mail pour activer votre compte.';
                 
-                /*
-                if(isset($_POST['status']) && $_POST['status']=='gestionnairepending'){
-                    $from    = 'quirkylimited@gmail.com';
-                    $subject = 'Statut gestionnaire du site Infinte Measures ';
-                    $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-                    $message = '<p>Bonjour, <br/>
-                    Vous êtes un professionel de la santé et vous avez demandez à être gestionnaire de notre site ? 
-                    Si cela est le cas, votre compte gestionnaire, sera activé sous les 24h. <br />
-                    Cordialement, l"Equipe Infinite Measures <br/>
-                    Mail envoyé automatiquement, ne pas répondre, merci<p>';
-                    mail($_POST['email'], $subject, $message, $headers);
-                }
-                */
+
 
             } else {
                 // Problème avec le SQl, il faut verifier si la table existe

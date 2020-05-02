@@ -114,6 +114,12 @@ if (isset($_GET['action'])) {
     case"contactus";
         contactus();
         break;
+    case"postcontact";
+        postcontact();
+        break;
+    case"contactussend";
+        contactussend();
+        break;
     case "forum":
         forum();
     break;
