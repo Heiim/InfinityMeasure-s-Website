@@ -3,7 +3,7 @@
 require('model/connectdb.php');
 
 $idtest = intval($_GET['idtest']);
-$stmt = $con->prepare('SELECT result,date FROM results WHERE iduser = ? AND idtest = ?');
+$stmt = $con->prepare('SELECT result, time FROM results WHERE iduser = ? AND idtest = ?');
 // On utilise l'id pour récuperer les infos
 $stmt->bind_param('ii', $_SESSION['id'], $idtest);
 $stmt->execute();

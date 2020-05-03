@@ -183,6 +183,9 @@ if (isset($_GET['action'])) {
     case "senduserinvite":
         sendUserInvite();
     break;
+    case "stats":
+        stats();
+    break;
 
     }
     
