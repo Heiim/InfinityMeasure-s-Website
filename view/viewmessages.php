@@ -72,7 +72,7 @@
                 <label class="goodsize" for="content">Message : </label>
             </div>
             <div>
-                <input class="messageinput" type="textarea" name="content" id="content" required>
+                <input class="messageinput" type="textarea" name="content" id="content" maxlength="300" required>
                 <input type="submit" value="Envoyer">
             </div>
         </form>
