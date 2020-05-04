@@ -51,7 +51,7 @@
                     </select>
                 </div>
                 <div>
-                    <input class="textareadisc" type="textarea" name="content" id="content" required>
+                    <input class="textareadisc" type="textarea" name="content" id="content" maxlength="300" required>
                     <input type="submit" value="Envoyer">
                 </div>
             </form>
