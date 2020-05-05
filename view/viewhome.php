@@ -25,7 +25,7 @@
                 <a class="buttoncenter" href="index.php?action=register" >Vous êtes un recruteur ?</a>
                 <a class="buttoncenter1" href="index.php?action=register" >Vous êtes un futur conducteur ?</a>
             </div>
-            <video autoplay loop>
+            <video playsinline autoplay muted loop>
                 <source src ="public/videos/wall.mp4" type ="video/mp4">
             </video>
         </section>
