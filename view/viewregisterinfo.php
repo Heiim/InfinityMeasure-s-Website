@@ -8,7 +8,7 @@
 <header>
     <div>
         <div class="logo">
-            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
@@ -17,7 +17,7 @@
 
 <body>
         <div style="width: 99%">
-            <div class="clearing messagecontainer" style="margin: 0 auto; width: 200px;">
+            <div class="clearing messagecontainer" style="margin: 0 auto; width: 500px;">
                 <p><?php echo $messagedisp ?></p>
             </div>
 
