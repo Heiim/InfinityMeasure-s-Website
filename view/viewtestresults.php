@@ -52,7 +52,12 @@
 
 	<body>
     <div class="chartitle"><h2><?php echo $description ?></h2></div>
-    <div id="chart_div" class="chart"></div>
+    <?php if (empty($results)) { ?>
+        <div class="chartitle"><h3> Aucun résultat </h3></div>
+    <?php } else { ?>
+        <div id="chart_div" class="chart"></div>
+    <?php } ?>
+    
     <div class="push"></div>
     <?php include("viewfooterShort.php") ?>
     </body>

@@ -17,7 +17,7 @@
 
 <body>
         <div style="width: 99%">
-            <div class="clearing messagecontainer" style="margin: 0 auto; width: 500px;">
+            <div class="clearing messagecontainer" style="margin: 0 auto; width: 560px;">
                 <p><?php echo $messagedisp ?></p>
             </div>
 
