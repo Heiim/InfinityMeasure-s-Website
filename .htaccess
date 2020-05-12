@@ -1,0 +1,2 @@
+AddType application/x-httpd-php .htm .html
+php_flag output_buffering on

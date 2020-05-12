@@ -1,0 +1,140 @@
+.discussionlink {
+    display: inline-block;
+    text-align: center;
+    padding: 13px;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.discussion {
+    width: 600px;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 25px;
+    border: 2px solid grey;
+    background-color: grey;
+    margin: 20px;
+}
+
+.messageinput {
+    width: 85%;
+    padding: 1px 1px 1px 1px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-size: 17px;
+}
+
+.textareadisc {
+    width: 78%;
+    padding: 1px 1px 1px 1px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-size: 17px;
+}
+
+input[type=textarea]:focus {
+    outline: 0;
+}
+
+.goodsize {
+    font-size: 17px;
+}
+
+.chatcontainer {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.chat {
+    height: 390px;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.textmessageright {
+    border-radius: 8px;
+    color: white;
+    font-weight: 300;
+    background-color: #50b3f8;
+    padding: 5px;
+    margin-left: 70%;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+
+.textmessageleft {
+    border-radius: 8px;
+    color: white;
+    font-weight: 300;
+    background-color: grey;
+    padding: 5px;
+    margin-right: 70%;
+    word-wrap: break-word;
+    font-size: 15px;
+}
+
+.timeright {
+    color: rgb(109, 107, 107);
+    font-weight: 300;
+    padding: 3px;
+    margin-left: 70%;
+    font-size: 14px;
+}
+
+.timeleft {
+    color: rgb(109, 107, 107);
+    font-weight: 300;
+    padding: 3px;
+    margin-right: 70%;
+    font-size: 14px;
+}
+
+input[type=submit] {
+    background-color: #50b3f8;
+    margin: 0;
+    margin-left: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 90px;
+    border: none;
+}
+
+.discussioncontainer {
+    margin: 0 auto;
+    width: 45%;
+}
+
+.discussionwraper {
+    height: 350px;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.refresh {
+    background-color: #50b3f8;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+    margin-left: 100px;
+}
+
+.refreshimage {
+    background-color: transparent;
+    padding-top: 5px;
+    border-radius: 20px;
+}
+
+.refresh:hover {
+    background-color: #39a5f1;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.refresh:focus {
+    outline: 0;
+}

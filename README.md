@@ -1,0 +1,1 @@
+Put these files in the public_html folder
