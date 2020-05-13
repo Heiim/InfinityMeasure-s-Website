@@ -14,26 +14,8 @@ $mail->Port = 587; // TLS only
 $mail->SMTPSecure = 'tls'; // ssl is deprecated
 $mail->SMTPAuth = true;
 $mail->Password = ''; // password ask the quirky administrators for the password
-
-$rint = random_int(0, 2);
-
-switch ($rint) {
-    case 0:
-        $mail->Username = 'infinite.measures.g7e@gmail.com'; // email
-        $mail->setFrom('infinite.measures.g7e@gmail.com', 'Infinite Measures'); // From email and name
-        break;
-    case 1:
-        $mail->Username = 'infinitemeasuresg7@gmail.com'; // email
-        $mail->setFrom('infinitemeasuresg7@gmail.com', 'Infinite Measures'); // From email and name
-        break;
-    case 2:
-        $mail->Username = 'g7e.infinite.measures@gmail.com'; // email
-        $mail->setFrom('g7e.infinite.measures@gmail.com', 'Infinite Measures'); // From email and name
-        break;
-}
-
-
-
+$mail->Username = 'infinite.measures.g7e@gmail.com'; // email
+$mail->setFrom('infinite.measures.g7e@gmail.com', 'Infinite Measures'); // From email and name
 $mail->CharSet = "UTF-8";
 
 if (isset($contactemail)) {
