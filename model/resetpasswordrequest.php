@@ -3,7 +3,8 @@
 require('model/connectdb.php');
 
 if ($stmt = $con->prepare('SELECT token FROM accounts WHERE email = ?')) {
-    $stmt->bind_param('s', htmlspecialchars($_POST['email']));
+    $emailr = htmlspecialchars($_POST['email']);
+    $stmt->bind_param('s', $emailr);
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($token);
