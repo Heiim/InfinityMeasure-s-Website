@@ -573,6 +573,10 @@ function contactussend()
     require('view/viewcontactussend.php');
 }
 
+function faq()
+{
+    require('view/viewfaq.php');
+}
 function forum()
 {
     session_start();
