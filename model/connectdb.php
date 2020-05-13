@@ -1,6 +1,6 @@
 <?php
 
-//info de connexion
+//infos de connexion
 $DATABASE_HOST = '';
 $DATABASE_USER = '';
 $DATABASE_PASS = '';
