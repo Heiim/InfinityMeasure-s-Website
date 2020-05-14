@@ -37,7 +37,7 @@
     <header>
     <div>
         <div class="logo">
-            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
@@ -52,7 +52,12 @@
 
 	<body>
     <div class="chartitle"><h2><?php echo $description ?></h2></div>
-    <div id="chart_div" class="chart"></div>
+    <?php if (empty($results)) { ?>
+        <div class="chartitle"><h3> Aucun résultat </h3></div>
+    <?php } else { ?>
+        <div id="chart_div" class="chart"></div>
+    <?php } ?>
+    
     <div class="push"></div>
     <?php include("viewfooterShort.php") ?>
     </body>

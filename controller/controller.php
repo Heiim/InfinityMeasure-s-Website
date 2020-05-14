@@ -997,3 +997,21 @@ function sendUserInvite()
         exit();
     }
 }
+
+function stats()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="manager") {
+        require('model/getmanagersession.php');
+        require('model/getstats.php');
+        require('view/manager/viewstats.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}

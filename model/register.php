@@ -27,39 +27,39 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
                 $stmt->close();
 
 
-            if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, token) VALUES (?, ?, ?, ?, ?, ?)')) {
-                // On hash et verifiy le mot de passe pour pas le stocket en clair dans la DB
-                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                $uniqid = uniqid();
-                $token = uniqid();
-                
-                $firstn=ucfirst(strtolower($_POST['firstn']));
-                $lastn=ucfirst(strtolower($_POST['lastn']));
+                if ($stmt = $con->prepare('INSERT INTO accounts (password, email, activation_code, firstn, lastn, token) VALUES (?, ?, ?, ?, ?, ?)')) {
+                    // On hash et verifiy le mot de passe pour pas le stocket en clair dans la DB
+                    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                    $uniqid = uniqid();
+                    $token = uniqid();
+                    
+                    $firstn=ucfirst(strtolower($_POST['firstn']));
+                    $lastn=ucfirst(strtolower($_POST['lastn']));
 
-                $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $firstn, $lastn, $token);
-                $stmt->execute();
+                    $stmt->bind_param('ssssss', $password, $_POST['email'], $uniqid, $firstn, $lastn, $token);
+                    $stmt->execute();
 
 
-                $stmt2 = $con->prepare('SELECT idaccount FROM accounts WHERE email = ?');
-                $stmt2->bind_param('s', $_POST['email']);
-                $stmt2->execute();
-                $stmt2->bind_result($id);
-                $stmt2->fetch();
-                $stmt2->close();
+                    $stmt2 = $con->prepare('SELECT idaccount FROM accounts WHERE email = ?');
+                    $stmt2->bind_param('s', $_POST['email']);
+                    $stmt2->execute();
+                    $stmt2->bind_result($id);
+                    $stmt2->fetch();
+                    $stmt2->close();
 
-                $stmt3 = $con->prepare('INSERT INTO users (iduser, birthday, gender, height, weight) VALUES (?, ?, ?, ?, ?)');
-                $stmt3->bind_param('issss', $id, $_POST['birthday'], $_POST['gender'], $_POST['height'], $_POST['weight']);
-                $stmt3->execute();
-                $stmt3->close();
+                    $stmt3 = $con->prepare('INSERT INTO users (iduser, birthday, gender, height, weight, idcompany) VALUES (?, ?, ?, ?, ?, ?)');
+                    $stmt3->bind_param('isssss', $id, $_POST['birthday'], $_POST['gender'], $_POST['height'], $_POST['weight'], $idcompany);
+                    $stmt3->execute();
+                    $stmt3->close();
 
-                $from    = 'quirkylimited@gmail.com';
-                $subject = 'Activation du compte';
-                $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-                $activate_link = 'http://localhost/index.php?action=activate&email=' . $_POST['email'] . '&code=' . $uniqid;
-                $message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
-                mail($_POST['email'], $subject, $message, $headers);
-                $messagedisp = 'Consultez votre boite mail pour activer votre compte.';
-                
+                    $from    = 'quirkylimited@gmail.com';
+                    $subject = 'Activation du compte';
+                    $headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
+                    $activate_link = 'http://localhost/index.php?action=activate&email=' . $_POST['email'] . '&code=' . $uniqid;
+                    $message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
+                    mail($_POST['email'], $subject, $message, $headers);
+                    $messagedisp = 'Consultez votre boite mail pour activer votre compte.';
+                    
 
 
             } else {

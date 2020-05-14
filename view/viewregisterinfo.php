@@ -8,7 +8,7 @@
 <header>
     <div>
         <div class="logo">
-            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
@@ -16,19 +16,19 @@
 </header>
 
 <body>
-        <div>
-            <div class="clearing messagecontainer">
-                <p class="message"><?php echo $messagedisp ?></p>
+        <div style="width: 99%">
+            <div class="clearing messagecontainer" style="margin: 0 auto; width: 560px;">
+                <p><?php echo $messagedisp ?></p>
             </div>
 
             <?php if (isset($profilebutton)) { ?>
-                <div style="margin-left:670px;" class="button"><a class="whitelink" href="index.php?action=login">Retour au profil</a></div>
+                <div style="margin: 0 auto; width: 160px;"> <div class="button"><a class="whitelink" href="index.php?action=login">Retour au profil</a></div></div>
             <?php }?>
 
             <?php include("viewfooterShort.php") ?>
 
             <?php if (isset($loginbutton)) { ?>
-                <div style="margin-left:685px;" class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></div>
+                <div style="margin: 0 auto; width: 131px;"><div class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></div></div>
             <?php }?>
 
             <?php include("viewfooterShort.php") ?>

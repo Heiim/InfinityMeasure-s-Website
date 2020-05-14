@@ -9,7 +9,7 @@
 <header>
 <div>
     <div class="logo">
-        <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+        <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
     </div>
     <p class="name">Infinite Measures</p>
     </a>
@@ -51,7 +51,7 @@
                     </select>
                 </div>
                 <div>
-                    <input class="textareadisc" type="textarea" name="content" id="content" required>
+                    <input class="textareadisc" type="textarea" name="content" id="content" maxlength="300" required>
                     <input type="submit" value="Envoyer">
                 </div>
             </form>

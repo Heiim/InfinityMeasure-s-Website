@@ -9,7 +9,7 @@
     <header>
     <div>
         <div class="logo">
-        <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+        <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>

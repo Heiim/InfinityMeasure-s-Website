@@ -1,7 +1,14 @@
-* {
-    font-family: 'Source Sans Pro', 'Verdana Pro Light', serif;
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('public/fonts/source-sans-pro-v13-latin-regular.woff') format('woff');
+    font-style: normal;
     font-weight: 100;
+}
+
+* {
     background-color: white;
+    font-family: 'Source Sans Pro';
+    font-weight: 100;
 }
 
 header {
@@ -179,19 +186,20 @@ a {
     width: 430px;
     padding: 10px;
 }
-.contactform1{
+
+.contactform1 {
     display: inline-block;
     text-align: left;
     width: 100%;
     margin-left: 5%;
-    padding:10px;
-}
-textarea
-{
-   font-size: 20px;
+    padding: 10px;
 }
 
-.confirm{
+textarea {
+    font-size: 20px;
+}
+
+.confirm {
     text-align: center;
     color: #50b3f8;
 }

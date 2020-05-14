@@ -7,3 +7,13 @@ input[type=textarea] {
     font-size: large;
     outline: none;
 }
+
+.statbox {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #50b3f8;
+    padding: 8px;
+    border-radius: 7px;
+    margin-top: 30px;
+    text-align: center;
+}
