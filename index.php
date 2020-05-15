@@ -120,6 +120,9 @@ if (isset($_GET['action'])) {
     case"contactussend";
         contactussend();
         break;
+    case"faq";
+        faq();
+        break;
     case "forum":
         forum();
     break;

@@ -11,7 +11,6 @@
     font-weight: 100;
 }
 
-
 header {
     top: 0;
     border: 2px;
@@ -187,19 +186,20 @@ a {
     width: 430px;
     padding: 10px;
 }
-.contactform1{
+
+.contactform1 {
     display: inline-block;
     text-align: left;
     width: 100%;
     margin-left: 5%;
-    padding:10px;
-}
-textarea
-{
-   font-size: 20px;
+    padding: 10px;
 }
 
-.confirm{
+textarea {
+    font-size: 20px;
+}
+
+.confirm {
     text-align: center;
     color: #50b3f8;
 }
@@ -589,4 +589,37 @@ input[type=search]:hover {
 .newcompany {
     margin: 25px;
     margin-left: 250px;
+}
+
+
+/* faq page */
+
+.accor ul {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.accor ul li {
+    border-bottom: 2px solid #50b3f8;
+    color: #000;
+}
+
+.accor a {
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #50b3f8;
+    color: #fff;
+}
+
+.accor:target ul {
+    max-height: 180px;
+    background: #50b3f8;
+    padding: 30px 50 px;
+    color: #fff;
+    line-height: 35px;
 }
