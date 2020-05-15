@@ -1062,3 +1062,21 @@ function stats()
         exit();
     }
 }
+
+function banUser()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/banuser.php');
+        require('view/viewregisterinfo.php');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+
+}    

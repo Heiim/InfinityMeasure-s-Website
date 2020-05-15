@@ -6,9 +6,6 @@
     <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
 </head>
 
-<?php
-    session_start();
-?>
 
 <header>
     <div>
@@ -55,7 +52,6 @@
                                     <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
                                     <li class="usercard_data">Email : <?=$email?></li>
                                 </ul>
-                            </a>
                             </div>
                                 
                         <?php }
@@ -65,6 +61,10 @@
                 <div class="push"></div>
 
                 
+            </div>
+        </div>
+    </div>
+</body>
             </div>
         </div>
     </div>
