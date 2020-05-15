@@ -523,35 +523,70 @@ function sendMessage()
 
 function showsearchuser()
 { 
-    require('view/viewsearchuser.php');
+    if ($_SESSION['status']=='user'){
+        header('Location: index.php');
+    }
+    else {
+        require('view/viewsearchuser.php');
+    }
 }
 
 function showsearchmanager()
 { 
-    require('view/viewsearchmanager.php');
+    if ($_SESSION['status']=='user'){
+        header('Location: index.php');
+    }
+    else {
+        require('view/viewsearchmanager.php');
+    }
 }
 
 function showsearchadmin()
 {
-    require('view/viewsearchadmin.php');
+    if ($_SESSION['status']=='admin'){
+        require('view/viewsearchadmin.php');
+    }
+    else {
+        header('Location: index.php');
+    }
+
+    
 }
 
 function searchuser()
 {
-    require('model/searchuser.php');
-    require('view/viewsearchuser.php');
+    if ($_SESSION['status']=='user'){
+        header('Location: index.php');
+    }
+    else {
+        require('model/searchuser.php');
+        require('view/viewsearchuser.php');
+    }
+    
 }
 
 function searchmanager()
 {
-    require('model/searchmanager.php');
-    require('view/viewsearchmanager.php');
+    if ($_SESSION['status']=='user'){
+        header('Location: index.php');
+    }
+    else {
+        require('model/searchmanager.php');
+        require('view/viewsearchmanager.php');
+    }
+
 }
 
 function searchadmin()
-{
-    require('model/searchadmin.php');
-    require('view/viewsearchadmin.php');
+{   
+    if ($_SESSION['status']=='admin'){
+        require('model/searchadmin.php');
+        require('view/viewsearchadmin.php');
+    }
+    else {
+        header('Location: index.php');
+    }
+    
 }
 
 function cgu()
