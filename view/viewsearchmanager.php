@@ -43,8 +43,11 @@
                 
                     <input type="search" name="prenom" placeholder="Prénom" />
                     <input type="search" name="nom" placeholder="Nom" />
-                    <input type="search" name="compagnie" placeholder="Compagnie" />
-                    
+                    <?php if ($_SESSION['status']=="manager"){?>
+                        <input readonly type="search" name="entreprise" placeholder="Entreprise :" value=<?=$_SESSION['company_name']?> />
+                    <?php } else {?>
+                        <input type="search" name="entreprise" placeholder="Entreprise :" />
+                    <?php } ?>
                     <input type="submit" value="Chercher" />
                     <input type="reset" value="Supprimer" />
                 </form>
@@ -56,7 +59,7 @@
                                 <ul class="usercard">
                                     <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
                                     <li class="usercard_data">Email : <?=$email?></li>
-                                    <li class="usercard_data">Entreprise : <?=$company_code?></li>
+                                    <li class="usercard_data">Entreprise : <?=$companysolver[$company_code]?></li>
                                 </ul>
                             </a>
                             </div>
