@@ -6,10 +6,6 @@
     <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
 </head>
 
-<?php
-    session_start();
-?>
-
 <header>
     <div>
         <div class="logo">
@@ -61,7 +57,6 @@
                                     <li class="usercard_data">Email : <?=$email?></li>
                                     <li class="usercard_data">Entreprise : <?=$companysolver[$company_code]?></li>
                                 </ul>
-                            </a>
                             </div>
                                 
                         <?php }

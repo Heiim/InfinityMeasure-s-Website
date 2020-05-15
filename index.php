@@ -189,6 +189,9 @@ if (isset($_GET['action'])) {
     case "stats":
         stats();
     break;
+    case "banuser":
+        banUser();
+    break;
 
     }
     

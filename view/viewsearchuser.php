@@ -6,10 +6,6 @@
     <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
 </head>
 
-<?php
-    session_start();
-?>
-
 <header>
     <div>
         <div class="logo">
@@ -59,13 +55,15 @@
                     
                     <?php if(isset($thesearchwasdone)){
                         while($stmt->fetch()) {?>
-                            <div class="barre"><a href="getprofilS.php?iduser=<?=$idaccount?>">
+                            <div class="barre">
                                 <ul class="usercard">
                                     <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
                                     <li class="usercard_data">Email : <?=$email?></li>
                                     <li class="usercard_data">Entreprise : <?=$companysolver[$company_code]?></li>
+                                    <?php if ($_SESSION['status']=="admin"){?>
+                                    <a style="color: red" href="index.php?action=banuser&id=<?=$idaccount?>">Bannir</a>
+                                    <?php }?>
                                 </ul>
-                            </a>
                             </div>
                                 
                         <?php }
