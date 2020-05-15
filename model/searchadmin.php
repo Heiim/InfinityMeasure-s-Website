@@ -19,7 +19,7 @@ if(isset($_GET['nom']) AND !empty($_GET['nom'])) {
 }
  
 
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+
 
 
 $stmt = $con->prepare("SELECT idaccount, firstn, lastn, email FROM admins LEFT JOIN accounts ON admins.idadmin = accounts.idaccount WHERE firstn LIKE ? AND lastn LIKE ?");

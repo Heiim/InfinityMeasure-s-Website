@@ -17,3 +17,7 @@ $stmt3->execute();
 $stmt3->bind_result($company_code, $company_name);
 $stmt3->fetch();
 $stmt3->close();
+
+
+$_SESSION['company_code']=$company_code;
+$_SESSION['company_name']=$company_name;

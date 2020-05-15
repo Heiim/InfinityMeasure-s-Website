@@ -39,12 +39,25 @@ if(isset($_POST['gender']) AND !empty($_POST['gender'])) {
     $gender_user = "%";
 }
 
+if ($_SESSION['status']=='manager'){
+    $thecompanycode=$_SESSION['company_code'];
+} else{
+    $thecompanycode = "%";
+}
 
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$stmt3 = $con->prepare('SELECT company_code, name FROM companies');
+$stmt3->bind_param('i', $idcompany);
+$stmt3->execute();
+$stmt3->bind_result($slcompany_code, $slcompany_name);
+while ($stmt3->fetch()) {
+	$companysolver[$slcompany_code]=$slcompany_name;
+}
+$stmt3->close();
 
 
-$stmt = $con->prepare("SELECT idaccount, firstn, lastn, email, company_code FROM users LEFT JOIN accounts ON users.iduser = accounts.idaccount LEFT JOIN companies ON companies.idcompany = users.idcompany WHERE firstn LIKE ? AND lastn LIKE ? AND gender LIKE ? AND weight LIKE ? AND height LIKE ?");
-$stmt->bind_param('sssss',$prenom_user, $nom_user, $gender_user, $poids_user, $taille_user);
+
+$stmt = $con->prepare("SELECT idaccount, firstn, lastn, email, company_code FROM users LEFT JOIN accounts ON users.iduser = accounts.idaccount LEFT JOIN companies ON companies.idcompany = users.idcompany WHERE firstn LIKE ? AND lastn LIKE ? AND gender LIKE ? AND weight LIKE ? AND height LIKE ? AND company_code LIKE ?");
+$stmt->bind_param('ssssss',$prenom_user, $nom_user, $gender_user, $poids_user, $taille_user, $thecompanycode);
 $stmt->execute();
 $stmt->bind_result($idaccount, $firstn, $lastn, $email, $company_code);
 

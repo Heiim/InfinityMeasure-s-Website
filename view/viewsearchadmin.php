@@ -25,6 +25,8 @@
                     echo 'index.php?action=userprofile';
                 }else if ($_SESSION['status']=="admin"){
                     echo 'index.php?action=adminprofile';
+                }else if ($_SESSION['status']=="manager"){
+                    echo 'index.php?action=managerprofile';
                 }
             ?>'>Mon compte</a></li>
             <li class="button"><a class="whitelink" href="index.php?action=chat">Messagerie</a></li>
