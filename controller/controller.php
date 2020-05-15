@@ -523,6 +523,8 @@ function sendMessage()
 
 function showsearchuser()
 { 
+    session_start();
+
     if ($_SESSION['status']=='user'){
         header('Location: index.php');
     }
@@ -533,6 +535,9 @@ function showsearchuser()
 
 function showsearchmanager()
 { 
+
+    session_start();
+
     if ($_SESSION['status']=='user'){
         header('Location: index.php');
     }
@@ -543,6 +548,8 @@ function showsearchmanager()
 
 function showsearchadmin()
 {
+    session_start();
+
     if ($_SESSION['status']=='admin'){
         require('view/viewsearchadmin.php');
     }
@@ -555,6 +562,8 @@ function showsearchadmin()
 
 function searchuser()
 {
+    session_start();
+    
     if ($_SESSION['status']=='user'){
         header('Location: index.php');
     }
@@ -567,6 +576,8 @@ function searchuser()
 
 function searchmanager()
 {
+    session_start();
+
     if ($_SESSION['status']=='user'){
         header('Location: index.php');
     }
@@ -579,6 +590,8 @@ function searchmanager()
 
 function searchadmin()
 {   
+    session_start();
+    
     if ($_SESSION['status']=='admin'){
         require('model/searchadmin.php');
         require('view/viewsearchadmin.php');
