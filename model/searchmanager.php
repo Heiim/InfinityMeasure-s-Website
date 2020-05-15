@@ -29,7 +29,7 @@ if(isset($_GET['compagnie']) AND !empty($_GET['compagnie'])) {
     $compagnie_user = "%";
 }
 
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+
 
 
 $stmt = $con->prepare("SELECT idaccount, firstn, lastn, email, company_code FROM managers LEFT JOIN accounts ON managers.idmanager = accounts.idaccount LEFT JOIN companies ON companies.idcompany = managers.idcompany WHERE firstn LIKE ? AND lastn LIKE ? AND company_code LIKE ?");

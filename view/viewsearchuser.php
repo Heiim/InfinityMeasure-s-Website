@@ -13,7 +13,7 @@
 <header>
     <div>
         <div class="logo">
-            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
@@ -23,8 +23,10 @@
         <li class="button"><a class="whitelink" href='<?php
             if($_SESSION['status']=="user"){
                 echo 'index.php?action=userprofile';
-            }else if ($_SESSION['status']=="admin"){
+            } else if ($_SESSION['status']=="admin") {
                 echo 'index.php?action=adminprofile';
+            } else if ($_SESSION['status']=="manager") {
+                echo 'index.php?action=managerprofile';
             }
         ?>'>Mon compte</a></li>
             <li class="button"><a class="whitelink" href="index.php?action=chat">Messagerie</a></li>
@@ -61,7 +63,7 @@
                                 <ul class="usercard">
                                     <li class="usercard_title"><?=$firstn?> <?=$lastn?></li>
                                     <li class="usercard_data">Email : <?=$email?></li>
-                                    <li class="usercard_data">Compagnie : <?=$company_code?></li>
+                                    <li class="usercard_data">Entreprise : <?=$companysolver[$company_code]?></li>
                                 </ul>
                             </a>
                             </div>
