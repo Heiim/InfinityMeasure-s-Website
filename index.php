@@ -192,6 +192,12 @@ if (isset($_GET['action'])) {
     case "banuser":
         banUser();
     break;
+    case "deletequestion":
+        deleteQuestion();
+    break;
+    case "newquestion":
+        newQuestion();
+    break;
 
     }
     
