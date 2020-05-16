@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="public/style/style.css">
+    <link rel="stylesheet" href="public/style/forum.css">
     <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
 </head>
 
@@ -31,30 +32,35 @@
     <div class="push"></div>
 
     <div class="wrapper">
-        <div class="accor" id="question1">
-            <a href="#question1"> What is Lorem Ipsum? </a>
-            <ul>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-           </ul>
-       </div>
-       <div class="accor" id="question2">
-            <a href="#question2"> What is Lorem Ipsum? </a>
-            <ul>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-           </ul>
-       </div>
-       <div class="accor" id="question3">
-            <a href="#question3"> What is Lorem Ipsum? </a>
-            <ul>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-           </ul>
-       </div>
-       <div class="accor" id="question4">
-            <a href="#question4"> What is Lorem Ipsum? </a>
-            <ul>
-                <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-           </ul>
-       </div>
+        <?php for ($i = 0; $i < count($questions); $i++) { ?>
+            <div class="accor" id="question<?=$i?>">
+                <a href="#question<?=$i?>"> <?=$questions[$i]?> </a>
+                <ul>
+                    <li><?=$answers[$i]?>
+                    <?php if (isset($_SESSION['status']) && ($_SESSION['status']=='admin')) {?>
+                        <a style="color: white; background-color: red; width: 130px; height: 32px; padding: 2px; margin: 4px;" class="whitelink" href="index.php?action=deletequestion&id=<?=$idqs[$i]?>">Supprimer</a>
+                    <?php } ?>
+                    </li>
+                </ul>
+            </div>
+        <?php } ?>
+
+        <?php if (isset($_SESSION['status']) && ($_SESSION['status']=='admin')) {?>
+            <form style="margin-left: 150px; margin-bottom: 30px; margin-top: 150px" action="index.php?action=newquestion" method="post" autocomplete="off">
+                <div>
+                    <label class="goodsize" for="content">Nouvelle question : </label>
+                </div>
+                <div style="margin-top: 7px;">
+                    <label style="font-size: 18px;" for="title">Question : </label>
+                    <input class="titleinput" name="question" id="question" maxlength="45" required>
+                </div>
+                <div>
+                <textarea placeholder="Réponse" class="textareatopic" rows="6" cols="154" wrap="hard" name="answer" id="answer" maxlength="900" required></textarea> 
+                </div>
+                <input type="submit" value="Poster"> <span class="passworderrorlogin"><?php if(isset($_GET['error'])) echo $_GET['error']; ?></span>
+            </form>
+        <?php } ?>
+
     </div>
 	
 </body>

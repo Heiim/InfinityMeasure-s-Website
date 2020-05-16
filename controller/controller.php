@@ -621,7 +621,10 @@ function contactussend()
 }
 
 function faq()
-{
+{   
+    session_start();
+
+    require('model/getquestions.php');
     require('view/viewfaq.php');
 }
 function forum()
@@ -1079,4 +1082,38 @@ function banUser()
         exit();
     }
 
-}    
+}
+
+function deleteQuestion()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/deletequestion.php');
+        header('Location: index.php?action=faq');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
+
+function newQuestion()
+{
+    session_start();
+
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php?action=login');
+        exit();
+    } else if ($_SESSION['status']=="admin") {
+        require('model/newquestion.php');
+        header('Location: index.php?action=faq');
+        exit();
+    } else {
+        header('Location: index.php');
+        exit();
+    }
+}
