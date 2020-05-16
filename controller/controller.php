@@ -41,16 +41,13 @@ function authenticate()
         header('Location: index.php?action=loginerror&error='.$error);
     } else{
         if($_SESSION['status']=='admin'){
-            session_destroy();
-            adminProfile();
+            header('Location: index.php?action=managerprofile');
         }
         else if ($_SESSION['status']=='user'){
-            session_destroy();
-            userProfile();
+            header('Location: index.php?action=userprofile');
         }
         else if ($_SESSION['status']=='manager'){
-            session_destroy();
-            managerProfile();
+            header('Location: index.php?action=managerprofile');
         }
     }
 
