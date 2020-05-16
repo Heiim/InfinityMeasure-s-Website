@@ -30,7 +30,6 @@
     </div>
 
     <div class="push"></div>
-
     <div class="wrapper">
         <?php for ($i = 0; $i < count($questions); $i++) { ?>
             <div class="accor" id="question<?=$i?>">
@@ -62,6 +61,6 @@
         <?php } ?>
 
     </div>
-	
+            <?php include("viewfooterShort.php") ?>
 </body>
 </html>
