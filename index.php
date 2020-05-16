@@ -198,6 +198,9 @@ if (isset($_GET['action'])) {
     case "newquestion":
         newQuestion();
     break;
+    case "switchlanguage":
+        switchLanguage();
+    break;
 
     }
     

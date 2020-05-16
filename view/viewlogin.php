@@ -7,8 +7,6 @@
     <link rel="icon" type="image/png" href="public/images/infinitelogo.png" />
     <div hidden>
     <?=
-    session_start();
-    
     logincheck();
     ?>
 </div>
@@ -17,15 +15,15 @@
 <header>
     <div>
         <div class="logo">
-            <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+            <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
         </div>
         <p class="name">Infinite Measures</p>
         </a>
     </div>
     <div class="connection">
         <ul>
-            <li class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></li>
-            <li class="button"><a class="whitelink" href="index.php?action=register">Créer un compte</a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=login"> <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Sign in <?php } else {?> Connexion <?php } ?></a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=register"><?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Sign up <?php } else {?> Créer un compte <?php } ?></a></li>
         </ul>
     </div>
 </header>
@@ -35,22 +33,22 @@
         <div>
             <div class="clearing loginformcontainer">
                 <div class="loginform">
-                <h1 class="pageinfoh1">Connexion</h1>
+                <h1 class="pageinfoh1"><?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Sign in <?php } else {?> Connexion <?php } ?></h1>
 
                     <form action="index.php?action=authenticate" method="post">
                         <div>
-                            <label for="email">Adresse email </label>
+                            <label for="email"><?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Email <?php } else {?> Adresse email <?php } ?></label>
                             <input type="email" name="email" id="email" required>
                         </div>
                         <div>
-                            <label for="password">Mot de passe </label>
+                            <label for="password"><?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Password <?php } else {?> Mot de passe <?php } ?></label>
                             <input type="password" name="password" id="password" required>
                         </div>
                         <div>
                             <ul>
-                                <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=resetpassword">Mot de passe oublié</a></li>
+                                <li class="button resetpasswordbutton"><a class="whitelink" href="index.php?action=resetpassword"><?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Reset password <?php } else {?> Mot de passe oublié <?php } ?></a></li>
                             </ul>
-                            <input type="submit" value="Connexion">
+                            <input type="submit" value=" <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Sign in <?php } else {?> Connexion <?php } ?> ">
                         </div>
                     </form>
                 </div>

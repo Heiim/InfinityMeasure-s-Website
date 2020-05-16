@@ -19,16 +19,19 @@ function logincheck()
 
 function homePage()
 {
+    session_start();
     require('view/viewhome.php');
 }
 
 function login()
 {
+    session_start();
     require('view/viewlogin.php');
 }
 
 function loginError()
 {
+    session_start();
     require('view/viewlogin.php');
 }
 
@@ -41,7 +44,7 @@ function authenticate()
         header('Location: index.php?action=loginerror&error='.$error);
     } else{
         if($_SESSION['status']=='admin'){
-            header('Location: index.php?action=managerprofile');
+            header('Location: index.php?action=adminprofile');
         }
         else if ($_SESSION['status']=='user'){
             header('Location: index.php?action=userprofile');
@@ -98,6 +101,7 @@ function logout()
 
 function showRegister()
 {
+    session_start();
     require('view/viewregister.php');
 }
 
@@ -149,6 +153,7 @@ function register()
 
 function activate(){
     require('model/activate.php');
+    session_start();
     require('view/viewactivateinfo.php');
 }
 
@@ -357,17 +362,20 @@ function doEditManagerProfile()
 
 function resetpassword()
 {
+    session_start();
     require('view/viewresetpasswordrequest.php');
 }
 
 function resetpasswordrequest()
 {
     require('model/resetpasswordrequest.php');
+    session_start();
     require('view/viewregisterinfo.php');
 }
 
 function doresetpasswordrequest()
 {
+    session_start();
     require('view/viewresetpasswordform.php');
 }
 
@@ -391,6 +399,7 @@ function doresetpassword()
 
 function editTest()
 {
+    session_start();
     require('model/gettestfromid.php');
     require('view/admin/viewedittest.php');
 }
@@ -429,6 +438,7 @@ function doEditTest()
 function newTest()
 {
     require('model/getsensors.php');
+    session_start();
     require('view/admin/viewnewtest.php');
 }
 
@@ -600,12 +610,14 @@ function searchadmin()
 
 function cgu()
 {
+    session_start();
     require('view/viewcgu.php');
 }
 
 function contactus()
 {
-require('view/viewcontactus.php');
+    session_start();
+    require('view/viewcontactus.php');
 }
 function postcontact()
 {
@@ -614,6 +626,7 @@ function postcontact()
 
 function contactussend()
 {
+    session_start();
     require('view/viewcontactussend.php');
 }
 
@@ -820,6 +833,7 @@ function sendAdminInvite()
 
 function adminRegister()
 {
+    session_start();
     require('view/admin/viewadminregister.php');
 }
 
@@ -963,6 +977,7 @@ function sendManagerInvite()
 
 function managerRegister()
 {
+    session_start();
     require('view/manager/viewmanagerregister.php');
 }
 
@@ -1113,4 +1128,19 @@ function newQuestion()
         header('Location: index.php');
         exit();
     }
+}
+
+function switchLanguage()
+{
+
+    session_start();
+
+    if ($_GET['lang']=="en"){
+        $_SESSION['lang']="en";
+    } else {
+        $_SESSION['lang']="fr";
+    }
+
+    header('Location: index.php');
+    
 }
