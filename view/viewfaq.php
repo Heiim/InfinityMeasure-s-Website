@@ -30,7 +30,6 @@
     </div>
 
     <div class="push"></div>
-
     <div class="wrapper">
         <?php for ($i = 0; $i < count($questions); $i++) { ?>
             <div class="accor" id="question<?=$i?>">
@@ -46,7 +45,7 @@
         <?php } ?>
 
         <?php if (isset($_SESSION['status']) && ($_SESSION['status']=='admin')) {?>
-            <form style="margin-left: 150px; margin-bottom: 30px; margin-top: 150px" action="index.php?action=newquestion" method="post" autocomplete="off">
+            <form style="margin-left: 150px; margin-bottom: 30px; margin-top: 150px; margin-bottom: 100px" action="index.php?action=newquestion" method="post" autocomplete="off">
                 <div>
                     <label class="goodsize" for="content">Nouvelle question : </label>
                 </div>
@@ -62,6 +61,6 @@
         <?php } ?>
 
     </div>
-	
+            <?php include("viewfooterLong.php") ?>
 </body>
 </html>
