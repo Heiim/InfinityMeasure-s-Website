@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 13 mai 2020 à 17:03
+-- Généré le : sam. 16 mai 2020 à 15:22
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.2
 
@@ -138,6 +138,18 @@ CREATE TABLE `posts` (
   `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `questions`
+--
+
+CREATE TABLE `questions` (
+  `idquestion` int(11) NOT NULL,
+  `question` varchar(250) NOT NULL,
+  `answer` varchar(2000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -290,6 +302,12 @@ ALTER TABLE `posts`
   ADD KEY `idaccount` (`idaccount`);
 
 --
+-- Index pour la table `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`idquestion`);
+
+--
 -- Index pour la table `results`
 --
 ALTER TABLE `results`
@@ -362,6 +380,12 @@ ALTER TABLE `messages`
 --
 ALTER TABLE `posts`
   MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `idquestion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `results`
