@@ -29,7 +29,6 @@
     </div>
 
     <div class="push"></div>
-
     <div class="wrapper">
         <div class="accor" id="question1">
             <a href="#question1"> What is Lorem Ipsum? </a>
@@ -56,6 +55,6 @@
            </ul>
        </div>
     </div>
-	
+            <?php include("viewfooterShort.php") ?>
 </body>
 </html>
