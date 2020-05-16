@@ -16,7 +16,7 @@
     </div>
     <div class="connection">
         <ul>
-            <li class="button"><a class="whitelink" href="index.php?action=chat">Messagerie</a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=managerprofile">Mon compte</a></li>
             <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
         </ul>
     </div>
