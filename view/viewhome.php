@@ -34,13 +34,13 @@
         <section>
             <div class="title">
                 <h2> <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Our devices and tests <?php } else {?> Nos dispositifs et tests <?php } ?> </h2>
-                <img class="image1" src="public/images/Systeme.png ">
+                <img class="image1" src="public/images/Systeme<?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?>en<?php } ?>.png ">
             </div>
             <div class="titlesmall">
                 <h2> <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Our devices and tests <?php } else {?> Nos dispositifs et tests <?php } ?> </h2>
-                <img class="image2" src="public/images/Systemesmall.png">
+                <img class="image2" src="public/images/Systemesmall<?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?>en<?php } ?>.png">
             </div>
-             <img class="image" src="public/images/téléchargement.jpg">
+                <img class="image" src="public/images/background.jpg">
         </section>
         <section>
             <div class="title1">
@@ -58,7 +58,7 @@
                     &emsp;&ensp;
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.613200257332!2d-1.5551092840815752!3d47.22415022231152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ee9889ed81f1%3A0xa6cf6e831307cff9!2sSt%20Donatien-Malakoff%2C%2044000%20Nantes!5e0!3m2!1sfr!2sfr!4v1585559082847!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></h4>
             </div>
-            <img class="image" src="public/images/téléchargement.jpg">
+            <img class="image" src="public/images/background.jpg">
             <div class="footer">
                 <div class="aboutus">
                 <li class="button"><a class="whitelink" href="index.php?action=cgu"> <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> GCU <?php } else {?> CGU <?php } ?> </a></li>
