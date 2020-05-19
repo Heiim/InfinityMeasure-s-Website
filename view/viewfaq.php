@@ -61,6 +61,5 @@
         <?php } ?>
 
     </div>
-            <?php include("viewfooterLong.php") ?>
 </body>
 </html>
