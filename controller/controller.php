@@ -218,7 +218,7 @@ function updateProfilePic()
 
 function getResults() {
     session_start();
-    require('model/getResults.php');
+    require('model/getresults.php');
     require('view/viewtestresults.php');
 }
 

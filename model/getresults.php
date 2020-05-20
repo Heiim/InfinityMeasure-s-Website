@@ -24,3 +24,4 @@ $stmt->bind_param('i', $idtest);
 $stmt->execute();
 $stmt->bind_result($min,$max,$description,$unit);
 $stmt->fetch();
+$stmt->close();
