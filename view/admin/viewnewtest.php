@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-// Si l'utilisateur est pas loggué on le redirige vers la page de login
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.php?action=login');
-	exit();
-}
-?>
-
 <html>
     <head>
         <link rel="stylesheet" href="public/style/style.css">
