@@ -32,10 +32,10 @@
                 Constituant le contrat entre la société Infinite Measures, l’Utilisateur, l’accès au site doit être précédé de l’acceptation de ces CGU. L’accès à cette plateforme signifie l’acceptation des présentes CGU.
             </p>
             
-            <h2 class="titletext">Article 2 : Mentions légales (A modifier)</h2>
-            <p>L’édition du site lapetiteperle est assurée par la société Infinite Measure inscrite au RCS sous le numéro 451 432 228, dont le siège social est localisé au 3 Rue Docteur Joubert, 59110, La Madeleine, France Métropolitaine.
+            <h2 class="titletext">Article 2 : Mentions légales</h2>
+            <p>L’édition du site infinitemeasures est assurée par la société Quirky inscrite au RCS sous le numéro xxx xxx xxx, dont le siège social est localisé au 28 Rue Notre Dame des Champs, 75006 Paris, France Métropolitaine.
 
-                L’hébergeur du site lapetiteperle.fr est la société LHW, sise au 5 Rue Keller, 59100 Roubaix, France.
+                L’hébergeur du site infinitemeasures est la société 000webhost.
             </p>
             
             <h2 class="titletext">Article 3 : Accès au site</h2>
