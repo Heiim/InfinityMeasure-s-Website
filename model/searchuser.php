@@ -46,7 +46,6 @@ if ($_SESSION['status']=='manager'){
 }
 
 $stmt3 = $con->prepare('SELECT company_code, name FROM companies');
-$stmt3->bind_param('i', $idcompany);
 $stmt3->execute();
 $stmt3->bind_result($slcompany_code, $slcompany_name);
 while ($stmt3->fetch()) {
