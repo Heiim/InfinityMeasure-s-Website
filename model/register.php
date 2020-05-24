@@ -55,7 +55,7 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
                     //$from    = 'quirkylimited@gmail.com';
                     $subject = 'Activation du compte';
                     //$headers = 'From: ' . $from . "\r\n" . 'Reply-To: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-                    $activate_link = 'http://localhost/index.php?action=activate&email=' . $_POST['email'] . '&code=' . $uniqid;
+                    $activate_link = 'https://infinite-measures-g7e.000webhostapp.com/index.php?action=activate&email=' . $_POST['email'] . '&code=' . $uniqid;
                     //$message = '<p>Veuillez cliquer sur ce lien pour activer votre compte: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
                     //mail($_POST['email'], $subject, $message, $headers);
                     

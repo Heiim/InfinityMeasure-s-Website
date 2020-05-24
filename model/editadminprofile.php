@@ -47,7 +47,7 @@ if ($stmt = $con->prepare('SELECT email FROM accounts WHERE idaccount = ?')) {
             //$from    = 'Infinite Measures <user13557950@us-imm-node4c.000webhost.io>';
             $subject = 'Changement d\'addresse mail';
             //$headers = 'From: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-            $activate_link = 'https://infinite-measures-quirky.000webhostapp.com/index.php?action=activate&email=' . $_POST['email'] . '&code=' . $uniqid;
+            $activate_link = 'https://infinite-measures-g7e.000webhostapp.com/index.php?action=activate&email=' . $_POST['email'] . '&code=' . $uniqid;
             
             //$message = '<p>Veuillez cliquer sur ce lien pour confirmer le changement d\'email: <a href="' . $activate_link . '">' . $activate_link . '</a></p>';
             //mail($_POST['email'], $subject, $message, $headers);

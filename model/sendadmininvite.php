@@ -33,7 +33,7 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
             //$from    = 'Infinite Measures <user13557950@us-imm-node4c.000webhost.io>';
             $subject = 'Création d\'un compte administrateur';
             //$headers = 'From: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-            $register_link = 'https://infinite-measures-quirky.000webhostapp.com/index.php?action=adminregister&email=' . $_POST['email'] . '&token=' . $token;
+            $register_link = 'https://infinite-measures-g7e.000webhostapp.com/index.php?action=adminregister&email=' . $_POST['email'] . '&token=' . $token;
             //$message = '<p>Veuillez cliquer sur ce lien pour créer votre compte: <a href="' . $register_link . '">' . $register_link . '</a></p>';
             //mail($_POST['email'], $subject, $message, $headers);
             

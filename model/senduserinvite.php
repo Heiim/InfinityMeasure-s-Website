@@ -21,7 +21,7 @@ if ($stmt = $con->prepare('SELECT idaccount, password FROM accounts WHERE email 
             //$from    = 'Infinite Measures <user13557950@us-imm-node4c.000webhost.io>';
             $subject = 'Création d\'un compte utilisateur';
             //$headers = 'From: ' . $from . "\r\n" . 'X-Mailer: PHP/' . phpversion() . "\r\n" . 'MIME-Version: 1.0' . "\r\n" . 'Content-Type: text/html; charset=UTF-8' . "\r\n";
-            $register_link = 'https://infinite-measures-quirky.000webhostapp.com/index.php?action=register&email=' . $_POST['email'] . '&company_code=' . $_POST['company_code'];
+            $register_link = 'https://infinite-measures-g7e.000webhostapp.com/index.php?action=register&email=' . $_POST['email'] . '&company_code=' . $_POST['company_code'];
             
             $long_url = $register_link;
             $apiv4 = 'https://api-ssl.bitly.com/v4/bitlinks';
