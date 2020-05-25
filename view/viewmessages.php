@@ -10,7 +10,7 @@
 <header>
 <div>
     <div class="logo">
-        <a href="index.php"><img src="public/images/infinitelogo.png" width=100%x height=100%>
+        <a href="index.php"><img src="public/images/infinitelogo.png" width=100% height=100%>
     </div>
     <p class="name">Infinite Measures</p>
     </a>
@@ -36,10 +36,15 @@
             <a class="whitelink goodsize" href="index.php?action=chat">Retour</a> 
             Conversation avec 
             <?php 
-                if ($idsenders[0]==$_SESSION['id']) {
-                    echo htmlspecialchars($idsolver[$idreceivers[0]]);
+                if (($idsenders[0]!=$_SESSION['id'] && $idsenders[0]==$idadmin) || ($idreceivers[0]!=$_SESSION['id'] && $idreceivers[0]==$idadmin)) {
+                    echo "l'administrateur";
                 } else {
-                    echo htmlspecialchars($idsolver[$idsenders[0]]);
+
+                    if ($idsenders[0]==$_SESSION['id']) {
+                        echo htmlspecialchars($idsolver[$idreceivers[0]]);
+                    } else {
+                        echo htmlspecialchars($idsolver[$idsenders[0]]);
+                    }
                 }
                 
             ?>

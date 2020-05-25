@@ -30,3 +30,10 @@ while ($stmt2->fetch()) {
 	$idsolver[$idaccount]=$name;
 }
 $stmt2->close();
+
+
+$stmt3 = $con->prepare('SELECT idadmin FROM admins');
+$stmt3->execute();
+$stmt3->bind_result($idadmin);
+$stmt3->fetch();
+$stmt3->close();
