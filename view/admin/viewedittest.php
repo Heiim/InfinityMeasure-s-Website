@@ -19,6 +19,7 @@
             <li class="button"><a class="whitelink" href="index.php?action=adminprofile">Retour au profil</a></li>
             <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
         </ul>
+        <?php include(__DIR__."/../viewloggednotice.php") ?>
     </div>
 </header>
 
@@ -31,27 +32,27 @@
                     <form action="index.php?action=doedittest" method="post" autocomplete="off">
                         <div>
                             <label for="name">Nom</label>
-                            <input type="text" name="name" id="name" placeholder=<?=$name?> value=<?=$name?> required>
+                            <input style="width:200px;" type="text" name="name" id="name" placeholder=<?=$name?> value=<?=$name?> required>
                         </div>
                         <div>
                             <label for="min">Minimum </label>
-                            <input type="number" name="min" id="min" placeholder=<?=$min?> value=<?=$min?> required>
+                            <input style="width:200px;" type="number" name="min" id="min" placeholder=<?=$min?> value=<?=$min?> required>
                         </div>
                         <div>
                             <label for="max">Maximum </label>
-                            <input type="number" name="max" id="max" placeholder=<?=$max?> value=<?=$max?> required>
+                            <input style="width:200px;" type="number" name="max" id="max" placeholder=<?=$max?> value=<?=$max?> required>
                         </div>
                         <div>
                             <label for="unit">Unité </label>
-                            <input type="text" name="unit" id="unit" placeholder=<?=$unit?> value=<?=$unit?> required>
+                            <input style="width:200px;" type="text" name="unit" id="unit" placeholder=<?=$unit?> value=<?=$unit?> required>
                         </div>
                         <div>
                             <label for="description">Description </label>
-                            <input class="textareadisc" type="textarea" name="description" id="description" value='<?=$description?>' required>
+                            <input style="width:200px;" class="textareadisc" type="textarea" name="description" id="description" value='<?=$description?>' required>
                         </div>
                         <div>
                             <label for="idsensor">Capteur: </label>
-                            <select id="idsensor" name="idsensor">
+                            <select style="width:204px;" id="idsensor" name="idsensor">
                                 <?php 
                                     for ($i = 0; $i < count($idsolver); $i++) {
                                         if ($theidsensor==$ids[$i]){

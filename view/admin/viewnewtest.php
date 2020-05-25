@@ -19,6 +19,7 @@
             <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
         </ul>
     </div>
+    <?php include(__DIR__."/../viewloggednotice.php") ?>
 </header>
 
 <body>
@@ -29,27 +30,27 @@
                     <form action="index.php?action=donewtest" method="post" autocomplete="off">
                         <div>
                             <label for="name">Nom</label>
-                            <input type="text" name="name" id="name" required>
+                            <input style="width:200px;" type="text" name="name" id="name" required>
                         </div>
                         <div>
                             <label for="min">Minimum </label>
-                            <input type="number" name="min" id="min" required>
+                            <input style="width:200px;" type="number" name="min" id="min" required>
                         </div>
                         <div>
                             <label for="max">Maximum </label>
-                            <input type="number" name="max" id="max" required>
+                            <input style="width:200px;" type="number" name="max" id="max" required>
                         </div>
                         <div>
                             <label for="unit">Unité </label>
-                            <input type="text" name="unit" id="unit" required>
+                            <input style="width:200px;" type="text" name="unit" id="unit" required>
                         </div>
                         <div>
                             <label for="description">Description </label>
-                            <input class="textareadisc" type="textarea" name="description" id="description" required>
+                            <input style="width:200px;" class="textareadisc" type="textarea" name="description" id="description" required>
                         </div>
                         <div>
-                            <label for="idsensor">Capteur: </label>
-                            <select id="idsensor" name="idsensor">
+                            <label for="idsensor">Capteur </label>
+                            <select style="width:204px;" id="idsensor" name="idsensor">
                                 <?php 
                                     for ($i = 0; $i < count($idsolver); $i++) {
                                         echo nl2br('<option value="'.$ids[$i].'">'.$idsolver[$ids[$i]].'</option>');

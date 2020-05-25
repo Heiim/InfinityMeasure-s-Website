@@ -17,9 +17,10 @@
     </div>
     <div class="connection">
         <ul>
-            <li class="button"><a class="whitelink" href="index.php?action=login">Connexion</a></li>
-            <li class="button"><a class="whitelink" href="index.php?action=register">Créer un compte</a></li>
+            <li class="button"><a class="whitelink" href="index.php?action=login"> <?php if (isset($_SESSION['loggedin'])) { ?> Mon compte <?php } else { ?> Connexion <?php } ?> </a></li>
+            <?php if (!isset($_SESSION['loggedin'])) { ?> <li class="button"><a class="whitelink" href="index.php?action=register">Créer un compte</a></li> <?php } ?>
         </ul>
+        <?php include("viewloggednotice.php") ?>
     </div>
 </header>
 

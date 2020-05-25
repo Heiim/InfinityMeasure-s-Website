@@ -19,6 +19,7 @@
         <li class="button"><a class="whitelink" href='index.php?action=login'>Mon compte</a></li>
         <li class="button"><a class="whitelink" href="index.php?action=logout">Déconnexion</a></li>
     </ul>
+    <?php include("viewloggednotice.php") ?>
 </div>
 </header>
 
