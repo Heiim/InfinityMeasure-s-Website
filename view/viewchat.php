@@ -31,7 +31,10 @@
             $ids=array_keys($idsolver);
             for ($i = 0; $i < count($idsolver); $i++) {
                 // if the id is different from the user's one and he has a discussion with the user
-                if ($ids[$i] != $_SESSION['id'] && (in_array($ids[$i], $idreceivers) || in_array($ids[$i], $idsenders))) {
+                if ($_SESSION['status'] == 'user' && $ids[$i]==$idadmin) {
+                    echo nl2br('<div class="discussion"><a class="discussionlink" href="index.php?action=getmessages&id='.$ids[$i].'"> Administrateur pincipal </a></div>');
+                }
+                else if ($ids[$i] != $_SESSION['id'] && (in_array($ids[$i], $idreceivers) || in_array($ids[$i], $idsenders))) {
                     echo nl2br('<div class="discussion"><a class="discussionlink" href="index.php?action=getmessages&id='.$ids[$i].'">' .htmlspecialchars($idsolver[$ids[$i]]).'</a></div>');
                 }
             }
@@ -40,15 +43,20 @@
         <div>
             <form action="index.php?action=sendmessage" method="post" autocomplete="off">
                 <div>
-                    <label class="goodsize" for="content">Nouveau message à: </label>
+                    <label class="goodsize" for="content">Nouveau message à <?php if ($_SESSION['status'] != 'admin'){ ?> un administrateur <?php } ?> :</label>
+                    <?php if ($_SESSION['status'] == 'admin'){ ?>
                     <select id="id" name="id">
                         <?php 
                             for ($i = 0; $i < count($idsolver); $i++) {
                                 if ($ids[$i] != $_SESSION['id']) {
-                                    echo nl2br('<option value="'.$ids[$i].'">'.htmlspecialchars($idsolver[$ids[$i]]).'</option>');
-                                }
+                                        echo nl2br('<option value="'.$ids[$i].'">'.htmlspecialchars($idsolver[$ids[$i]]).'</option>');
                             }
-                        ?>
+                        }
+                    } else { ?>
+                    <select id="id" name="id" hidden>
+                        <option value=<?=$idadmin?>>
+                    <?php } ?>
+                    
                     </select>
                 </div>
                 <div>

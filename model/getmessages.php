@@ -35,3 +35,10 @@ while ($stmt2->fetch()) {
 $stmt2->close();
 
 $sendto=$_GET['id'];
+
+
+$stmt3 = $con->prepare('SELECT idadmin FROM admins');
+$stmt3->execute();
+$stmt3->bind_result($idadmin);
+$stmt3->fetch();
+$stmt3->close();
