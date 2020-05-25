@@ -19,6 +19,7 @@
             <li class="button"><a class="whitelink" href="index.php?action=chat"> <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Inbox <?php } else {?> Messagerie <?php } ?></a></li>
             <li class="button"><a class="whitelink" href="index.php?action=logout"> <?php if ( (isset($_SESSION['lang'])) && ($_SESSION['lang']=='en')) { ?> Log out <?php } else {?> Déconnexion <?php } ?> </a></li>
         </ul>
+        <?php include("viewloggednotice.php") ?>
     </div>
 </header>
 
